@@ -2,19 +2,64 @@
   "hero": {
     "title": "Scrap Bays Limited",
     "text": "Scrap Bays Limited is a trading company that specialises in selling scrap metal, plastic scrap and waste paper scrap — all grades of ferrous and non-ferrous scrap metal, supplied to industrial buyers worldwide.",
-    "primary": { "label": "Shop now", "href": "/shop/" },
-    "secondary": { "label": "Sell your scrap", "href": "/scrap-material-enquiry/" },
+    "primary": {
+      "label": "Shop now",
+      "href": "/shop/"
+    },
+    "secondary": {
+      "label": "Sell your scrap",
+      "href": "/scrap-material-enquiry/"
+    },
     "slides": [
-      { "src": "/media/2026/01/steel-rail-scrap-seo-1200x1200-1.jpg", "alt": "Used rails and HMS steel scrap", "label": "Ferrous & non-ferrous metal scrap", "href": "/product-category/meralscrap/" },
-      { "src": "/media/2025/10/copper-inqot.jpeg", "alt": "Stacked copper ingots", "label": "Metal ingots", "href": "/product-category/metalingot/" },
-      { "src": "/media/2025/10/larch-logs-scaled-1.jpg", "alt": "Stacked larch wood logs", "label": "Hardwood & softwood logs", "href": "/product-category/woods/" },
-      { "src": "/media/2026/01/insulated-copper-wire-scrap-seo-1200x1200-1.jpg", "alt": "Insulated copper cable scrap", "label": "Copper cable & wire scrap", "href": "/product/insulated-copper-cable-scrap/" },
-      { "src": "/media/2026/01/clear_pet_scrap_seo_1200.jpg", "alt": "Clear PET plastic scrap", "label": "Plastic scrap", "href": "/product-category/plastic-scrap/" }
-    ]
+      {
+        "src": "/images/hero/hero-metal-scrap.webp",
+        "fallback": "/media/2026/01/steel-rail-scrap-seo-1200x1200-1.jpg",
+        "alt": "Used rails and HMS steel scrap",
+        "label": "Ferrous & non-ferrous metal scrap",
+        "href": "/product-category/meralscrap/"
+      },
+      {
+        "src": "/images/hero/hero-metal-ingots.webp",
+        "fallback": "/media/2025/10/copper-inqot.jpeg",
+        "alt": "Stacked copper ingots",
+        "label": "Metal ingots",
+        "href": "/product-category/metalingot/"
+      },
+      {
+        "src": "/images/hero/hero-timber-logs.webp",
+        "fallback": "/media/2025/10/larch-logs-scaled-1.jpg",
+        "alt": "Stacked larch wood logs",
+        "label": "Hardwood & softwood logs",
+        "href": "/product-category/woods/"
+      },
+      {
+        "src": "/images/hero/hero-copper-cable.webp",
+        "fallback": "/media/2026/01/insulated-copper-wire-scrap-seo-1200x1200-1.jpg",
+        "alt": "Insulated copper cable scrap",
+        "label": "Copper cable & wire scrap",
+        "href": "/product/insulated-copper-cable-scrap/"
+      },
+      {
+        "src": "/images/hero/hero-plastic-scrap.webp",
+        "fallback": "/media/2026/01/clear_pet_scrap_seo_1200.jpg",
+        "alt": "Clear PET plastic scrap",
+        "label": "Plastic scrap",
+        "href": "/product-category/plastic-scrap/"
+      }
+    ],
+    "_slidesNote": "src = new banner (see IMAGE_BRIEFS.md). Until that file exists in public/, the homepage uses fallback."
   },
   "featuredSections": [
-    { "title": "Wood", "category": "woods", "limit": 8 },
-    { "title": "Metal Ingots", "category": "metalingot", "limit": 8 }
+    {
+      "title": "Wood",
+      "category": "woods",
+      "limit": 8
+    },
+    {
+      "title": "Metal Ingots",
+      "category": "metalingot",
+      "limit": 8
+    }
   ],
   "values": [
     {

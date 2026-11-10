@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Globe2, Handshake, Leaf, ShieldCheck, type LucideIcon } from "lucide-react";
@@ -17,6 +19,12 @@ export const metadata = buildMetadata({
   path: "/",
 });
 
+/** Use the commissioned banner when its file exists in public/, otherwise the fallback photo. */
+const heroSlides = home.hero.slides.map(({ src, fallback, ...rest }) => ({
+  ...rest,
+  src: fs.existsSync(path.join(process.cwd(), "public", src)) ? src : fallback,
+}));
+
 const ICONS: Record<string, LucideIcon> = { shield: ShieldCheck, globe: Globe2, handshake: Handshake, leaf: Leaf };
 
 export default function HomePage() {
@@ -26,7 +34,7 @@ export default function HomePage() {
 
   return (
     <>
-      <HeroSlider {...home.hero} />
+      <HeroSlider title={home.hero.title} text={home.hero.text} primary={home.hero.primary} secondary={home.hero.secondary} slides={heroSlides} />
 
       {/* Categories */}
       <section className="container-x py-16 md:py-20">
@@ -46,7 +54,7 @@ export default function HomePage() {
                 {c.image && <Image src={c.image.src} alt="" fill sizes="(min-width:1024px) 14vw, (min-width:768px) 25vw, 50vw" className="object-cover opacity-80 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />}
                 <span className="absolute inset-0 bg-gradient-to-t from-steel-900/90 via-steel-900/20 to-transparent" />
                 <span className="absolute inset-x-0 bottom-0 p-3 text-center md:text-left">
-                  <span className="block font-display text-lg leading-tight font-semibold text-white">{c.name}</span>
+                  <span className="block font-heading text-base leading-tight font-semibold text-white sm:text-lg">{c.name}</span>
                   <span className="text-xs text-steel-200">{productsInCategory(c.slug).length} products</span>
                 </span>
               </Link>
