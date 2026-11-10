@@ -90,6 +90,9 @@
   .prose-site {
     @apply max-w-none text-[1.0625rem] leading-relaxed text-steel-700;
   }
+  .prose-site > :first-child {
+    @apply mt-0;
+  }
   .prose-site > * + * {
     @apply mt-4;
   }

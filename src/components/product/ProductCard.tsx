@@ -15,23 +15,23 @@ export function ProductCard({ product, categoryName, priority = false }: { produ
             src={img.src}
             alt={img.alt || title}
             fill
-            sizes="(min-width:1280px) 300px, (min-width:768px) 33vw, (min-width:480px) 50vw, 100vw"
+            sizes="(min-width:1280px) 300px, (min-width:768px) 33vw, 50vw"
             className="object-cover transition duration-500 group-hover:scale-105"
             priority={priority}
           />
         )}
-        <div className="absolute top-2.5 right-2.5 z-10">
+        <div className="absolute top-1.5 right-1.5 z-10 sm:top-2.5 sm:right-2.5">
           <WishlistButton product={product} />
         </div>
       </div>
-      <div className="flex flex-1 flex-col p-4">
+      <div className="flex flex-1 flex-col p-3 sm:p-4">
         {categoryName && <p className="mb-1 text-xs font-semibold tracking-wider text-brand-700 uppercase">{categoryName}</p>}
-        <h3 className="font-display text-lg leading-snug font-semibold text-steel-900">
+        <h3 className="font-display text-base leading-snug font-semibold text-steel-900 sm:text-lg">
           <Link href={`/product/${product.slug}/`} className="after:absolute after:inset-0 after:content-['']">
             {title}
           </Link>
         </h3>
-        {subtitle && <p className="mt-1 line-clamp-2 text-sm text-steel-500">{subtitle}</p>}
+        {subtitle && <p className="mt-1 line-clamp-2 hidden text-sm text-steel-500 min-[480px]:block">{subtitle}</p>}
         <div className="mt-auto pt-3">
           <PriceTag price={product.price} currency={product.currency} unit={product.unit} />
         </div>
@@ -47,5 +47,5 @@ export function splitName(name: string): [string, string | undefined] {
 }
 
 export function ProductGrid({ children }: { children: React.ReactNode }) {
-  return <div className="grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 sm:gap-5 md:grid-cols-3 xl:grid-cols-4">{children}</div>;
+  return <div className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 xl:grid-cols-4">{children}</div>;
 }

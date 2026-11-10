@@ -10,7 +10,7 @@ import legacy from "./data/legacy.json";
 const legacyRedirects = (legacy.redirects as { from: string; to: string }[]).map((r) => ({
   source: r.from.replace(/\/$/, ""),
   destination: r.to,
-  permanent: true,
+  statusCode: 301,
 }));
 
 const securityHeaders = [
@@ -23,6 +23,8 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   trailingSlash: true,
+  // Pin tracing to this project (a stray lockfile in a parent folder can confuse it).
+  outputFileTracingRoot: process.cwd(),
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
@@ -33,25 +35,24 @@ const nextConfig: NextConfig = {
     return [
       ...legacyRedirects,
       // Old WooCommerce / WordPress paths
-      { source: "/cart", destination: "/cart/", permanent: true },
-      { source: "/shop/page/:n(\\d+)", destination: "/shop/?page=:n", permanent: true },
-      { source: "/product-category/:slug/page/:n(\\d+)", destination: "/product-category/:slug/", permanent: true },
-      { source: "/step/:path*", destination: "/checkout/", permanent: true }, // CartFlows checkout steps
-      { source: "/category/:path*", destination: "/blog/", permanent: true },
-      { source: "/default-kit", destination: "/", permanent: true }, // Elementor kit leaked into the product sitemap
-      { source: "/feed", destination: "/blog/", permanent: true },
-      { source: "/comments/feed", destination: "/blog/", permanent: true },
-      { source: "/:slug/feed", destination: "/:slug/", permanent: true },
-      { source: "/about", destination: "/about-us/", permanent: true },
-      { source: "/contact", destination: "/scrap-material-enquiry/", permanent: true },
-      { source: "/contact-us", destination: "/scrap-material-enquiry/", permanent: true },
+      { source: "/shop/page/:n(\\d+)", destination: "/shop/?page=:n", statusCode: 301 },
+      { source: "/product-category/:slug/page/:n(\\d+)", destination: "/product-category/:slug/", statusCode: 301 },
+      { source: "/step/:path*", destination: "/checkout/", statusCode: 301 }, // CartFlows checkout steps
+      { source: "/category/:path*", destination: "/blog/", statusCode: 301 },
+      { source: "/default-kit", destination: "/", statusCode: 301 }, // Elementor kit leaked into the product sitemap
+      { source: "/feed", destination: "/blog/", statusCode: 301 },
+      { source: "/comments/feed", destination: "/blog/", statusCode: 301 },
+      { source: "/:slug/feed", destination: "/:slug/", statusCode: 301 },
+      { source: "/about", destination: "/about-us/", statusCode: 301 },
+      { source: "/contact", destination: "/scrap-material-enquiry/", statusCode: 301 },
+      { source: "/contact-us", destination: "/scrap-material-enquiry/", statusCode: 301 },
       { source: "/admin", destination: "/admin/orders/", permanent: false },
       // Old media URLs (same year/month paths). Only files used by the new site were migrated.
-      { source: "/wp-content/uploads/:y(\\d{4})/:m(\\d{2})/:file", destination: "/media/:y/:m/:file", permanent: true },
+      { source: "/wp-content/uploads/:y(\\d{4})/:m(\\d{2})/:file", destination: "/media/:y/:m/:file", statusCode: 301 },
       // Old sitemap index names
-      { source: "/sitemap_index.xml", destination: "/sitemap.xml", permanent: true },
-      { source: "/wp-sitemap.xml", destination: "/sitemap.xml", permanent: true },
-      { source: "/:type(post|page|product|product_cat|category|cartflows_step)-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/sitemap_index.xml", destination: "/sitemap.xml", statusCode: 301 },
+      { source: "/wp-sitemap.xml", destination: "/sitemap.xml", statusCode: 301 },
+      { source: "/:type(post|page|product|product_cat|category|cartflows_step)-sitemap.xml", destination: "/sitemap.xml", statusCode: 301 },
     ];
   },
   async headers() {

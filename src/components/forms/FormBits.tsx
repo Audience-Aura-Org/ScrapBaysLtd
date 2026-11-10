@@ -85,6 +85,7 @@ export function useSubmit() {
       const data = await res.json().catch(() => ({}));
       if (res.ok && data.ok) {
         setState({ status: "done", errors: {}, reference: data.reference, emailed: data.emailed });
+        window.scrollTo({ top: 0 }); // the success panel replaces the form; show it from the top
         return true;
       }
       setState({ status: "error", errors: data.errors || {}, message: data.error || (data.errors ? "Please check the highlighted fields." : "Something went wrong. Please try again.") });

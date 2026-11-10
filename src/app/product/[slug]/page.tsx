@@ -52,13 +52,16 @@ export default async function ProductPage({ params }: { params: Params }) {
       <section className="container-x grid gap-8 py-6 md:py-8 lg:grid-cols-2 lg:gap-12">
         <Gallery images={p.images} name={p.name} />
         <div>
-          {cat && (
-            <Link href={`/product-category/${cat.slug}/`} className="eyebrow hover:underline">
-              {cat.name}
-            </Link>
-          )}
-          <h1 className="mt-2 text-3xl leading-tight font-bold sm:text-4xl">{title}</h1>
-          {subtitle && <p className="mt-2 text-lg text-steel-600">{subtitle}</p>}
+          {/* Title block centred on phones; price, form and details stay left-aligned. */}
+          <div className="text-center md:text-left">
+            {cat && (
+              <Link href={`/product-category/${cat.slug}/`} className="eyebrow hover:underline">
+                {cat.name}
+              </Link>
+            )}
+            <h1 className="mt-2 text-3xl leading-tight font-bold sm:text-4xl">{title}</h1>
+            {subtitle && <p className="mt-2 text-lg text-steel-600">{subtitle}</p>}
+          </div>
           <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-steel-200 py-4">
             <PriceTag price={p.price} currency={p.currency} unit={p.unit} size="lg" />
             <span className="text-sm text-steel-600">

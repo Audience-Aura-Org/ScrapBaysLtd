@@ -17,8 +17,10 @@ type MetaInput = {
 
 export function buildMetadata(m: MetaInput): Metadata {
   const fullTitle = m.absoluteTitle ? m.title : `${m.title} | ${site.name}`;
-  // Without an explicit image, Next's file-based opengraph-image route supplies the branded card.
-  const images = m.image ? [{ url: absUrl(m.image.src), width: m.image.width, height: m.image.height, alt: m.image.alt || m.title }] : undefined;
+  // Pages with their own photo (products, posts) use it; everything else gets the branded card.
+  const images = m.image
+    ? [{ url: absUrl(m.image.src), width: m.image.width, height: m.image.height, alt: m.image.alt || m.title }]
+    : [{ url: absUrl("/og.png"), width: 1200, height: 630, alt: `${site.name} — scrap metal, plastic & electronic scrap supplier` }];
   return {
     title: m.absoluteTitle ? { absolute: m.title } : m.title,
     description: m.description,
@@ -31,10 +33,10 @@ export function buildMetadata(m: MetaInput): Metadata {
       title: fullTitle,
       description: m.description,
       locale: "en_GB",
-      ...(images ? { images } : {}),
+      images,
       ...(m.type === "article" ? { publishedTime: m.publishedTime, modifiedTime: m.modifiedTime } : {}),
     },
-    twitter: { card: "summary_large_image", title: fullTitle, description: m.description, ...(images ? { images: images.map((i) => i.url) } : {}) },
+    twitter: { card: "summary_large_image", title: fullTitle, description: m.description, images: images.map((i) => i.url) },
   };
 }
 

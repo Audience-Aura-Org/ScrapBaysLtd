@@ -2,12 +2,10 @@ import { ImageResponse } from "next/og";
 import fs from "node:fs/promises";
 import path from "node:path";
 
-export const alt = "Scrap Bay Limited — scrap metal, plastic & electronic scrap supplier";
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+// Branded default social card at /og.png (used by every page without its own image).
+export const dynamic = "force-static";
 
-// Branded default social card. Product pages override this with the product photo.
-export default async function OgImage() {
+export async function GET() {
   const logo = await fs.readFile(path.join(process.cwd(), "public/icons/logo-512.png"));
   const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
   return new ImageResponse(
@@ -33,6 +31,6 @@ export default async function OgImage() {
         <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 14, background: "linear-gradient(90deg,#2a7a4b,#f8c537)" }} />
       </div>
     ),
-    size,
+    { width: 1200, height: 630 },
   );
 }

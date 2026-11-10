@@ -29,6 +29,7 @@ export function Header({ categories }: { categories: NavCat[] }) {
   const cartCount = ready ? cart.length : 0;
 
   return (
+    <>
     <header className="sticky top-0 z-40 border-b border-steel-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/85">
       <div className="hidden bg-steel-900 text-sm text-steel-200 md:block">
         <div className="container-x flex h-9 items-center justify-between">
@@ -107,8 +108,10 @@ export function Header({ categories }: { categories: NavCat[] }) {
           </button>
         </div>
       </div>
+    </header>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer: kept outside <header>, whose backdrop-filter would otherwise become
+          the containing block for this fixed element and widen the page on phones. */}
       <div id="mobile-menu" className={`fixed inset-0 z-50 lg:hidden ${open ? "" : "pointer-events-none"}`} aria-hidden={!open}>
         <div className={`absolute inset-0 bg-steel-900/50 transition-opacity ${open ? "opacity-100" : "opacity-0"}`} onClick={() => setOpen(false)} />
         <div
@@ -176,7 +179,7 @@ export function Header({ categories }: { categories: NavCat[] }) {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }
 
