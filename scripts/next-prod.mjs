@@ -10,6 +10,7 @@
  */
 import { spawn } from "node:child_process";
 import { createRequire } from "node:module";
+import fs from "node:fs";
 
 const require = createRequire(import.meta.url);
 const [command, ...args] = process.argv.slice(2);
@@ -28,6 +29,20 @@ if (command === "start" && process.env.PORT && !args.includes("-p") && !args.inc
 }
 
 const nextBin = require.resolve("next/dist/bin/next");
-const child = spawn(process.execPath, [nextBin, command, ...args], { stdio: "inherit", env });
-for (const sig of ["SIGINT", "SIGTERM"]) process.on(sig, () => child.kill(sig));
-child.on("exit", (code, signal) => process.exit(signal ? 1 : (code ?? 1)));
+let child;
+for (const sig of ["SIGINT", "SIGTERM"]) process.on(sig, () => child?.kill(sig));
+const run = () =>
+  new Promise((resolve) => {
+    child = spawn(process.execPath, [nextBin, command, ...args], { stdio: "inherit", env });
+    child.on("exit", (code, signal) => resolve(signal ? 1 : (code ?? 1)));
+  });
+
+let code = await run();
+// A .next folder left behind by an earlier failed/interrupted build can make the next build
+// fail with "Invariant: no direct app page entry found for /_not-found". Retry once clean.
+if (command === "build" && code !== 0) {
+  console.log("[next-prod] build failed; retrying once with a clean .next directory");
+  fs.rmSync(".next", { recursive: true, force: true });
+  code = await run();
+}
+process.exit(code);
