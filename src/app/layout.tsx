@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { site } from "@/lib/site";
 import { getCategories } from "@/lib/content";
@@ -10,7 +10,20 @@ import { JsonLd } from "@/components/JsonLd";
 import { organizationLd, websiteLd } from "@/lib/seo";
 
 // Site-wide typeface (body, UI and headings); exposed as --font-poppins, see globals.css.
-const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-poppins", display: "swap" });
+// Self-hosted (src/fonts, Poppins latin subset, SIL OFL) so dev and production builds never
+// depend on downloading from Google Fonts; next/font still adds fallback metrics (no layout shift).
+const poppins = localFont({
+  src: [
+    { path: "../fonts/poppins-300.woff2", weight: "300", style: "normal" },
+    { path: "../fonts/poppins-400.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/poppins-500.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/poppins-600.woff2", weight: "600", style: "normal" },
+    { path: "../fonts/poppins-700.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-poppins",
+  display: "swap",
+  fallback: ["ui-sans-serif", "system-ui", "Arial", "sans-serif"],
+});
 
 const verification: Metadata["verification"] = {};
 if (process.env.GOOGLE_SITE_VERIFICATION) verification.google = process.env.GOOGLE_SITE_VERIFICATION;
