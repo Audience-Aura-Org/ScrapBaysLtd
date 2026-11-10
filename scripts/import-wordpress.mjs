@@ -19,6 +19,8 @@ import TurndownService from "turndown";
 import { gfm } from "turndown-plugin-gfm";
 
 const BASE = "https://scrapbaysltd.com";
+// Mistyped product URLs in the old content -> real products (shared with the 301s in next.config.ts).
+const LINK_FIXES = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data/link-fixes.json"), "utf8"));
 const ROOT = process.cwd();
 const CACHE = path.join(ROOT, ".wp-cache");
 const REFRESH = process.argv.includes("--refresh");
@@ -136,6 +138,7 @@ function rewriteLink(href) {
       if (u.searchParams.get("product_cat")) return `/product-category/${u.searchParams.get("product_cat")}/`;
       const slug = u.pathname.replace(/^\/|\/$/g, "");
       if (PAGE_HANDLING[slug]) return PAGE_HANDLING[slug] + (u.hash || ""); // retired page -> its redirect target
+      if (LINK_FIXES[u.pathname]) return LINK_FIXES[u.pathname] + (u.hash || ""); // mistyped product links
       return u.pathname + (u.search || "") + (u.hash || "");
     }
     return u.href;
@@ -264,7 +267,10 @@ for (const sp of storeProducts) {
     stock: sp.is_in_stock ? "in_stock" : "out_of_stock",
     sku: sp.sku || undefined,
     shortDescription: plain(sp.short_description) || undefined,
-    images: sp.images.map((im) => imageInfo(im.id, im.src, im.alt)).filter(Boolean),
+    // WooCommerce often repeats the featured image in the gallery: keep each file once.
+    images: sp.images
+      .map((im) => imageInfo(im.id, im.src, im.alt))
+      .filter((img, i, all) => img && all.findIndex((x) => x?.src === img.src) === i),
     specs,
     tags: (wp?.product_tag || []).map((id) => tagById.get(id)).filter(Boolean),
     related: live.related?.length ? live.related : undefined,

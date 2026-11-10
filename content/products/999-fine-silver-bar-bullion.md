@@ -7,7 +7,7 @@ price: null
 currency: "USD"
 unit: "kg"
 stock: "in_stock"
-images: [{"src":"/media/2026/02/WhatsApp-Image-2026-02-13-at-6.18.54-PM.jpeg","alt":"Silver Bullion Bar","width":474,"height":265},{"src":"/media/2026/02/WhatsApp-Image-2026-02-13-at-6.18.54-PM.jpeg","alt":"Silver Bullion Bar","width":474,"height":265}]
+images: [{"src":"/media/2026/02/WhatsApp-Image-2026-02-13-at-6.18.54-PM.jpeg","alt":"Silver Bullion Bar","width":474,"height":265}]
 specs: [["Product Name","999 Fine Silver Bar Bullion"],["Metal Type","Pure Silver"],["Purity","99.9% Fine Silver"],["Silver Grade","Investment Grade"],["Form","Rectangular Bullion Bar"],["Weight Options","1 oz, 5 oz, 10 oz, 50 oz, 100 oz, 1 kg"],["Certification","Assay Certified"],["Finish","Premium Minted Finish"],["Packaging","Secure Protective Packaging"],["Investment Grade","Yes"],["Serial Number","Unique Authentication Number"],["Storage Recommendation","Dry Secure Storage or Vault"],["Liquidity","High Global Resale Value"],["Tarnish Resistance","High Quality Protective Finish"],["Usage","Investment, Wealth Preservation, Collecting"],["Market Recognition","International Precious Metal Standard"]]
 tags: []
 related: ["caluanie-muelear-oxidize","24k-gold-bar-bullion","leather-scrap","99-99-pure-indium-bar"]

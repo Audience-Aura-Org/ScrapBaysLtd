@@ -33,7 +33,7 @@ updated: "2026-07-03T10:02:12Z"
 
         Premium timber is harvested under controlled forestry practices to ensure proper quality standards and sustainable supply. Each shipment is carefully inspected for grain consistency, diameter size, moisture content, structural integrity, and overall wood condition before export.
 
-        The natural density and hardness make [**Zebrano Wood Logs**](/product/beach-wood-logs/) suitable for heavy-duty woodworking applications that require long service life and premium finishing quality.
+        The natural density and hardness make [**Zebrano Wood Logs**](/product/beech-wood-logs/) suitable for heavy-duty woodworking applications that require long service life and premium finishing quality.
 
         Because this hardwood machines well during cutting and processing, manufacturers consistently prefer it for premium wood production.
 

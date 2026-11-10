@@ -7,7 +7,7 @@ price: null
 currency: "USD"
 unit: "tonnes"
 stock: "in_stock"
-images: [{"src":"/media/2026/01/rubber-scrap-seo-1200x1200-1.jpg","alt":"Butyl Bagomatic Bladder Rubber Scrap","width":1200,"height":1200},{"src":"/media/2026/01/rubber-scrap-seo-1200x1200-1.jpg","alt":"Butyl Bagomatic Bladder Rubber Scrap","width":1200,"height":1200}]
+images: [{"src":"/media/2026/01/rubber-scrap-seo-1200x1200-1.jpg","alt":"Butyl Bagomatic Bladder Rubber Scrap","width":1200,"height":1200}]
 specs: [["Product Name","Butyl Bagomatic Bladder Rubber Scrap"],["Material Type","Butyl Rubber"],["Source Material","Used Tire Curing Bladders"],["Form","Cut Pieces / Rubber Scrap"],["Color","Black"],["Grade","Industrial Recycling Grade"],["Processing Method","Sorted, Cleaned, Cut"],["Elasticity","High"],["Heat Resistance","Excellent"],["Chemical Resistance","High"],["Tensile Strength","Medium to High"],["Moisture Content","Low"],["Application","Rubber Reclaim, Tire Manufacturing, Molded Products"],["Packaging","Bales / Jumbo Bags"],["Recyclability","Reusable Industrial Material"]]
 tags: []
 related: ["reclaimed-rubber-scrap","99-99-pure-indium-bar","24k-gold-bar-bullion","shredded-tires"]

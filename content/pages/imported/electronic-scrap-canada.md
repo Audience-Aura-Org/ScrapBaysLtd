@@ -60,7 +60,7 @@ Material specifications can vary according to product type, source and level of 
 
 Electronic waste can contain both recoverable materials and substances that require controlled handling. Canadian requirements can vary depending on the material, province or territory, municipality and whether the material is being moved across international borders. Buyers and sellers should confirm the applicable requirements before shipment.
 
-## International [Electronic Scrap Canada](/product/weee-scrap/) Shipments
+## International [Electronic Scrap Canada](/weee-scrap-2/) Shipments
 
 For international transactions involving **Electronic Scrap Canada**, shipment classification, customs documentation and applicable environmental requirements should be reviewed before dispatch. Where electronic scrap is classified as hazardous waste or hazardous recyclable material, additional Canadian and exporting-country requirements may apply.
 

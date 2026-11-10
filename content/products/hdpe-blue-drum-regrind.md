@@ -7,7 +7,7 @@ price: null
 currency: "USD"
 unit: "tonnes"
 stock: "in_stock"
-images: [{"src":"/media/2026/01/233.jpg","alt":"HDPE Blue Drum Regrind","width":720,"height":960},{"src":"/media/2026/01/233.jpg","alt":"HDPE Blue Drum Regrind","width":720,"height":960}]
+images: [{"src":"/media/2026/01/233.jpg","alt":"HDPE Blue Drum Regrind","width":720,"height":960}]
 specs: [["Product Name","HDPE Blue Drum Regrind"],["Material Type","High-Density Polyethylene (HDPE)"],["Source Material","Recycled Blue Plastic Drums"],["Color","Blue"],["Form","Plastic Regrind Flakes"],["Grade","Industrial Recycled Grade"],["Processing Method","Washed and Ground"],["Melt Flow Index","Available on Request"],["Density","Approx. 0.94 – 0.97 g/cm³"],["Contamination Level","Low Contamination"],["Moisture Content","Low Moisture Processed"],["Application","Blow Molding, Injection Molding, Extrusion"],["Chemical Resistance","Excellent"],["Durability","High Impact Resistance"],["Packaging","Jumbo Bags / Custom Packaging"],["Recyclability","100% Recyclable"],["Industry Use","Packaging, Automotive, Construction, Plastic Manufacturing"]]
 tags: [{"slug":"blue-drum-plastic-regrind","name":"Blue Drum Plastic Regrind"},{"slug":"hdpe-blue-drum-regrind","name":"HDPE Blue Drum Regrind"},{"slug":"hdpe-regrind-material","name":"HDPE Regrind Material"},{"slug":"hdpe-scrap-material","name":"HDPE Scrap Material"},{"slug":"industrial-plastic-regrind","name":"Industrial Plastic Regrind"},{"slug":"recycled-hdpe-plastic-material","name":"Recycled HDPE Plastic Material"}]
 related: ["eps-block-scrap","pet-flakes","pvc-window-door-profile-scrap","fishnet-scrap"]

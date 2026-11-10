@@ -35,7 +35,7 @@ updated: "2026-07-04T03:20:14Z"
 
         Advanced milling and drying processes help maintain the wood’s natural properties while minimizing defects such as cracking and warping. This ensures reliable performance during manufacturing and installation.
 
-        Because of its exceptional mechanical properties, [**Iron Wood Logs**](/product/beach-wood-logs/) remain in high demand among timber importers, construction companies, and industrial manufacturers worldwide.
+        Because of its exceptional mechanical properties, [**Iron Wood Logs**](/product/beech-wood-logs/) remain in high demand among timber importers, construction companies, and industrial manufacturers worldwide.
 
         ## **Industrial Applications**
 

@@ -7,7 +7,7 @@ price: null
 currency: "USD"
 unit: "tonnes"
 stock: "in_stock"
-images: [{"src":"/media/2026/01/fishnet_scrap_seo_1200.jpg","alt":"Fishnet Scrap","width":1200,"height":1200},{"src":"/media/2026/01/fishnet_scrap_seo_1200.jpg","alt":"Fishnet Scrap","width":1200,"height":1200}]
+images: [{"src":"/media/2026/01/fishnet_scrap_seo_1200.jpg","alt":"Fishnet Scrap","width":1200,"height":1200}]
 specs: [["Product Name","Fishing Net Waste Material"],["Material Type","Nylon / Polypropylene / Polyethylene"],["Source Material","Used Fishing Nets"],["Form","Nets / Shredded Scrap / Loose Material"],["Color","Mixed Colors"],["Grade","Industrial Recycling Grade"],["Processing Method","Sorted, Washed, Shredded"],["Tensile Strength","High"],["Flexibility","Excellent"],["Moisture Content","Low"],["Contamination Level","Controlled"],["UV Resistance","Good"],["Application","Plastic Recycling, Pellet Production, Textiles"],["Packaging","Bales / Jumbo Bags"],["Recyclability","100% Recyclable"]]
 tags: [{"slug":"fishing-net-scrap","name":"Fishing Net Scrap"},{"slug":"fishnet-scrap","name":"Fishnet Scrap"},{"slug":"marine-plastic-scrap","name":"Marine Plastic Scrap"},{"slug":"nylon-fishnet-scrap","name":"Nylon Fishnet Scrap"},{"slug":"nylon-scrap-material","name":"Nylon Scrap Material"},{"slug":"recycled-fishnet-scrap","name":"Recycled Fishnet Scrap"},{"slug":"recycled-nylon-material","name":"Recycled Nylon Material"},{"slug":"used-fishing-net-scrap","name":"Used Fishing Net Scrap"},{"slug":"waste-fishnet-scrap","name":"Waste Fishnet Scrap"}]
 related: ["pet-flakes","ldpe-film-roll-scrap","hdpe-blue-drum-regrind","eps-block-scrap"]

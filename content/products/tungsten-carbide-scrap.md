@@ -7,7 +7,7 @@ price: null
 currency: "USD"
 unit: "tonnes"
 stock: "in_stock"
-images: [{"src":"/media/2026/01/hss-tool-steel-scrap-seo-1200x1200-1.jpg","alt":"Tungsten Carbide Scrap","width":1200,"height":1200},{"src":"/media/2026/01/hss-tool-steel-scrap-seo-1200x1200-1.jpg","alt":"Tungsten Carbide Scrap","width":1200,"height":1200}]
+images: [{"src":"/media/2026/01/hss-tool-steel-scrap-seo-1200x1200-1.jpg","alt":"Tungsten Carbide Scrap","width":1200,"height":1200}]
 specs: [["Product Name","Tungsten Carbide Scrap"],["Material Type","Tungsten Carbide Alloy"],["Main Composition","Tungsten + Carbon + Binder Metals"],["Source Material","Cutting Tools, Carbide Inserts, Drill Bits"],["Form","Inserts / Powder / Scrap Pieces"],["Color","Metallic Grey"],["Grade","Industrial Recycling Grade"],["Hardness","Extremely High"],["Density","14 – 15 g/cm³"],["Melting Point","Very High"],["Wear Resistance","Excellent"],["Contamination Level","Low / Controlled"],["Application","Alloy Manufacturing, Tool Production"],["Packaging","Drums / Jumbo Bags"],["Recyclability","High Value Recyclable Material"]]
 tags: []
 related: ["brass-honey-scrap","fridge-ac-compressor-scraps","aluminum-ubc-scrap","steel-tire-wire-scrap"]

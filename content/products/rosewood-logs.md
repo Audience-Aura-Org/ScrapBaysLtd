@@ -54,7 +54,7 @@ updated: "2026-07-04T02:33:32Z"
         -   High-end woodworking projects
         -   Custom interior decoration
 
-        [**Rosewood Logs**](/product/douglas-fir-wood-logs-copy/) remain a preferred choice for manufacturers seeking premium hardwood with exceptional appearance and durability.
+        [**Rosewood Logs**](/product/douglas-fir-wood-logs/) remain a preferred choice for manufacturers seeking premium hardwood with exceptional appearance and durability.
 
         ## **Benefits of Rosewood Logs**
 

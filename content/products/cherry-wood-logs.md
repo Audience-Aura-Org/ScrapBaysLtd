@@ -25,7 +25,7 @@ updated: "2026-07-04T19:58:32Z"
 
         ## **Why Choose Cherry Wood Logs?**
 
-        [**Cherry Wood Logs**](/product/beach-wood-logs/) are highly valued for their natural beauty and outstanding machining performance. The wood develops a deeper, richer color over time, creating an elegant appearance that enhances furniture and interior décor.
+        [**Cherry Wood Logs**](/product/beech-wood-logs/) are highly valued for their natural beauty and outstanding machining performance. The wood develops a deeper, richer color over time, creating an elegant appearance that enhances furniture and interior décor.
 
         Manufacturers prefer this hardwood because it cuts, shapes, sands, glues, and finishes easily. Its fine texture and smooth grain allow for high-quality polishing and staining, making it ideal for premium furniture, cabinets, and custom woodworking projects.
 

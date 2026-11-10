@@ -18,7 +18,7 @@ updated: "2026-09-07T09:26:41Z"
 
 ## Ceramic CPU Scrap Recycling
 
-The recycling of [Ceramic CPU Scrap](/product/cpu-gold-processor/) involves sorting, grading, processing, and responsible material recovery. High-quality processors are generally separated according to processor type, ceramic construction, pin configuration, and metal content. Proper sorting helps recyclers identify materials that may have higher recovery potential.
+The recycling of [Ceramic CPU Scrap](/product/ceramic-cpu-scrap/) involves sorting, grading, processing, and responsible material recovery. High-quality processors are generally separated according to processor type, ceramic construction, pin configuration, and metal content. Proper sorting helps recyclers identify materials that may have higher recovery potential.
 
 ## Why Choose Ceramic CPU Scrap?
 

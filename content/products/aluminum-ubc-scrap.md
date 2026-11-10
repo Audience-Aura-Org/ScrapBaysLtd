@@ -47,7 +47,7 @@ Strict quality control ensures maximum aluminum recovery and efficient smelting 
 
 ## **Industrial Applications**
 
-[**Aluminum UBC Scrap**](/product/cpu-gold-processor/) is widely used in:
+[**Aluminum UBC Scrap**](/product/ceramic-cpu-scrap/) is widely used in:
 
 -   Aluminum recycling
 -   Secondary aluminum production

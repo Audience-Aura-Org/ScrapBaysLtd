@@ -14,7 +14,7 @@ updated: "2026-09-16T14:00:42Z"
 
 Available materials may include HDPE, LDPE, PET, PVC, ABS, PP and other plastic grades, depending on availability, specification and source.
 
-## Types of [Plastic Scrap](/product/weee-scrap/)
+## Types of [Plastic Scrap](/weee-scrap-2/)
 
 ### HDPE Plastic Scrap
 

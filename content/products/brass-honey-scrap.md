@@ -26,7 +26,7 @@ Carefully sorted and processed, [**Brass Honey Scrap**](/product/computer-hardwa
 
 ## **Why Choose ?**
 
-[**Brass Honey Scrap**](/product/cpu-gold-processor/) is valued for its high copper and zinc content, making it an economical raw material for brass production. Its clean condition and consistent composition reduce refining costs and improve manufacturing efficiency.
+[**Brass Honey Scrap**](/product/ceramic-cpu-scrap/) is valued for its high copper and zinc content, making it an economical raw material for brass production. Its clean condition and consistent composition reduce refining costs and improve manufacturing efficiency.
 
 Industrial buyers choose this material because it offers reliable quality, excellent recyclability, and strong demand across global metal recycling markets.
 

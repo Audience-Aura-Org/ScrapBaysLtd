@@ -84,7 +84,8 @@ export const getProducts = cache((): Product[] =>
     currency: String(d.currency || "USD"),
     unit: String(d.unit || "tonnes"),
     stock: (d.stock as StockStatus) || "in_stock",
-    images: (d.images as Img[]) || [],
+    // De-duplicate: WooCommerce often repeated the featured image in the gallery.
+    images: ((d.images as Img[]) || []).filter((img, i, all) => all.findIndex((x) => x.src === img.src) === i),
     specs: (d.specs as [string, string][]) || [],
     tags: (d.tags as Tag[]) || [],
     order: typeof d.order === "number" ? d.order : 999,

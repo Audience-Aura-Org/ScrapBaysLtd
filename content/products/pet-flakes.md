@@ -7,7 +7,7 @@ price: null
 currency: "USD"
 unit: "tonnes"
 stock: "in_stock"
-images: [{"src":"/media/2026/01/clear_pet_scrap_seo_1200.jpg","alt":"PET Flakes","width":1200,"height":1200},{"src":"/media/2026/01/clear_pet_scrap_seo_1200.jpg","alt":"PET Flakes","width":1200,"height":1200}]
+images: [{"src":"/media/2026/01/clear_pet_scrap_seo_1200.jpg","alt":"PET Flakes","width":1200,"height":1200}]
 specs: [["Product Name","PET Flakes"],["Material Type","Polyethylene Terephthalate (PET)"],["Source Material","Recycled PET Bottles"],["Form","Plastic Flakes"],["Color","Clear / Blue / Green / Mixed"],["Grade","Hot Washed / Cold Washed"],["Moisture Content","Low"],["PVC Content","Minimal"],["Contamination Level","Controlled / Low"],["Bulk Density","Approx. 250 – 350 kg/m³"],["Processing Method","Sorted, Washed, Shredded"],["Application","Fiber, Packaging, Bottle Recycling"],["Packaging","Jumbo Bags / Bales"],["Recyclability","100% Recyclable"]]
 tags: []
 related: ["ldpe-plastic-film-scrap","hdpe-blue-drum-regrind","pvc-window-door-profile-scrap","fishnet-scrap"]
@@ -20,7 +20,7 @@ updated: "2026-10-04T14:17:20Z"
 
 ## PET Flakes – Premium Recycled Plastic Material for Industrial Manufacturing and Recycling
 
-[**PET Flakes**](/product/aluminium-ubc-scrap/) are high-quality recycled plastic raw material produced from post-consumer PET bottles and industrial PET plastic waste. Designed for recycling industries and manufacturers seeking sustainable plastic materials, [**PET Flakes**](https://www.tstsysteminc.com/products/plastics/clean-ldpe-film-scrap-post-industrial/) offer excellent durability, consistent quality, and cost-effective performance for a wide range of industrial manufacturing applications.
+[**PET Flakes**](/product/aluminum-ubc-scrap/) are high-quality recycled plastic raw material produced from post-consumer PET bottles and industrial PET plastic waste. Designed for recycling industries and manufacturers seeking sustainable plastic materials, [**PET Flakes**](https://www.tstsysteminc.com/products/plastics/clean-ldpe-film-scrap-post-industrial/) offer excellent durability, consistent quality, and cost-effective performance for a wide range of industrial manufacturing applications.
 
 ## Why Choose it?
 

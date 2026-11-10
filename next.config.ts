@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import legacy from "./data/legacy.json";
+import linkFixes from "./data/link-fixes.json";
 
 /**
  * URL compatibility with the old WordPress site:
@@ -12,6 +13,10 @@ const legacyRedirects = (legacy.redirects as { from: string; to: string }[]).map
   destination: r.to,
   statusCode: 301,
 }));
+// Mistyped product URLs that old content linked to (see data/link-fixes.json).
+const linkFixRedirects = Object.entries(linkFixes)
+  .filter(([from]) => from.startsWith("/"))
+  .map(([from, to]) => ({ source: from.replace(/\/$/, ""), destination: to as string, statusCode: 301 as const }));
 
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
@@ -34,6 +39,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       ...legacyRedirects,
+      ...linkFixRedirects,
       // Old WooCommerce / WordPress paths
       { source: "/shop/page/:n(\\d+)", destination: "/shop/?page=:n", statusCode: 301 },
       { source: "/product-category/:slug/page/:n(\\d+)", destination: "/product-category/:slug/", statusCode: 301 },

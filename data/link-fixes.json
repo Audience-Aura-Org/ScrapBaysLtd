@@ -1,0 +1,9 @@
+{
+  "_comment": "Product URLs linked from old WordPress content that never existed (typos / deleted copies), mapped to the real product. Used by the importer and by the 301 redirects in next.config.ts.",
+  "/product/aluminium-ubc-scrap/": "/product/aluminum-ubc-scrap/",
+  "/product/beach-wood-logs/": "/product/beech-wood-logs/",
+  "/product/european-black-walnut/": "/product/european-black-walnut-logs/",
+  "/product/douglas-fir-wood-logs-copy/": "/product/douglas-fir-wood-logs/",
+  "/product/cpu-gold-processor/": "/product/ceramic-cpu-scrap/",
+  "/product/weee-scrap/": "/weee-scrap-2/"
+}
