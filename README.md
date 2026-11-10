@@ -2,7 +2,9 @@
 
 Standalone Next.js 15 storefront for **scrapbaysltd.com**, replacing the old WordPress / WooCommerce / Elementor site. All content (products, categories, pages, blog posts, images) lives in this repository; nothing talks to WordPress at runtime.
 
-- **Stack:** Next.js 15 (App Router, TypeScript), Tailwind CSS v4, nodemailer, zod
+- **Stack:** Next.js 15 (App Router, TypeScript), Tailwind CSS v4 (+ Typography for blog posts), nodemailer, zod
+- **Typeface:** Poppins everywhere (body and headings), via `next/font/google`. Headings use their own `font-heading` token in `src/app/globals.css`, so they can be switched independently.
+- **80% zoom:** the whole site renders at `zoom: 0.8` (`--zoom` in `globals.css`). When adding UI, size anything with a real-pixel minimum as *target ÷ 0.8*: form inputs are 20px (16px on screen, so iOS doesn't zoom in), tap targets at least 56px / `min-h-14` (≈45px on screen).
 - **Rendering:** every product, category, page and post is statically generated at build time. Only `/shop/` (search/filter/sort), the form APIs and `/admin/` render per request.
 - **No database.** Orders and enquiries are saved as JSON files (see [Orders & enquiries](#orders--enquiries)).
 
@@ -92,7 +94,11 @@ Markdown description: ## headings, lists, **bold**, [links](/shop/), tables…
 
 ### Homepage — `data/home.json`
 
-Hero text and slides, the featured product rows (by category) and the four value blocks.
+Hero text and slides, the featured product rows (by category) and the four value blocks. Each slide has a `src` (the commissioned banner in `public/images/hero/`) and a `fallback` photo; the homepage uses `src` as soon as that file exists (rebuild after adding it).
+
+### Images still to be produced — `IMAGE_BRIEFS.md`
+
+Briefs (exact path, size and a ready-to-paste prompt) for the new homepage banners and for blog posts whose featured images are too small. Drop each generated file at its path and rebuild; nothing else needs changing.
 
 ### Pages — `content/pages/*.md` and `content/pages/imported/*.md`
 
@@ -100,7 +106,13 @@ URL is `/<slug>/`. `about-us.md` and the three policies (`privacy-policy.md`, `c
 
 ### Blog posts — `content/posts/<slug>.md`
 
-URL is `/<slug>/` (same as WordPress). Front matter: `title`, `slug`, `date` (ISO, e.g. `"2026-11-10T09:00:00Z"`), optional `updated`, `excerpt`, `image` (`{"src","alt","width","height"}`), `seoTitle`, `seoDescription`. Posts are listed newest first, 10 per page.
+URL is `/<slug>/` (same as WordPress). Front matter: `title`, `slug`, `date` (ISO, e.g. `"2026-11-10T09:00:00Z"`), optional `updated`, `excerpt`, `image` (`{"src","alt","width","height"}`), `seoTitle`, `seoDescription`, and:
+
+- `category` — product-category slug the post is about (shown above the title, drives related posts and the CTA box);
+- `product` — product slug for the CTA button (optional);
+- `plannedImage` — path of a commissioned featured image (see `IMAGE_BRIEFS.md`); used automatically once the file exists, otherwise `image` is shown.
+
+Posts are listed newest first, 10 per page. The post page adds reading time, share links, related posts and the CTA automatically. A short line directly under an image becomes its caption. Keep `category`/`product`/`plannedImage` in sync with `data/post-meta.json`, which the importer merges back in.
 
 > A page and a post must not share a slug — both live at `/<slug>/`.
 
@@ -157,6 +169,8 @@ Hostinger's Node.js hosting deploys from the GitHub `main` branch.
 4. Deploy. After the first deploy, run `npm run mail:test` from the hPanel terminal/SSH (or submit a test enquiry) to confirm email works.
 5. Point the domain at the app, then submit `https://scrapbaysltd.com/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
 
-**Why `npm run build` / `npm start` go through `scripts/next-prod.mjs`:** Hostinger injects a non-production `NODE_ENV`. `next build` under a non-standard `NODE_ENV` fails while prerendering `/404` with `<Html> should not be imported outside of pages/_document`. The wrapper always runs Next with `NODE_ENV=production`, so don't change the build/start commands to call `next` directly.
+**Why `npm run build` / `npm start` go through `scripts/next-prod.mjs`:** Hostinger injects a non-production `NODE_ENV`. `next build` under a non-standard `NODE_ENV` fails while prerendering `/404` with `<Html> should not be imported outside of pages/_document`. The wrapper always runs Next with `NODE_ENV=production`, so don't change the build/start commands to call `next` directly. If a build fails, the wrapper retries once with a clean `.next`: a folder left by a failed or interrupted build can otherwise break the next build with `Invariant: no direct app page entry found for /_not-found`.
+
+**Locally:** `npm run dev` and `npm run build`/`npm start` share the `.next` folder, so running the dev server replaces the production build. Stop one before using the other.
 
 **Before switching DNS away from WordPress:** the old site is injecting third-party scripts (see the migration notes in `docs/MIGRATION.md`). Don't copy anything from the old server other than what's in this repo.

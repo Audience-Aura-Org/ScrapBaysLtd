@@ -46,5 +46,42 @@ no placeholder/lorem text, no leftover WordPress shortcodes or raw HTML.
 - Copper Ingots short description is run-on supplier text ("1)Factory supply directly; 2)Offer all kinds…").
 - `/blog/page/9/` returns 404 (correct; the page doesn't exist).
 
-## Status
-See the bottom of this file after fixes.
+## Status after fixes
+
+| # | Issue | Status | Commit |
+| --- | --- | --- | --- |
+| 1 | Rate limiter counted invalid submissions | Fixed: loose 30/10 min cap on all requests, strict 5/10 min on valid ones | a410ea0 |
+| 2 | Shop filters out of sync on back/forward | Fixed: bfcache reset + keyed form; empty params dropped | a410ea0 |
+| 3 | Server failures gave no useful message; no SMTP timeouts | Fixed: JSON 500 with contact email; 10s/20s SMTP timeouts; readable mail error on records | a410ea0, 7ce0a34 |
+| 4 | Out-of-range quantities | Fixed: explained on product page and in cart; 1,000,000 cap shared with server | a410ea0 |
+| 5 | Wrong business name | Fixed everywhere (site, content, emails, JSON-LD, importer) | 5aaf3a3 |
+| 6 | 6 broken product links in content | Fixed (12 instances) + 301s for the mistyped slugs | 2f58c9a |
+| 7 | Duplicate product images | Fixed in content, loader and importer | 2f58c9a |
+| 8 | Esc / focus in menus | Fixed: Esc closes drawer and dropdown; focus moves into/out of drawer | a410ea0 |
+| 9 | No error boundary | Added app/error.tsx | a410ea0 |
+| 10 | No hard double-submit guard | Fixed: synchronous lock in useSubmit | a410ea0 |
+| 11 | 768 px top bar wrapping | Fixed | a410ea0 |
+| 12 | Empty URL params | Fixed | a410ea0 |
+| 13 | Cart qty not synced across tabs live | Fixed | a410ea0 |
+| 14 | "(1 items)" label | Fixed | a410ea0 |
+| 15 | Technical message for malformed requests | Fixed: friendly 400 | a410ea0 |
+
+Also found and fixed later: two blog posts linked to `/wp-admin/post.php?post=…` editor URLs (48c1b00);
+a stale `.next` folder from a failed build could break the next build (build wrapper now retries clean, 3fde553).
+
+### Flow results (production build, Chrome, after zoom + font + blog changes)
+
+All pass at 1440 px and 390 px (30 automated checks per width), plus manual/API checks:
+navigation (logo, dropdown + Esc, mobile menu + scroll lock + Esc, breadcrumbs, footer, back);
+search/filter/sort/pagination (empty, no results, special characters, combined, refresh, back/forward);
+product page (gallery thumbnails + swipe, quantity 0/negative/decimal/huge, add to quote, wishlist, related);
+cart (update, remove, persistence across refresh and tabs, instant header count);
+quote enquiry (required, invalid email/phone, long input, double-click = 1 record, success + reference, cart cleared);
+checkout (validation, total 2.5 t x 8,500 = 21,250, confirmation + reference; tested with a temporary price);
+sell form (type/size limits explained, success with photo);
+tracking (empty, unknown, valid, case-insensitive);
+wishlist (cards + product page, persists, empty state);
+spam (honeypot, time trap, rate limit message, hammering cap, malformed JSON);
+404s (product, category, page, tag); server error message (unwritable storage);
+admin (401 without/with wrong password, status update + customer email);
+emails (business + customer for every form; real delivery through Titan accepted for all three forms).
