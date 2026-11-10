@@ -166,14 +166,14 @@ export async function sendRecordEmails(rec: StoredRecord, attachments: Mail["att
     result.business = await send({ to: c.to, bcc: c.bcc, attachments, ...businessMail(rec) });
   } catch (e) {
     result.business = "failed";
-    result.error = (e as Error).message;
+    result.error = describeMailError(e);
     console.error(`[mail] business notification failed for ${rec.reference}:`, e);
   }
   try {
     result.customer = await send({ to: rec.customer.email, replyTo: c.to, ...customerMail(rec) });
   } catch (e) {
     result.customer = "failed";
-    result.error = (result.error ? result.error + "; " : "") + (e as Error).message;
+    result.error = (result.error ? result.error + "; " : "") + describeMailError(e);
     console.error(`[mail] customer confirmation failed for ${rec.reference}:`, e);
   }
   return result;
@@ -200,4 +200,11 @@ export async function verifyAndSendTest(to?: string) {
   await t.verify();
   const c = mailConfig();
   await t.sendMail({ from: c.from, to: to || c.to, subject: `${site.name} SMTP test`, text: `SMTP test from ${site.url} at ${new Date().toISOString()}` });
+}
+
+/** Readable reason for the admin page. Connection failures arrive as an AggregateError with an empty message. */
+function describeMailError(e: unknown): string {
+  const err = e as { message?: string; code?: string; errors?: { code?: string; message?: string }[] };
+  const inner = err.errors?.[0];
+  return err.message || err.code || inner?.code || inner?.message || "Unknown SMTP error";
 }
