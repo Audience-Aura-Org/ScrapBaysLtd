@@ -40,7 +40,7 @@ export function PageHeader({ title, intro, crumbs, eyebrow }: { title: string; i
       <div className="container-x relative py-8 text-center md:py-12 md:text-left">
         <Breadcrumbs items={crumbs} className="mb-4 flex justify-center md:justify-start" />
         {eyebrow && <p className="eyebrow mb-2">{eyebrow}</p>}
-        <h1 className="mx-auto max-w-4xl text-3xl leading-tight font-bold sm:text-4xl md:mx-0 lg:text-5xl">{title}</h1>
+        <h1 className="mx-auto max-w-4xl text-[2rem] font-bold sm:text-[2.5rem] md:mx-0 lg:text-[3rem]">{title}</h1>
         {intro && <div className="mx-auto mt-3 max-w-3xl text-lg text-steel-600 md:mx-0">{intro}</div>}
       </div>
     </section>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Barlow_Condensed, Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 import { getCategories } from "@/lib/content";
@@ -9,8 +9,8 @@ import { ShopStateProvider } from "@/components/state/ShopState";
 import { JsonLd } from "@/components/JsonLd";
 import { organizationLd, websiteLd } from "@/lib/seo";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const barlow = Barlow_Condensed({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--font-barlow", display: "swap" });
+// Site-wide typeface (body, UI and headings); exposed as --font-poppins, see globals.css.
+const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-poppins", display: "swap" });
 
 const verification: Metadata["verification"] = {};
 if (process.env.GOOGLE_SITE_VERIFICATION) verification.google = process.env.GOOGLE_SITE_VERIFICATION;
@@ -37,7 +37,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const categories = getCategories().map(({ slug, name }) => ({ slug, name }));
   return (
-    <html lang="en-GB" className={`${inter.variable} ${barlow.variable}`}>
+    <html lang="en-GB" className={poppins.variable}>
       <body className="flex flex-col">
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2">
           Skip to content

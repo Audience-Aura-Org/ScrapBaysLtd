@@ -164,7 +164,7 @@ export function Header({ categories }: { categories: NavCat[] }) {
           className={`absolute inset-y-0 right-0 flex w-[min(22rem,88vw)] flex-col bg-white shadow-xl transition-transform ${open ? "translate-x-0" : "translate-x-full"}`}
         >
           <div className="flex h-16 items-center justify-between border-b border-steel-200 px-4">
-            <span className="font-display text-lg font-bold">Menu</span>
+            <span className="font-heading text-lg font-bold">Menu</span>
             <button ref={closeButton} type="button" className="grid size-14 place-items-center rounded-md hover:bg-steel-100" onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>
               <X className="size-6" aria-hidden />
               <span className="sr-only">Close menu</span>

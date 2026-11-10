@@ -28,8 +28,13 @@
   --color-steel-800: #1e293b;
   --color-steel-900: #111827;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-barlow), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  /* One typeface site-wide: Poppins (next/font, see layout.tsx). Headings use the separate
+     `font-heading` token so they can be switched independently later. */
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  /* Slightly larger smallest step: 13px (10.4px on screen at 80% zoom). */
+  --text-xs: 0.8125rem;
 }
 
 @layer base {
@@ -51,9 +56,14 @@
     @apply bg-steel-50 text-steel-800 antialiased;
     min-height: calc(100dvh / var(--zoom));
   }
-  h1, h2, h3, h4 {
-    @apply font-display text-steel-900;
-    letter-spacing: -0.005em;
+  /* All headings: Poppins semibold/bold. Poppins is wide with a tall x-height, so headings
+     are a step smaller than the old condensed face and tightly tracked. */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    @apply text-steel-900;
     text-wrap: balance;
   }
   /* iOS zooms into inputs under 16px on screen: 20px x 0.8 zoom = 16px. Fixed px so the
@@ -106,7 +116,7 @@
     @apply mt-1 text-sm text-red-700;
   }
   .eyebrow {
-    @apply font-display text-sm font-semibold tracking-[0.14em] text-brand-700 uppercase;
+    @apply font-sans text-xs font-semibold tracking-[0.12em] text-brand-700 uppercase sm:text-sm;
   }
   .card {
     @apply rounded-lg border border-steel-200 bg-white;
@@ -126,10 +136,10 @@
     @apply mt-10 text-2xl font-bold sm:text-[1.75rem];
   }
   .prose-site h3 {
-    @apply mt-8 text-xl font-bold;
+    @apply mt-8 text-xl font-semibold;
   }
   .prose-site h4 {
-    @apply mt-6 text-lg font-bold;
+    @apply mt-6 text-lg font-semibold;
   }
   .prose-site a {
     @apply font-medium text-brand-700 underline decoration-brand-300 underline-offset-2 hover:decoration-brand-700;

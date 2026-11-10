@@ -52,7 +52,7 @@ export function HeroSlider({ title, text, primary, secondary, slides }: { title:
         <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm font-medium text-brand-100 backdrop-blur">
           <span className="size-2 rounded-full bg-signal-400" aria-hidden /> UK-based B2B scrap materials trader
         </p>
-        <h1 className="max-w-3xl text-4xl leading-[1.05] font-bold text-white sm:text-5xl lg:text-6xl">{title}</h1>
+        <h1 className="max-w-3xl text-[2.5rem] leading-[1.1] font-bold text-white sm:text-[3.25rem] lg:text-[4rem]">{title}</h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-steel-200">{text}</p>
         <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
           <Link href={primary.href} className="btn-signal px-7">

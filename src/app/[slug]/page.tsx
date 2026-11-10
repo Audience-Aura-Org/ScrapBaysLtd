@@ -72,7 +72,7 @@ export default async function ContentPage({ params }: { params: Params }) {
             <time dateTime={post.date} className="text-sm font-semibold tracking-wider text-brand-700 uppercase">
               {formatDate(post.date)}
             </time>
-            <h1 className="mx-auto mt-2 max-w-4xl text-3xl leading-tight font-bold sm:text-4xl lg:text-5xl">{post.title}</h1>
+            <h1 className="mx-auto mt-2 max-w-4xl text-[2rem] font-bold sm:text-[2.5rem] lg:text-[3rem]">{post.title}</h1>
           </div>
         </header>
         <div className="container-x py-10">

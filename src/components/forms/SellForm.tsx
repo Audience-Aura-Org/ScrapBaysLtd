@@ -42,7 +42,7 @@ export function SellForm({ materials }: { materials: string[] }) {
       }}
     >
       <fieldset className="space-y-4">
-        <legend className="mb-2 font-display text-xl font-bold">Your material</legend>
+        <legend className="mb-2 font-heading text-xl font-bold">Your material</legend>
         <Field name="materialType" label="Material type" required list="material-list" maxLength={160} placeholder="e.g. HMS 1&2, copper wire, LDPE film, teak logs" error={state.errors.materialType} />
         <datalist id="material-list">
           {materials.map((m) => (
@@ -79,7 +79,7 @@ export function SellForm({ materials }: { materials: string[] }) {
         </div>
       </fieldset>
       <fieldset>
-        <legend className="mb-4 font-display text-xl font-bold">Your details</legend>
+        <legend className="mb-4 font-heading text-xl font-bold">Your details</legend>
         <ContactFields errors={state.errors} messageLabel="Anything else?" messagePlaceholder="Grade, condition, packing, asking price, availability…" />
       </fieldset>
       <AntiSpam />

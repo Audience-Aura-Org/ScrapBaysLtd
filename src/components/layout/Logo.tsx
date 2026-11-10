@@ -8,7 +8,7 @@ export function Logo({ light = false, className = "" }: { light?: boolean; class
         <Image src="/icons/logo-512.png" alt="" width={40} height={40} className="size-10" priority />
       </span>
       <span className="flex flex-col leading-none">
-        <span className={`font-display text-[1.35rem] font-bold tracking-tight ${light ? "text-white" : "text-steel-900"}`}>Scrap Bays</span>
+        <span className={`font-heading text-xl font-bold tracking-tight ${light ? "text-white" : "text-steel-900"}`}>Scrap Bays</span>
         <span className={`text-[0.68rem] font-semibold tracking-[0.2em] uppercase ${light ? "text-brand-200" : "text-brand-700"}`}>Limited</span>
       </span>
     </Link>

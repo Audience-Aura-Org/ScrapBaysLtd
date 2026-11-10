@@ -94,12 +94,20 @@ function detailRows(rec: StoredRecord): [string, string][] {
   return rows;
 }
 
+// Poppins, as on the site. It loads where the mail client allows web fonts (Apple Mail,
+// iOS, Outlook.com); elsewhere (e.g. Gmail) it falls back to Arial/Helvetica.
+const BODY_FONT = "Poppins,Arial,Helvetica,sans-serif";
+const HEADING_FONT = BODY_FONT; // headings use Poppins too
+
 function layout(title: string, inner: string) {
-  return `<!doctype html><html><body style="margin:0;background:#f4f5f2;font-family:Arial,Helvetica,sans-serif;color:#1e293b">
+  return `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>body,td,p,a,span{font-family:${BODY_FONT}}h1,h2,h3{font-family:${HEADING_FONT}}</style></head>
+<body style="margin:0;background:#f4f5f2;font-family:${BODY_FONT};color:#1e293b">
 <div style="max-width:620px;margin:0 auto;padding:24px">
-<div style="background:#14532d;color:#fff;padding:16px 20px;border-radius:8px 8px 0 0;font-size:18px;font-weight:bold">${esc(site.name)}</div>
+<div style="background:#14532d;color:#fff;padding:16px 20px;border-radius:8px 8px 0 0;font-family:${HEADING_FONT};font-size:22px;font-weight:bold">${esc(site.name)}</div>
 <div style="background:#fff;padding:20px;border-radius:0 0 8px 8px">
-<h1 style="font-size:20px;margin:0 0 12px">${esc(title)}</h1>${inner}
+<h1 style="font-family:${HEADING_FONT};font-size:26px;line-height:1.2;margin:0 0 12px">${esc(title)}</h1>${inner}
 </div>
 <p style="font-size:12px;color:#64748b;text-align:center;margin-top:16px">${esc(site.name)} · ${esc(site.email)} · ${esc(site.phone)} · <a href="${site.url}" style="color:#64748b">${site.url.replace(/^https?:\/\//, "")}</a></p>
 </div></body></html>`;

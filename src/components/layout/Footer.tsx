@@ -57,7 +57,7 @@ export function Footer() {
 function FooterCol({ title, links }: { title: string; links: { href: string; label: string }[] }) {
   return (
     <div>
-      <h2 className="mb-3 font-display text-base font-semibold tracking-wider text-white uppercase">{title}</h2>
+      <h2 className="mb-3 font-heading text-sm font-semibold tracking-[0.12em] text-white uppercase">{title}</h2>
       <ul className="space-y-1 text-sm">
         {links.map((l) => (
           <li key={l.href}>

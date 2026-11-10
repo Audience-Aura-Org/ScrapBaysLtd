@@ -103,7 +103,7 @@ export function CartView() {
                 </Link>
                 <div className="min-w-0">
                   <div className="flex items-start justify-between gap-3">
-                    <Link href={`/product/${p.slug}/`} className="inline-flex min-h-14 items-center font-display text-lg leading-snug font-semibold hover:text-brand-700">
+                    <Link href={`/product/${p.slug}/`} className="inline-flex min-h-14 items-center font-heading text-base leading-snug font-semibold hover:text-brand-700">
                       {splitName(p.name)[0]}
                     </Link>
                     <button type="button" onClick={() => removeLine(p.slug)} className="-mt-2 -mr-2 grid size-14 shrink-0 place-items-center rounded-md text-steel-500 hover:bg-red-50 hover:text-red-700" aria-label={`Remove ${p.name}`}>

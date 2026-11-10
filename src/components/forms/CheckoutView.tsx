@@ -58,18 +58,18 @@ export function CheckoutView() {
     >
       <div className="space-y-8">
         <fieldset className="card p-5 sm:p-6">
-          <legend className="px-1 font-display text-xl font-bold">Company &amp; contact</legend>
+          <legend className="px-1 font-heading text-xl font-bold">Company &amp; contact</legend>
           <div className="mt-2">
             <ContactFields errors={state.errors} messageLabel="Order notes" messagePlaceholder="Delivery address if different, port, timing…" />
           </div>
         </fieldset>
         <fieldset className="card space-y-4 p-5 sm:p-6">
-          <legend className="px-1 font-display text-xl font-bold">Billing</legend>
+          <legend className="px-1 font-heading text-xl font-bold">Billing</legend>
           <Field name="address" label="Billing address" textarea rows={3} required autoComplete="street-address" maxLength={600} error={state.errors.address} />
           <Field name="vatNumber" label="VAT / company registration number" maxLength={40} error={state.errors.vatNumber} />
         </fieldset>
         <fieldset className="card p-5 sm:p-6">
-          <legend className="px-1 font-display text-xl font-bold">Payment</legend>
+          <legend className="px-1 font-heading text-xl font-bold">Payment</legend>
           <p className="mb-3 text-sm text-steel-600">No card payment is taken online. Choose how you&apos;d like to pay once we confirm your order:</p>
           <div className="space-y-2">
             {[

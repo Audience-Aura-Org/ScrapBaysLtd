@@ -9,7 +9,7 @@ export function PriceTag({ price, currency, unit, size = "md" }: { price: number
       </span>
     );
   return (
-    <span className={`font-display font-bold text-steel-900 ${size === "lg" ? "text-3xl" : "text-lg"}`}>
+    <span className={`font-sans font-bold text-steel-900 ${size === "lg" ? "text-3xl" : "text-lg"}`}>
       {formatPrice(price, currency)}
       <span className={`ml-1 font-sans font-normal text-steel-500 ${size === "lg" ? "text-base" : "text-sm"}`}>/ {unit === "units" ? "unit" : unit.replace(/s$/, "")}</span>
     </span>

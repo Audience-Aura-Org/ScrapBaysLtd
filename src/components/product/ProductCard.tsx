@@ -26,7 +26,7 @@ export function ProductCard({ product, categoryName, priority = false }: { produ
       </div>
       <div className="flex flex-1 flex-col p-3 sm:p-4">
         {categoryName && <p className="mb-1 text-xs font-semibold tracking-wider text-brand-700 uppercase">{categoryName}</p>}
-        <h3 className="font-display text-base leading-snug font-semibold text-steel-900 sm:text-lg">
+        <h3 className="font-heading text-base leading-snug font-semibold text-steel-900 sm:text-lg">
           <Link href={`/product/${product.slug}/`} className="after:absolute after:inset-0 after:content-['']">
             {title}
           </Link>
