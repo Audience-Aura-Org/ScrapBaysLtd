@@ -21,6 +21,8 @@ import { gfm } from "turndown-plugin-gfm";
 const BASE = "https://scrapbaysltd.com";
 // Mistyped product URLs in the old content -> real products (shared with the 301s in next.config.ts).
 const LINK_FIXES = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data/link-fixes.json"), "utf8"));
+// Hand-maintained blog post fields merged into each imported post.
+const POST_META = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data/post-meta.json"), "utf8"));
 const ROOT = process.cwd();
 const CACHE = path.join(ROOT, ".wp-cache");
 const REFRESH = process.argv.includes("--refresh");
@@ -132,7 +134,7 @@ function rewriteLink(href) {
     const host = u.hostname.replace(/^www\./, "");
     if (host === "scrapbaysltd.com" || host.endsWith("hostingersite.com") || host === "deskly.audienceaura.org") {
       if (u.pathname.startsWith("/wp-content/uploads/")) return mediaUrl(u.href);
-      const pid = u.searchParams.get("page_id") || u.searchParams.get("p");
+      const pid = u.searchParams.get("page_id") || u.searchParams.get("p") || u.searchParams.get("post"); // post= : wp-admin editor links
       if (pid && (legacyIds.page[pid] || legacyIds.post[pid] || legacyIds.product[pid]))
         return legacyIds.page[pid] || legacyIds.post[pid] || legacyIds.product[pid];
       if (u.searchParams.get("product_cat")) return `/product-category/${u.searchParams.get("product_cat")}/`;
@@ -364,6 +366,7 @@ for (const p of posts) {
     seoTitle: live.title ? live.title.replace(/\s*[-|–]\s*Scrap Bay LTD\s*$/i, "") : undefined,
     seoDescription: live.description || undefined,
   };
+  Object.assign(fm, POST_META[slug] || {}); // hand-maintained category/product/plannedImage
   writeFile(path.join(contentDir, "posts", `${slug}.md`), frontmatter(fm) + "\n" + toMarkdown(p.content.rendered));
   report.posts++;
 }

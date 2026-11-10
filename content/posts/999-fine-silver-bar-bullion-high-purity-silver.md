@@ -8,6 +8,9 @@ excerpt: "999 Fine Silver Bar Bullion is a high-purity silver product containing
 image: {"src":"/media/2026/02/WhatsApp-Image-2026-02-13-at-6.18.54-PM.jpeg","alt":"Silver Bullion Bar","width":474,"height":265}
 seoTitle: "999 Fine Silver Bar Bullion – High-Purity Silver"
 seoDescription: "999 Fine Silver Bar Bullion is a high-purity silver product containing 99.9% fine silver. Silver bars are widely used for precious-metal investment,"
+category: "others"
+product: "999-fine-silver-bar-bullion"
+plannedImage: "/images/blog/999-fine-silver-bar-bullion-high-purity-silver.webp"
 ---
 
 **999 Fine Silver Bar Bullion** is a high-purity silver product containing **99.9% fine silver**. Silver bars are widely used for precious-metal investment, industrial applications, and collection purposes.

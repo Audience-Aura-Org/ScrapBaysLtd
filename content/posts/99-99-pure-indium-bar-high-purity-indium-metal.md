@@ -8,6 +8,9 @@ excerpt: "99.99% Pure Indium Bar is a high-purity indium metal product suitable 
 image: {"src":"/media/2026/02/WhatsApp-Image-2026-02-13-at-6.18.54-PM-2.jpeg","alt":"Indium Bullion Bar","width":474,"height":365}
 seoTitle: "99.99% Pure Indium Bar – High-Purity Indium Metal"
 seoDescription: "99.99% Pure Indium Bar is a high-purity indium metal product suitable for industrial, electronic, scientific, and specialized manufacturing applications. With"
+category: "others"
+product: "99-99-pure-indium-bar"
+plannedImage: "/images/blog/99-99-pure-indium-bar-high-purity-indium-metal.webp"
 ---
 
 **99.99% Pure Indium Bar** is a high-purity indium metal product suitable for industrial, electronic, scientific, and specialized manufacturing applications. With a purity level of **99.99%**, it is valued for its excellent softness, malleability, low melting point, and ability to form reliable bonds with other materials.

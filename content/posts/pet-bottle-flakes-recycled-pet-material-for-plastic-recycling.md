@@ -8,6 +8,8 @@ excerpt: "PET Bottle Flakes are recycled polyethylene terephthalate (PET) materi
 image: {"src":"/media/2026/01/clear_pet_scrap_seo_1200.jpg","alt":"PET Flakes","width":1200,"height":1200}
 seoTitle: "PET Bottle Flakes – Recycled PET Material for Plastic Recycling"
 seoDescription: "PET Bottle Flakes are recycled polyethylene terephthalate (PET) materials produced by collecting, sorting, cleaning, and processing used PET bottles. They are"
+category: "plastic-scrap"
+product: "pet-flakes"
 ---
 
 **PET Bottle Flakes** are recycled polyethylene terephthalate (PET) materials produced by collecting, sorting, cleaning, and processing used PET bottles. They are widely used by plastic recyclers and manufacturers as a raw material for producing new recycled plastic products.

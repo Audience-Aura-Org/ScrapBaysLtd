@@ -8,6 +8,8 @@ excerpt: "EPS Block Scrap is expanded polystyrene material collected from manufa
 image: {"src":"/media/2026/01/eps-block-scrap-1200x800-1.webp","alt":"EPS Block Scrap","width":1200,"height":800}
 seoTitle: "EPS Block Scrap – Recyclable Expanded Polystyrene Material for Recycling"
 seoDescription: "EPS Block Scrap is expanded polystyrene material collected from manufacturing, packaging, construction, and other industrial applications. Known for its"
+category: "plastic-scrap"
+product: "eps-block-scrap"
 ---
 
 **EPS Block Scrap** is expanded polystyrene material collected from manufacturing, packaging, construction, and other industrial applications. Known for its lightweight structure and high volume, EPS can be recovered and processed into reusable material for various recycling applications.

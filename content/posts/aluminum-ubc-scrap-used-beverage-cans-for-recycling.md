@@ -8,6 +8,9 @@ excerpt: "Aluminum UBC Scrap (Used Beverage Can Scrap) consists of discarded alu
 image: {"src":"/media/2025/10/Aluminum-UBC-Scrap.jpg","alt":"Aluminum UBC Scrap","width":443,"height":443}
 seoTitle: "Aluminum UBC Scrap – Used Beverage Cans for Recycling"
 seoDescription: "Aluminum UBC Scrap (Used Beverage Can Scrap) consists of discarded aluminium cans collected from beverages such as soft drinks, juices, and other canned"
+category: "meralscrap"
+product: "aluminum-ubc-scrap"
+plannedImage: "/images/blog/aluminum-ubc-scrap-used-beverage-cans-for-recycling.webp"
 ---
 
 Aluminum UBC Scrap (Used Beverage Can Scrap) consists of discarded aluminium cans collected from beverages such as soft drinks, juices, and other canned drinks. It is a valuable recyclable material widely used by aluminium recycling facilities, metal processors, and manufacturers.

@@ -8,9 +8,10 @@ excerpt: "Electronic Scrap consists of discarded, obsolete, damaged, or surplus 
 image: {"src":"/media/2026/01/Image-Jul-3-2026-10_55_35-AM.png","alt":"Electronic Scrap","width":1254,"height":1254}
 seoTitle: "Electronic Scrap – Recyclable Electronic Waste & Components"
 seoDescription: "Electronic Scrap consists of discarded, obsolete, damaged, or surplus electrical and electronic equipment collected for recycling and material recovery. It"
+category: "electronicscrap"
 ---
 
-[Electronic Scrap](/wp-admin/post.php?post=1516&action=edit) consists of discarded, obsolete, damaged, or surplus electrical and electronic equipment collected for recycling and material recovery. It can include computers, circuit boards, mobile phones, cables, power supplies, electronic components, and other end-of-life equipment.
+[Electronic Scrap](/electronic-scrap-canada/) consists of discarded, obsolete, damaged, or surplus electrical and electronic equipment collected for recycling and material recovery. It can include computers, circuit boards, mobile phones, cables, power supplies, electronic components, and other end-of-life equipment.
 
 Through proper sorting, dismantling, and processing, valuable materials such as copper, aluminium, plastics, and other recoverable metals can be separated and prepared for reuse. Electronic Scrap is suitable for e-waste recyclers, electronic processors, and material recovery facilities looking for recyclable feedstock.
 

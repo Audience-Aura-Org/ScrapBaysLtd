@@ -108,7 +108,7 @@ export function productLd(p: Product, description: string, categoryName?: string
   return ld;
 }
 
-export const blogPostingLd = (p: Post, description: string) => ({
+export const blogPostingLd = (p: Post, description: string, extra: { wordCount?: number; section?: string } = {}) => ({
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   headline: p.title,
@@ -116,7 +116,10 @@ export const blogPostingLd = (p: Post, description: string) => ({
   datePublished: p.date,
   dateModified: p.updated || p.date,
   url: absUrl(`/${p.slug}/`),
-  mainEntityOfPage: absUrl(`/${p.slug}/`),
+  mainEntityOfPage: { "@type": "WebPage", "@id": absUrl(`/${p.slug}/`) },
+  inLanguage: "en-GB",
+  ...(extra.wordCount ? { wordCount: extra.wordCount } : {}),
+  ...(extra.section ? { articleSection: extra.section } : {}),
   ...(p.image ? { image: [absUrl(p.image.src)] } : {}),
   author: { "@id": ORG_ID, "@type": "Organization", name: site.name },
   publisher: { "@id": ORG_ID, "@type": "Organization", name: site.name, logo: { "@type": "ImageObject", url: absUrl(site.logo) } },

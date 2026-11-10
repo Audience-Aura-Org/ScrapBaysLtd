@@ -1,13 +1,11 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Breadcrumbs, PageHeader } from "@/components/PageHeader";
-import { JsonLd } from "@/components/JsonLd";
-import { PostList } from "@/components/blog/PostList";
+import { PageHeader } from "@/components/PageHeader";
+import { BlogPost } from "@/components/blog/BlogPost";
 import { getPage, getPages, getPost, getPosts, pageSummary } from "@/lib/content";
 import { dropDuplicateTitle, renderMarkdown } from "@/lib/markdown";
-import { blogPostingLd, buildMetadata } from "@/lib/seo";
+import { buildMetadata } from "@/lib/seo";
 import { formatDate } from "@/lib/format";
 
 /**
@@ -60,44 +58,7 @@ export default async function ContentPage({ params }: { params: Params }) {
 
   const post = getPost(slug);
   if (!post) notFound();
-  const more = getPosts()
-    .filter((p) => p.slug !== slug)
-    .slice(0, 3);
-  return (
-    <>
-      <article>
-        <header className="border-b border-steel-200 bg-white">
-          <div className="container-x py-8 text-center md:py-12">
-            <Breadcrumbs items={[{ name: "Blog", path: "/blog/" }, { name: post.title, path: `/${slug}/` }]} className="mb-5 flex justify-center" />
-            <time dateTime={post.date} className="text-sm font-semibold tracking-wider text-brand-700 uppercase">
-              {formatDate(post.date)}
-            </time>
-            <h1 className="mx-auto mt-2 max-w-4xl text-[2rem] font-bold sm:text-[2.5rem] lg:text-[3rem]">{post.title}</h1>
-          </div>
-        </header>
-        <div className="container-x py-10">
-          <div className="mx-auto max-w-3xl">
-            {post.image && (
-              <div className="relative mb-8 aspect-[16/9] overflow-hidden rounded-lg bg-steel-100">
-                <Image src={post.image.src} alt={post.image.alt || post.title} fill priority sizes="(min-width:768px) 768px, 100vw" className="object-cover" />
-              </div>
-            )}
-            <div className="prose-site" dangerouslySetInnerHTML={{ __html: renderMarkdown(dropDuplicateTitle(post.body, post.title)) }} />
-            <EnquiryNudge />
-          </div>
-        </div>
-      </article>
-      {more.length > 0 && (
-        <section className="border-t border-steel-200 bg-white py-12">
-          <div className="container-x">
-            <h2 className="mb-6 text-center text-2xl font-bold md:text-left">More from the blog</h2>
-            <PostList posts={more} />
-          </div>
-        </section>
-      )}
-      <JsonLd data={blogPostingLd(post, pageSummary(post))} />
-    </>
-  );
+  return <BlogPost post={post} />;
 }
 
 function EnquiryNudge() {

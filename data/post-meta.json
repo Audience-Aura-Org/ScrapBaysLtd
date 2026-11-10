@@ -1,0 +1,51 @@
+{
+  "_comment": "Hand-maintained blog post fields that the WordPress importer merges back in (category = product category slug for the CTA/related posts, product = product slug, plannedImage = commissioned featured image, see IMAGE_BRIEFS.md).",
+  "24k-gold-bar-bullion-pure-gold-bars-for-precious-metal-trading": {
+    "category": "others",
+    "product": "24k-gold-bar-bullion"
+  },
+  "99-99-pure-indium-bar-high-purity-indium-metal": {
+    "category": "others",
+    "product": "99-99-pure-indium-bar",
+    "plannedImage": "/images/blog/99-99-pure-indium-bar-high-purity-indium-metal.webp"
+  },
+  "999-fine-silver-bar-bullion-high-purity-silver": {
+    "category": "others",
+    "product": "999-fine-silver-bar-bullion",
+    "plannedImage": "/images/blog/999-fine-silver-bar-bullion-high-purity-silver.webp"
+  },
+  "abs-scrap-acrylonitrile-butadiene-styrene": {
+    "category": "plastic-scrap",
+    "product": "abs-computer-scrap",
+    "plannedImage": "/images/blog/abs-scrap-acrylonitrile-butadiene-styrene.webp"
+  },
+  "aluminum-ubc-scrap-used-beverage-cans-for-recycling": {
+    "category": "meralscrap",
+    "product": "aluminum-ubc-scrap",
+    "plannedImage": "/images/blog/aluminum-ubc-scrap-used-beverage-cans-for-recycling.webp"
+  },
+  "brass-honey-scrap-quality-brass-scrap-for-recycling": {
+    "category": "meralscrap",
+    "product": "brass-honey-scrap",
+    "plannedImage": "/images/blog/brass-honey-scrap-quality-brass-scrap-for-recycling.webp"
+  },
+  "butyl-bagomatic-bladder-rubber-scrap-recyclable-industrial-rubber-material": {
+    "category": "others",
+    "product": "butyl-bagomatic-bladder-rubber-scrap"
+  },
+  "electronic-scrap-recyclable-electronic-waste-components": {
+    "category": "electronicscrap"
+  },
+  "eps-block-scrap-recyclable-expanded-polystyrene-material-for-recycling": {
+    "category": "plastic-scrap",
+    "product": "eps-block-scrap"
+  },
+  "pet-bottle-flakes-recycled-pet-material-for-plastic-recycling": {
+    "category": "plastic-scrap",
+    "product": "pet-flakes"
+  },
+  "top-grade-caluanie-muelear-oxidize-for-metal-crushing-stone-refinement": {
+    "category": "others",
+    "product": "caluanie-muelear-oxidize"
+  }
+}

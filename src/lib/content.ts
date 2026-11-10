@@ -59,6 +59,12 @@ export type Post = {
   image?: Img;
   seoTitle?: string;
   seoDescription?: string;
+  /** Product category the post is about (drives the CTA box and related posts). */
+  category?: string;
+  /** Product the post is about, if any. */
+  product?: string;
+  /** Commissioned replacement featured image (see IMAGE_BRIEFS.md); used once the file exists. */
+  plannedImage?: string;
   body: string;
 };
 
@@ -131,10 +137,25 @@ export const getPages = cache((): Page[] => [
 export const getPage = (slug: string) => getPages().find((p) => p.slug === slug);
 
 export const getPosts = cache((): Post[] =>
-  readDir("posts", (d, body, f) => ({ ...(d as Omit<Post, "body">), slug: slugOf(d, f), date: String(d.date), body })).sort(
-    (a, b) => +new Date(b.date) - +new Date(a.date),
-  ),
+  readDir("posts", (d, body, f) => {
+    const post = { ...(d as Omit<Post, "body">), slug: slugOf(d, f), date: String(d.date), body };
+    // Swap in the commissioned featured image as soon as the file has been added to public/.
+    if (post.plannedImage && fs.existsSync(path.join(ROOT, "public", post.plannedImage)))
+      post.image = { src: post.plannedImage, alt: post.image?.alt || post.title, width: 1200, height: 630 };
+    return post;
+  }).sort((a, b) => +new Date(b.date) - +new Date(a.date)),
 );
+
+/** Words in a Markdown body, and reading time at ~200 words per minute (minimum 1). */
+export const wordCount = (md: string) => md.replace(/!\[[^\]]*\]\([^)]*\)|\]\([^)]*\)|[#*_`>|-]/g, " ").split(/\s+/).filter(Boolean).length;
+export const readingMinutes = (md: string) => Math.max(1, Math.round(wordCount(md) / 200));
+
+/** Posts in the same category first, then the most recent others. */
+export function relatedPosts(post: Post, n = 3): Post[] {
+  const others = getPosts().filter((p) => p.slug !== post.slug);
+  const same = others.filter((p) => post.category && p.category === post.category);
+  return [...same, ...others.filter((p) => !same.includes(p))].slice(0, n);
+}
 export const getPost = (slug: string) => getPosts().find((p) => p.slug === slug);
 
 export const productSummary = (p: Product) => p.seoDescription || p.shortDescription || summarize(p.body);

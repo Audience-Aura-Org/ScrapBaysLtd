@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   /* Brand green sampled from the Scrap Bays recycling mark */
@@ -173,6 +174,97 @@
   }
   .prose-site td {
     @apply border-t border-steel-200 px-3 py-2 align-top;
+  }
+}
+
+/*
+ * Blog post body: Tailwind Typography (`prose prose-lg prose-blog`), themed to the brand.
+ * The column (max-w-[85ch] in BlogPost.tsx, ch measured at 16px) gives ~68 characters per line of the 18px prose-lg text.
+ */
+@layer components {
+  .prose-blog {
+    --tw-prose-body: var(--color-steel-700);
+    --tw-prose-headings: var(--color-steel-900);
+    --tw-prose-lead: var(--color-steel-600);
+    --tw-prose-links: var(--color-brand-700);
+    --tw-prose-bold: var(--color-steel-900);
+    --tw-prose-counters: var(--color-brand-700);
+    --tw-prose-bullets: var(--color-brand-500);
+    --tw-prose-hr: var(--color-steel-200);
+    --tw-prose-quotes: var(--color-steel-800);
+    --tw-prose-quote-borders: var(--color-brand-500);
+    --tw-prose-captions: var(--color-steel-500);
+    --tw-prose-code: var(--color-steel-900);
+    --tw-prose-pre-code: var(--color-steel-100);
+    --tw-prose-pre-bg: var(--color-steel-900);
+    --tw-prose-th-borders: var(--color-steel-300);
+    --tw-prose-td-borders: var(--color-steel-200);
+    font-family: var(--font-sans);
+  }
+  .prose-blog :where(p, li) {
+    line-height: 1.7;
+  }
+  .prose-blog :where(h2, h3, h4) {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+  .prose-blog :where(a) {
+    text-decoration-color: var(--color-brand-300);
+    text-underline-offset: 3px;
+  }
+  .prose-blog :where(a):hover {
+    text-decoration-color: var(--color-brand-700);
+  }
+  .prose-blog :where(figure) {
+    margin-block: 2em;
+  }
+  .prose-blog :where(img) {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+  .prose-blog :where(figure img) {
+    margin: 0;
+  }
+  .prose-blog :where(figcaption) {
+    text-align: center;
+  }
+  .prose-blog :where(blockquote) {
+    font-style: normal;
+    background: var(--color-brand-50);
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 0.75em 1.25em;
+  }
+  .prose-blog :where(blockquote p:first-of-type)::before,
+  .prose-blog :where(blockquote p:last-of-type)::after {
+    content: none;
+  }
+  .prose-blog :where(code):not(:where(pre code)) {
+    background: var(--color-steel-100);
+    border-radius: 0.25rem;
+    padding: 0.15em 0.4em;
+    font-weight: 500;
+  }
+  .prose-blog :where(code):not(:where(pre code))::before,
+  .prose-blog :where(code):not(:where(pre code))::after {
+    content: none;
+  }
+  /* Tables scroll sideways on narrow screens instead of widening the page. */
+  .prose-blog .table-wrap {
+    overflow-x: auto;
+    margin-block: 2em;
+    border: 1px solid var(--color-steel-200);
+    border-radius: 0.5rem;
+  }
+  .prose-blog .table-wrap table {
+    margin: 0;
+    min-width: 32rem;
+  }
+  .prose-blog .table-wrap :where(th, td) {
+    padding-inline: 0.85em;
+  }
+  .prose-blog .table-wrap :where(thead) {
+    background: var(--color-steel-100);
   }
 }
 

@@ -9,9 +9,12 @@ excerpt: "ABS Scrap is a widely traded engineering plastic valued for its streng
 image: {"src":"/media/2026/09/abs-scrap-2180430579-p6.webp","alt":"ABS Scrap","width":500,"height":375}
 seoTitle: "ABS Scrap: 100% Quality Complete Guide to Recycling, Types & Applications"
 seoDescription: "ABS Scrap recycling guide covering types, applications, processing, quality factors, valuable materials, and sustainable plastic recovery."
+category: "plastic-scrap"
+product: "abs-computer-scrap"
+plannedImage: "/images/blog/abs-scrap-acrylonitrile-butadiene-styrene.webp"
 ---
 
-[ABS Scrap](/wp-admin/post.php?post=1448&action=edit) is a widely traded engineering plastic valued for its strength, durability, impact resistance, and versatility. ABS stands for **Acrylonitrile Butadiene Styrene**, a thermoplastic commonly used in automotive components, electrical and electronic products, household appliances, computer equipment, and many consumer goods.
+[ABS Scrap](/abs-scrap/) is a widely traded engineering plastic valued for its strength, durability, impact resistance, and versatility. ABS stands for **Acrylonitrile Butadiene Styrene**, a thermoplastic commonly used in automotive components, electrical and electronic products, household appliances, computer equipment, and many consumer goods.
 
 As industries increasingly focus on recycling and resource recovery, ABS Scrap provides an opportunity to recover useful plastic materials from discarded and surplus products. Proper collection, sorting, processing, and recycling can turn unwanted ABS components into valuable secondary raw materials.
 

@@ -8,6 +8,9 @@ excerpt: "Brass Honey Scrap is a valuable non-ferrous metal scrap commonly recog
 image: {"src":"/media/2025/10/BRASS-SCRAP-RED-BRASS-SCRAP.jpg","alt":"Honey Brass Scrap","width":666,"height":666}
 seoTitle: "Brass Honey Scrap – Quality Brass Scrap for Recycling"
 seoDescription: "Brass Honey Scrap is a valuable non-ferrous metal scrap commonly recognised for its distinctive golden-yellow colour and copper-zinc composition. It is widely"
+category: "meralscrap"
+product: "brass-honey-scrap"
+plannedImage: "/images/blog/brass-honey-scrap-quality-brass-scrap-for-recycling.webp"
 ---
 
 Brass Honey Scrap is a valuable non-ferrous metal scrap commonly recognised for its distinctive golden-yellow colour and copper-zinc composition. It is widely traded in the metal recycling industry and used as a raw material by brass foundries, metal processors, and recycling facilities.
