@@ -1,24 +1,26 @@
 import { fieldErrors, PHOTO_LIMITS, sellSchema } from "@/lib/validation";
-import { botResponse, guard, json, persistAndNotify } from "@/lib/server/submit";
+import { badRequest, botResponse, guard, json, limitValid, persistAndNotify, safeHandler } from "@/lib/server/submit";
 import { newReference, savePhoto } from "@/lib/server/store";
 
 export const dynamic = "force-dynamic";
 
 /** "Scrap Material Enquiry": people offering scrap for sale, with optional photos (multipart). */
-export async function POST(req: Request) {
+export const POST = safeHandler("sell", async (req) => {
   const blocked = guard(req, "sell");
   if (blocked) return blocked;
   const len = Number(req.headers.get("content-length") || 0);
   if (len > PHOTO_LIMITS.maxFiles * PHOTO_LIMITS.maxBytes + 200_000) return json({ ok: false, errors: { photos: "Photos are too large (max 5 MB each)." } }, 413);
 
   const form = await req.formData().catch(() => null);
-  if (!form) return json({ ok: false, error: "Invalid form submission" }, 400);
+  if (!form) return badRequest();
   const fields = Object.fromEntries([...form.entries()].filter(([, v]) => typeof v === "string"));
   const parsed = sellSchema.safeParse(fields);
   if (!parsed.success) return json({ ok: false, errors: fieldErrors(parsed.error) }, 422);
   const input = parsed.data;
   const bot = botResponse(input, "sell");
   if (bot) return bot;
+  const limited = limitValid(req, "sell");
+  if (limited) return limited;
 
   const photos = form.getAll("photos").filter((f): f is File => typeof f !== "string" && f.size > 0);
   if (photos.length > PHOTO_LIMITS.maxFiles) return json({ ok: false, errors: { photos: `Attach up to ${PHOTO_LIMITS.maxFiles} photos.` } }, 422);
@@ -41,4 +43,4 @@ export async function POST(req: Request) {
     reference,
   );
   return json({ ok: true, reference: rec.reference, emailed: rec.mail?.customer === "sent" });
-}
+});

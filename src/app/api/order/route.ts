@@ -1,19 +1,22 @@
 import { fieldErrors, orderSchema } from "@/lib/validation";
-import { botResponse, guard, json, persistAndNotify, priceLines } from "@/lib/server/submit";
+import { badRequest, botResponse, guard, json, limitValid, persistAndNotify, priceLines, safeHandler } from "@/lib/server/submit";
 import { getProduct } from "@/lib/content";
 
 export const dynamic = "force-dynamic";
 
 /** Checkout for priced products. No card processing: paid offline by bank transfer or invoice. */
-export async function POST(req: Request) {
+export const POST = safeHandler("order", async (req) => {
   const blocked = guard(req, "order");
   if (blocked) return blocked;
   const body = await req.json().catch(() => null);
+  if (!body || typeof body !== "object") return badRequest();
   const parsed = orderSchema.safeParse(body);
   if (!parsed.success) return json({ ok: false, errors: fieldErrors(parsed.error) }, 422);
   const input = parsed.data;
   const bot = botResponse(input, "order");
   if (bot) return bot;
+  const limited = limitValid(req, "order");
+  if (limited) return limited;
 
   // Prices always come from the repo content, never from the browser.
   const { lines, errors } = priceLines(input.items);
@@ -47,4 +50,4 @@ export async function POST(req: Request) {
     req,
   );
   return json({ ok: true, reference: rec.reference, emailed: rec.mail?.customer === "sent" });
-}
+});

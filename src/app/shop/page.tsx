@@ -54,7 +54,7 @@ export default async function ShopPage({ searchParams }: { searchParams: SP }) {
       />
       <div className="container-x py-8 md:py-10">
         <div className="card mb-6 p-4 sm:p-5">
-          <ShopFilters q={q} category={category} sort={sort} categories={categories.map(({ slug, name }) => ({ slug, name }))} />
+          <ShopFilters key={`${q}|${category}|${sort}`} q={q} category={category} sort={sort} categories={categories.map(({ slug, name }) => ({ slug, name }))} />
         </div>
         <ul className="mb-6 flex gap-2 overflow-x-auto pb-1 scrollbar-none" aria-label="Categories">
           <li>

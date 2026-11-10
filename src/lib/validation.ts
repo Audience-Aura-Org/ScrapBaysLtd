@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { QUANTITY_UNITS } from "./format";
-export { PHOTO_LIMITS } from "./limits";
+import { MAX_QUANTITY } from "./limits";
+export { MAX_QUANTITY, PHOTO_LIMITS } from "./limits";
 
 const text = (max: number) => z.string().trim().max(max, `Must be ${max} characters or fewer`);
 const required = (label: string, max = 120) => text(max).min(1, `${label} is required`);
@@ -24,7 +25,7 @@ export const antiSpam = {
 
 export const cartLine = z.object({
   slug: z.string().trim().min(1).max(200),
-  quantity: z.coerce.number().positive("Quantity must be more than 0").max(1_000_000),
+  quantity: z.coerce.number().positive("Quantity must be more than 0").max(MAX_QUANTITY, `Quantities over ${MAX_QUANTITY.toLocaleString("en-GB")} need a direct enquiry`),
   unit: z.enum(QUANTITY_UNITS),
 });
 
@@ -65,7 +66,8 @@ export type FieldErrors = Record<string, string>;
 export function fieldErrors(err: z.ZodError): FieldErrors {
   const out: FieldErrors = {};
   for (const issue of err.issues) {
-    const key = issue.path.join(".") || "form";
+    // Line-item problems (e.g. items.2.quantity) are shown together above the submit button.
+    const key = issue.path[0] === "items" ? "items" : issue.path.join(".") || "form";
     out[key] ??= issue.message;
   }
   return out;

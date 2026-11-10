@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Heart, Mail, Menu, Phone, Search, ShoppingCart, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { useShop } from "../state/ShopState";
@@ -12,11 +12,29 @@ type NavCat = { slug: string; name: string };
 
 export function Header({ categories }: { categories: NavCat[] }) {
   const [open, setOpen] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
   const pathname = usePathname();
   const { cart, wishlist, ready } = useShop();
-  useEffect(() => setOpen(false), [pathname]);
+  const menuButton = useRef<HTMLButtonElement>(null);
+  const closeButton = useRef<HTMLButtonElement>(null);
+  const productsLink = useRef<HTMLAnchorElement>(null);
+  const wasOpen = useRef(false);
+  useEffect(() => {
+    setOpen(false);
+    setDropdown(false);
+  }, [pathname]);
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    // Move focus into the drawer when it opens and back to the menu button when it closes.
+    if (open) closeButton.current?.focus();
+    else if (wasOpen.current) menuButton.current?.focus();
+    wasOpen.current = open;
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
   const links = [
@@ -33,8 +51,8 @@ export function Header({ categories }: { categories: NavCat[] }) {
     <header className="sticky top-0 z-40 border-b border-steel-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/85">
       <div className="hidden bg-steel-900 text-sm text-steel-200 md:block">
         <div className="container-x flex h-9 items-center justify-between">
-          <p>B2B scrap materials trader · UK based, shipping worldwide</p>
-          <div className="flex items-center gap-5">
+          <p className="hidden truncate lg:block">B2B scrap materials trader · UK based, shipping worldwide</p>
+          <div className="ml-auto flex items-center gap-5 whitespace-nowrap">
             <a href={`mailto:${site.email}`} className="flex items-center gap-1.5 hover:text-white">
               <Mail className="size-3.5" aria-hidden /> {site.email}
             </a>
@@ -52,11 +70,36 @@ export function Header({ categories }: { categories: NavCat[] }) {
         <Logo />
 
         <nav aria-label="Main" className="ml-6 hidden items-center gap-1 lg:flex">
-          <div className="group relative">
-            <Link href="/shop/" className={`flex items-center gap-1 rounded-md px-3 py-2 font-medium hover:text-brand-700 ${isActive("/shop/") || pathname.startsWith("/product") ? "text-brand-700" : "text-steel-700"}`}>
-              Products <ChevronDown className="size-4 transition-transform group-hover:rotate-180" aria-hidden />
+          <div
+            className="relative"
+            onMouseEnter={() => setDropdown(true)}
+            onMouseLeave={() => setDropdown(false)}
+            onFocus={() => setDropdown(true)}
+            onBlur={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setDropdown(false);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Escape" && dropdown) {
+                setDropdown(false);
+                productsLink.current?.focus();
+                e.stopPropagation();
+              }
+            }}
+          >
+            <Link
+              ref={productsLink}
+              href="/shop/"
+              aria-expanded={dropdown}
+              aria-controls="products-menu"
+              className={`flex items-center gap-1 rounded-md px-3 py-2 font-medium hover:text-brand-700 ${isActive("/shop/") || pathname.startsWith("/product") ? "text-brand-700" : "text-steel-700"}`}
+              // Re-focusing the link after Esc must not immediately re-open the menu.
+              onFocus={(e) => {
+                if (e.relatedTarget && e.currentTarget.parentElement?.contains(e.relatedTarget as Node)) e.stopPropagation();
+              }}
+            >
+              Products <ChevronDown className={`size-4 transition-transform ${dropdown ? "rotate-180" : ""}`} aria-hidden />
             </Link>
-            <div className="invisible absolute top-full left-0 w-64 pt-2 opacity-0 transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+            <div id="products-menu" className={`absolute top-full left-0 w-64 pt-2 transition ${dropdown ? "visible opacity-100" : "invisible opacity-0"}`}>
               <ul className="card p-2 shadow-lg">
                 {categories.map((c) => (
                   <li key={c.slug}>
@@ -95,14 +138,14 @@ export function Header({ categories }: { categories: NavCat[] }) {
             <Heart className="size-5" aria-hidden />
             {ready && wishlist.length > 0 && <Badge n={wishlist.length} />}
           </Link>
-          <Link href="/cart/" className="relative grid size-11 place-items-center rounded-md text-steel-700 hover:bg-steel-100" aria-label={`Quote list and cart (${cartCount} items)`}>
+          <Link href="/cart/" className="relative grid size-11 place-items-center rounded-md text-steel-700 hover:bg-steel-100" aria-label={`Quote list and cart (${cartCount} ${cartCount === 1 ? "item" : "items"})`}>
             <ShoppingCart className="size-5" aria-hidden />
             {cartCount > 0 && <Badge n={cartCount} />}
           </Link>
           <Link href="/cart/" className="btn-primary ml-2 hidden min-h-10 py-2 text-sm md:inline-flex">
             Request a quote
           </Link>
-          <button type="button" className="grid size-11 place-items-center rounded-md text-steel-800 hover:bg-steel-100 lg:hidden" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(true)}>
+          <button ref={menuButton} type="button" className="grid size-11 place-items-center rounded-md text-steel-800 hover:bg-steel-100 lg:hidden" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(true)}>
             <Menu className="size-6" aria-hidden />
             <span className="sr-only">Open menu</span>
           </button>
@@ -122,7 +165,7 @@ export function Header({ categories }: { categories: NavCat[] }) {
         >
           <div className="flex h-16 items-center justify-between border-b border-steel-200 px-4">
             <span className="font-display text-lg font-bold">Menu</span>
-            <button type="button" className="grid size-11 place-items-center rounded-md hover:bg-steel-100" onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>
+            <button ref={closeButton} type="button" className="grid size-11 place-items-center rounded-md hover:bg-steel-100" onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>
               <X className="size-6" aria-hidden />
               <span className="sr-only">Close menu</span>
             </button>

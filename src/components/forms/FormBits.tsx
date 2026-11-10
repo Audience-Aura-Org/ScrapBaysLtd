@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState, type InputHTMLAttributes, type ReactNode } from "react";
+import { useEffect, useRef, useState, type InputHTMLAttributes, type ReactNode } from "react";
 import { CheckCircle2 } from "lucide-react";
 import type { FieldErrors } from "@/lib/validation";
+import { site } from "@/lib/site";
 
 export function Field({
   name,
@@ -78,7 +79,11 @@ export type SubmitState = { status: "idle" | "submitting" | "done" | "error"; er
 
 export function useSubmit() {
   const [state, setState] = useState<SubmitState>({ status: "idle", errors: {} });
+  // Synchronous lock: a double-click fires twice before React re-renders the disabled button.
+  const inFlight = useRef(false);
   async function submit(url: string, body: BodyInit, json = true) {
+    if (inFlight.current) return false;
+    inFlight.current = true;
     setState({ status: "submitting", errors: {} });
     try {
       const res = await fetch(url, { method: "POST", body, headers: json ? { "Content-Type": "application/json" } : undefined });
@@ -88,9 +93,15 @@ export function useSubmit() {
         window.scrollTo({ top: 0 }); // the success panel replaces the form; show it from the top
         return true;
       }
-      setState({ status: "error", errors: data.errors || {}, message: data.error || (data.errors ? "Please check the highlighted fields." : "Something went wrong. Please try again.") });
+      setState({
+        status: "error",
+        errors: data.errors || {},
+        message: data.error || (data.errors ? "Please check the highlighted fields." : `Something went wrong on our side. Please try again, or email us at ${site.email}.`),
+      });
     } catch {
       setState({ status: "error", errors: {}, message: "We couldn't reach the server. Check your connection and try again." });
+    } finally {
+      inFlight.current = false;
     }
     // Move focus to the first invalid field.
     setTimeout(() => (document.querySelector('[aria-invalid="true"]') as HTMLElement | null)?.focus(), 50);

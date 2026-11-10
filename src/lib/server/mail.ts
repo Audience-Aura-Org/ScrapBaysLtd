@@ -26,7 +26,17 @@ let transporter: Transporter | null = null;
 function getTransport() {
   const c = mailConfig();
   if (!c.user || !c.pass) return null;
-  transporter ??= nodemailer.createTransport({ host: c.host, port: c.port, secure: c.secure, auth: { user: c.user, pass: c.pass } });
+  // Timeouts so a slow or unreachable SMTP server can't leave the customer's form spinning:
+  // the submission is already saved before mail is sent.
+  transporter ??= nodemailer.createTransport({
+    host: c.host,
+    port: c.port,
+    secure: c.secure,
+    auth: { user: c.user, pass: c.pass },
+    connectionTimeout: 10_000,
+    greetingTimeout: 10_000,
+    socketTimeout: 20_000,
+  });
   return transporter;
 }
 

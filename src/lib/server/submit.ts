@@ -4,20 +4,57 @@ import { getProduct } from "../content";
 import { clientIp, looksLikeBot, rateLimit } from "./rate-limit";
 import { newReference, saveRecord, type LineItem, type RecordKind, type StoredRecord } from "./store";
 import { sendRecordEmails } from "./mail";
+import { site } from "../site";
 
 export const json = (body: unknown, status = 200, headers?: HeadersInit) =>
   NextResponse.json(body, { status, headers: { "Cache-Control": "no-store", ...headers } });
 
-/** Shared guard: same-origin check, rate limit, body size. Returns a response to short-circuit, or null. */
-export function guard(req: Request, bucket: string, limit = 5, windowMs = 10 * 60 * 1000) {
+const WINDOW = 10 * 60 * 1000;
+const tooMany = (retryAfter: number) =>
+  json(
+    { ok: false, error: `Too many submissions from your connection. Please try again in ${Math.max(1, Math.ceil(retryAfter / 60))} minute(s), or email us at ${site.email}.` },
+    429,
+    { "Retry-After": String(retryAfter) },
+  );
+
+/**
+ * First guard on every form request: same-origin check plus a loose per-IP limit on all requests
+ * (stops hammering). The strict limit is applied only to valid submissions — see `limitValid` —
+ * so customers who fix a few typos are never locked out.
+ */
+export function guard(req: Request, bucket: string, looseLimit = 30) {
   const origin = req.headers.get("origin");
   const host = req.headers.get("x-forwarded-host") || req.headers.get("host");
-  if (origin && host && new URL(origin).host !== host) return json({ ok: false, error: "Cross-site request blocked" }, 403);
-  const ip = clientIp(req.headers);
-  const rl = rateLimit(`${bucket}:${ip}`, limit, windowMs);
-  if (!rl.ok)
-    return json({ ok: false, error: `Too many submissions. Please try again in ${Math.ceil(rl.retryAfter / 60)} minute(s), or email us directly.` }, 429, { "Retry-After": String(rl.retryAfter) });
-  return null;
+  try {
+    if (origin && host && new URL(origin).host !== host) return json({ ok: false, error: "Cross-site request blocked" }, 403);
+  } catch {
+    return json({ ok: false, error: "Cross-site request blocked" }, 403);
+  }
+  const rl = rateLimit(`${bucket}:all:${clientIp(req.headers)}`, looseLimit, WINDOW);
+  return rl.ok ? null : tooMany(rl.retryAfter);
+}
+
+/** Strict limit: at most `limit` accepted submissions per IP per 10 minutes. Call after validation. */
+export function limitValid(req: Request, bucket: string, limit = 5) {
+  const rl = rateLimit(`${bucket}:ok:${clientIp(req.headers)}`, limit, WINDOW);
+  return rl.ok ? null : tooMany(rl.retryAfter);
+}
+
+export const badRequest = () => json({ ok: false, error: "We couldn't read that request. Please refresh the page and try again." }, 400);
+
+/** Wraps a route handler so unexpected failures return a clear JSON error (details only in server logs). */
+export function safeHandler(name: string, fn: (req: Request) => Promise<Response>) {
+  return async (req: Request) => {
+    try {
+      return await fn(req);
+    } catch (e) {
+      console.error(`[api:${name}]`, e);
+      return json(
+        { ok: false, error: `Sorry — something went wrong on our side and your request wasn't saved. Please try again in a few minutes, or email us at ${site.email}.` },
+        500,
+      );
+    }
+  };
 }
 
 /** Bots get a plausible success response but nothing is stored or sent. */

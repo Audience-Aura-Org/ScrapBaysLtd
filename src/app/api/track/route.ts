@@ -1,13 +1,15 @@
 import { fieldErrors, trackSchema } from "@/lib/validation";
-import { guard, json } from "@/lib/server/submit";
+import { badRequest, guard, json, safeHandler } from "@/lib/server/submit";
 import { loadRecord, STATUS_LABEL } from "@/lib/server/store";
 
 export const dynamic = "force-dynamic";
 
-export async function POST(req: Request) {
-  const blocked = guard(req, "track", 20, 10 * 60 * 1000);
+export const POST = safeHandler("track", async (req) => {
+  const blocked = guard(req, "track", 20);
   if (blocked) return blocked;
-  const parsed = trackSchema.safeParse(await req.json().catch(() => null));
+  const body = await req.json().catch(() => null);
+  if (!body || typeof body !== "object") return badRequest();
+  const parsed = trackSchema.safeParse(body);
   if (!parsed.success) return json({ ok: false, errors: fieldErrors(parsed.error) }, 422);
   const rec = await loadRecord(parsed.data.reference);
   // Same response for "no such reference" and "wrong email" so references can't be probed.
@@ -27,4 +29,4 @@ export async function POST(req: Request) {
       sell: rec.sell ? { materialType: rec.sell.materialType, quantity: rec.sell.quantity } : undefined,
     },
   });
-}
+});

@@ -2,11 +2,57 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { Trash2 } from "lucide-react";
 import { useShop } from "../state/ShopState";
 import { formatPrice, QUANTITY_UNITS } from "@/lib/format";
 import { AntiSpam, ContactFields, FormAlert, formToObject, SuccessPanel, useSubmit } from "./FormBits";
 import { splitName } from "../product/ProductCard";
+import { quantityError } from "../product/AddToCart";
+
+/** Quantity box for a cart line: commits on blur/Enter, rejects invalid values with a reason. */
+function CartQuantity({ slug, quantity, unit, onChange }: { slug: string; quantity: number; unit: string; onChange: (q: number) => void }) {
+  const [value, setValue] = useState(String(quantity));
+  const [error, setError] = useState<string | null>(null);
+  const commit = () => {
+    const err = quantityError(value, unit);
+    if (err) {
+      setError(`${err} Kept ${quantity}.`);
+      setValue(String(quantity));
+    } else {
+      setError(null);
+      if (Number(value) !== quantity) onChange(Number(value));
+    }
+  };
+  return (
+    <div>
+      <label className="sr-only" htmlFor={`q-${slug}`}>
+        Quantity
+      </label>
+      <input
+        id={`q-${slug}`}
+        inputMode="decimal"
+        value={value}
+        onChange={(e) => setValue(e.target.value.replace(/[^\d.-]/g, "").slice(0, 12))}
+        onBlur={commit}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            commit();
+          }
+        }}
+        aria-invalid={!!error}
+        aria-describedby={error ? `q-${slug}-err` : undefined}
+        className="field w-28"
+      />
+      {error && (
+        <p id={`q-${slug}-err`} role="alert" className="field-error max-w-56">
+          {error}
+        </p>
+      )}
+    </div>
+  );
+}
 
 export function CartView() {
   const { cart, ready, updateLine, removeLine, clearCart } = useShop();
@@ -65,22 +111,8 @@ export function CartView() {
                     </button>
                   </div>
                   <div className="mt-2 flex flex-wrap items-end gap-3">
-                    <div>
-                      <label className="sr-only" htmlFor={`q-${p.slug}`}>
-                        Quantity
-                      </label>
-                      <input
-                        id={`q-${p.slug}`}
-                        inputMode="decimal"
-                        defaultValue={l.quantity}
-                        onBlur={(e) => {
-                          const n = Number(e.target.value);
-                          if (Number.isFinite(n) && n > 0) updateLine(p.slug, { quantity: n });
-                          else e.target.value = String(l.quantity);
-                        }}
-                        className="field w-24"
-                      />
-                    </div>
+                    {/* key: re-mount when the quantity changes elsewhere (e.g. another tab) */}
+                    <CartQuantity key={`${p.slug}-${l.quantity}`} slug={p.slug} quantity={l.quantity} unit={l.unit} onChange={(q) => updateLine(p.slug, { quantity: q })} />
                     {priced ? (
                       <span className="pb-3 text-sm text-steel-600">{l.unit}</span>
                     ) : (
