@@ -35,7 +35,7 @@ export default function HomePage() {
             <p className="eyebrow">Categories</p>
             <h2 className="mt-1 text-3xl font-bold sm:text-4xl">What we trade</h2>
           </div>
-          <Link href="/shop/" className="inline-flex min-h-11 items-center gap-1 font-semibold text-brand-700 hover:text-brand-900">
+          <Link href="/shop/" className="inline-flex min-h-14 items-center gap-1 font-semibold text-brand-700 hover:text-brand-900">
             Browse all products <ArrowRight className="size-4" aria-hidden />
           </Link>
         </div>
@@ -64,7 +64,7 @@ export default function HomePage() {
             <div className="container-x">
               <div className="mb-8 flex flex-col items-center gap-3 text-center md:flex-row md:items-end md:justify-between md:text-left">
                 <h2 className="text-3xl font-bold sm:text-4xl">{sec.title}</h2>
-                <Link href={`/product-category/${sec.category}/`} className="inline-flex min-h-11 items-center gap-1 font-semibold text-brand-700 hover:text-brand-900">
+                <Link href={`/product-category/${sec.category}/`} className="inline-flex min-h-14 items-center gap-1 font-semibold text-brand-700 hover:text-brand-900">
                   View all {catName[sec.category]} <ArrowRight className="size-4" aria-hidden />
                 </Link>
               </div>
@@ -128,7 +128,7 @@ export default function HomePage() {
           <div className="container-x">
             <div className="mb-8 flex flex-col items-center gap-3 text-center md:flex-row md:items-end md:justify-between md:text-left">
               <h2 className="text-3xl font-bold sm:text-4xl">From the blog</h2>
-              <Link href="/blog/" className="inline-flex min-h-11 items-center gap-1 font-semibold text-brand-700 hover:text-brand-900">
+              <Link href="/blog/" className="inline-flex min-h-14 items-center gap-1 font-semibold text-brand-700 hover:text-brand-900">
                 All articles <ArrowRight className="size-4" aria-hidden />
               </Link>
             </div>

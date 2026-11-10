@@ -11,7 +11,7 @@ export function Gallery({ images, name }: { images: Img[]; name: string }) {
   const go = (i: number) => setActive((i + images.length) % images.length);
   const img = images[active];
   return (
-    <div>
+    <div className="mx-auto w-full max-w-xl lg:max-w-none">
       <div
         className="relative aspect-square overflow-hidden rounded-lg border border-steel-200 bg-white"
         onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}

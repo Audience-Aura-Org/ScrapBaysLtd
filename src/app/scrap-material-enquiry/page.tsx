@@ -45,10 +45,10 @@ export default function SellPage() {
           <div className="card p-6">
             <h2 className="text-xl font-bold">Prefer to talk?</h2>
             <p className="mt-3 space-y-1 text-sm">
-              <a href={`mailto:${site.email}`} className="flex min-h-10 items-center justify-center gap-2 font-semibold text-brand-700 lg:justify-start">
+              <a href={`mailto:${site.email}`} className="flex min-h-14 items-center justify-center gap-2 font-semibold text-brand-700 lg:justify-start">
                 <Mail className="size-4" aria-hidden /> {site.email}
               </a>
-              <a href={telHref(site.phone)} className="flex min-h-10 items-center justify-center gap-2 font-semibold text-brand-700 lg:justify-start">
+              <a href={telHref(site.phone)} className="flex min-h-14 items-center justify-center gap-2 font-semibold text-brand-700 lg:justify-start">
                 <Phone className="size-4" aria-hidden /> {site.phone}
               </a>
             </p>

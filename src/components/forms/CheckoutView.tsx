@@ -76,7 +76,7 @@ export function CheckoutView() {
               { v: "bank_transfer", t: "Bank transfer", d: "We send a pro-forma invoice with our bank details." },
               { v: "invoice", t: "Invoice (approved accounts)", d: "Pay on agreed terms after we confirm the order." },
             ].map((o, n) => (
-              <label key={o.v} className="flex min-h-11 cursor-pointer gap-3 rounded-md border border-steel-300 p-3 has-[:checked]:border-brand-600 has-[:checked]:bg-brand-50">
+              <label key={o.v} className="flex min-h-14 cursor-pointer gap-3 rounded-md border border-steel-300 p-3 has-[:checked]:border-brand-600 has-[:checked]:bg-brand-50">
                 <input type="radio" name="paymentMethod" value={o.v} defaultChecked={n === 0} className="mt-1 size-5 accent-brand-700" />
                 <span>
                   <span className="block font-semibold">{o.t}</span>
@@ -108,7 +108,7 @@ export function CheckoutView() {
           <strong>{formatPrice(subtotal, currency)}</strong>
         </p>
         <p className="mt-1 text-xs text-steel-500">Final prices are confirmed on your invoice; shipping and any taxes are added there.</p>
-        <label className="mt-5 flex min-h-11 items-start gap-3 text-sm">
+        <label className="mt-5 flex min-h-14 items-start gap-3 text-sm">
           <input type="checkbox" name="acceptTerms" className="mt-0.5 size-5 accent-brand-700" aria-invalid={!!state.errors.acceptTerms} />
           <span>
             I accept the{" "}

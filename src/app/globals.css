@@ -33,21 +33,47 @@
 }
 
 @layer base {
+  /*
+   * The whole site renders at 80% on every screen size. Anything that must hit a real-pixel
+   * minimum after zoom is sized as (target / 0.8): inputs 20px -> 16px on screen (stops iOS
+   * auto-zoom), tap targets 56px -> 44.8px. Viewport units shrink with zoom too, so full-height
+   * rules divide by --zoom.
+   */
+  :root {
+    --zoom: 0.8;
+  }
   html {
+    zoom: var(--zoom);
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
   }
   body {
     @apply bg-steel-50 text-steel-800 antialiased;
+    min-height: calc(100dvh / var(--zoom));
   }
   h1, h2, h3, h4 {
     @apply font-display text-steel-900;
     letter-spacing: -0.005em;
     text-wrap: balance;
   }
-  /* iOS zooms into inputs under 16px */
-  input, select, textarea, button {
-    font-size: 16px;
+  /* iOS zooms into inputs under 16px on screen: 20px x 0.8 zoom = 16px. Fixed px so the
+     phone root-size bump below doesn't change it. */
+  input, select, textarea {
+    font-size: 20px;
+  }
+  button {
+    font-size: inherit;
+  }
+  /* Phones: 80% zoom makes small text too small, so lift the rem base and the two
+     smallest steps (body 18px -> 14.4px on screen, text-sm ~13.5px, text-xs ~11.7px). */
+  @media (max-width: 639.98px) {
+    html {
+      font-size: 18px;
+    }
+    :root {
+      --text-xs: 0.8125rem;
+      --text-sm: 0.9375rem;
+    }
   }
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-brand-500;
@@ -74,7 +100,7 @@
     @apply mb-1.5 block text-sm font-semibold text-steel-700;
   }
   .field {
-    @apply block min-h-11 w-full rounded-md border border-steel-300 bg-white px-3 py-2.5 text-base text-steel-900 shadow-sm placeholder:text-steel-500/70 focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20 focus:outline-none;
+    @apply block min-h-14 w-full rounded-md border border-steel-300 bg-white px-3 py-3 text-[20px] text-steel-900 shadow-sm placeholder:text-steel-500/70 focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20 focus:outline-none;
   }
   .field-error {
     @apply mt-1 text-sm text-red-700;
@@ -141,7 +167,7 @@
 }
 
 @utility btn {
-  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-2.5 text-base font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+  @apply inline-flex min-h-14 items-center justify-center gap-2 rounded-md px-5 py-2.5 text-base font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60;
 }
 
 @utility scrollbar-none {

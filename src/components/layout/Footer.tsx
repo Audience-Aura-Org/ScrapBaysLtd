@@ -16,10 +16,10 @@ export function Footer() {
             UK-based trader of scrap metal, metal ingots, electronic, plastic and motor-parts scrap and timber, supplying industrial buyers worldwide.
           </p>
           <div className="mt-5 space-y-2 text-sm">
-            <a href={`mailto:${site.email}`} className="flex min-h-8 items-center justify-center gap-2 hover:text-white sm:justify-start">
+            <a href={`mailto:${site.email}`} className="flex min-h-14 items-center justify-center gap-2 hover:text-white sm:justify-start">
               <Mail className="size-4 text-brand-400" aria-hidden /> {site.email}
             </a>
-            <a href={telHref(site.phone)} className="flex min-h-8 items-center justify-center gap-2 hover:text-white sm:justify-start">
+            <a href={telHref(site.phone)} className="flex min-h-14 items-center justify-center gap-2 hover:text-white sm:justify-start">
               <Phone className="size-4 text-brand-400" aria-hidden /> {site.phone}
             </a>
           </div>
@@ -61,7 +61,7 @@ function FooterCol({ title, links }: { title: string; links: { href: string; lab
       <ul className="space-y-1 text-sm">
         {links.map((l) => (
           <li key={l.href}>
-            <Link href={l.href} className="inline-flex min-h-9 items-center hover:text-white">
+            <Link href={l.href} className="inline-flex min-h-14 min-w-14 items-center hover:text-white">
               {l.label}
             </Link>
           </li>

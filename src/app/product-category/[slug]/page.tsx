@@ -50,7 +50,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
           <ul className="flex flex-wrap justify-center gap-2 md:justify-start">
             {others.map((o) => (
               <li key={o.slug}>
-                <Link href={`/product-category/${o.slug}/`} className="inline-flex min-h-11 items-center rounded-full border border-steel-300 bg-white px-4 font-medium hover:border-brand-600 hover:text-brand-700">
+                <Link href={`/product-category/${o.slug}/`} className="inline-flex min-h-14 items-center rounded-full border border-steel-300 bg-white px-4 font-medium hover:border-brand-600 hover:text-brand-700">
                   {o.name}
                 </Link>
               </li>

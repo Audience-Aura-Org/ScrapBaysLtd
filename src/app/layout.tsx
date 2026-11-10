@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const categories = getCategories().map(({ slug, name }) => ({ slug, name }));
   return (
     <html lang="en-GB" className={`${inter.variable} ${barlow.variable}`}>
-      <body className="flex min-h-dvh flex-col">
+      <body className="flex flex-col">
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2">
           Skip to content
         </a>

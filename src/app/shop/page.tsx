@@ -58,7 +58,7 @@ export default async function ShopPage({ searchParams }: { searchParams: SP }) {
         </div>
         <ul className="mb-6 flex gap-2 overflow-x-auto pb-1 scrollbar-none" aria-label="Categories">
           <li>
-            <Link href="/shop/" className={`inline-flex min-h-10 items-center rounded-full border px-4 text-sm font-medium whitespace-nowrap ${!category ? "border-brand-700 bg-brand-700 text-white" : "border-steel-300 bg-white hover:border-brand-600"}`}>
+            <Link href="/shop/" className={`inline-flex min-h-14 min-w-14 items-center justify-center rounded-full border px-4 text-sm font-medium whitespace-nowrap ${!category ? "border-brand-700 bg-brand-700 text-white" : "border-steel-300 bg-white hover:border-brand-600"}`}>
               All
             </Link>
           </li>
@@ -66,7 +66,7 @@ export default async function ShopPage({ searchParams }: { searchParams: SP }) {
             <li key={c.slug}>
               <Link
                 href={`/shop/?category=${c.slug}`}
-                className={`inline-flex min-h-10 items-center rounded-full border px-4 text-sm font-medium whitespace-nowrap ${category === c.slug ? "border-brand-700 bg-brand-700 text-white" : "border-steel-300 bg-white hover:border-brand-600"}`}
+                className={`inline-flex min-h-14 min-w-14 items-center justify-center rounded-full border px-4 text-sm font-medium whitespace-nowrap ${category === c.slug ? "border-brand-700 bg-brand-700 text-white" : "border-steel-300 bg-white hover:border-brand-600"}`}
               >
                 {c.name}
               </Link>

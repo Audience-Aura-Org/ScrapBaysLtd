@@ -68,7 +68,7 @@ export function SellForm({ materials }: { materials: string[] }) {
               {photos.map((p, i) => (
                 <li key={`${p.name}-${i}`} className="flex items-center justify-between gap-3 rounded-md bg-steel-100 px-3 py-1.5 text-sm">
                   <span className="truncate">{p.name}</span>
-                  <button type="button" onClick={() => setPhotos(photos.filter((_, n) => n !== i))} className="grid size-9 shrink-0 place-items-center rounded hover:bg-white" aria-label={`Remove ${p.name}`}>
+                  <button type="button" onClick={() => setPhotos(photos.filter((_, n) => n !== i))} className="grid size-14 shrink-0 place-items-center rounded hover:bg-white" aria-label={`Remove ${p.name}`}>
                     <X className="size-4" aria-hidden />
                   </button>
                 </li>

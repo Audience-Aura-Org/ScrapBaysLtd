@@ -21,7 +21,7 @@ export function WishlistButton({ product, variant = "icon" }: { product: Product
       onClick={() => toggleWishlist(product)}
       aria-pressed={active}
       aria-label={`${label}: ${product.name}`}
-      className="grid size-10 place-items-center rounded-full bg-white/95 text-steel-700 shadow-sm ring-1 ring-steel-200 transition hover:text-red-500"
+      className="relative grid size-10 place-items-center rounded-full bg-white/95 after:absolute after:-inset-2 after:content-[''] text-steel-700 shadow-sm ring-1 ring-steel-200 transition hover:text-red-500"
     >
       <Heart className={`size-5 ${active ? "fill-red-500 text-red-500" : ""}`} aria-hidden />
     </button>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Logo({ light = false, className = "" }: { light?: boolean; className?: string }) {
   return (
-    <Link href="/" className={`flex shrink-0 items-center gap-2.5 ${className}`} aria-label="Scrap Bays Limited — home">
+    <Link href="/" className={`flex min-h-14 shrink-0 items-center gap-2.5 ${className}`} aria-label="Scrap Bays Limited — home">
       <span className={`grid size-10 place-items-center overflow-hidden rounded-md ${light ? "bg-white" : "bg-white ring-1 ring-steel-200"}`}>
         <Image src="/icons/logo-512.png" alt="" width={40} height={40} className="size-10" priority />
       </span>

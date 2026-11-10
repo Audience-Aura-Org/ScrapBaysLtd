@@ -64,7 +64,7 @@ export function HeroSlider({ title, text, primary, secondary, slides }: { title:
         </div>
 
         <div className="mt-10 flex items-center gap-4 md:mt-14">
-          <Link href={slides[i].href} className="text-sm font-semibold text-white underline decoration-signal-400 decoration-2 underline-offset-4" aria-live="polite">
+          <Link href={slides[i].href} className="inline-flex min-h-14 items-center text-sm font-semibold text-white underline decoration-signal-400 decoration-2 underline-offset-4" aria-live="polite">
             {slides[i].label} →
           </Link>
         </div>
@@ -77,7 +77,7 @@ export function HeroSlider({ title, text, primary, secondary, slides }: { title:
               aria-selected={n === i}
               aria-label={`Slide ${n + 1}: ${s.label}`}
               onClick={() => go(n)}
-              className="grid h-8 place-items-center px-0.5"
+              className="grid h-14 min-w-14 place-items-center px-1"
             >
               <span className={`block h-1.5 rounded-full transition-all ${n === i ? "w-8 bg-signal-400" : "w-4 bg-white/40 hover:bg-white/70"}`} />
             </button>
@@ -87,10 +87,10 @@ export function HeroSlider({ title, text, primary, secondary, slides }: { title:
 
       {/* Arrows: desktop/tablet only. On phones, swipe. */}
       <div className="absolute right-6 bottom-8 hidden gap-2 md:flex lg:right-10">
-        <button type="button" onClick={() => go(i - 1)} className="grid size-12 place-items-center rounded-full border border-white/25 bg-steel-900/40 text-white backdrop-blur hover:bg-steel-900/70" aria-label="Previous slide">
+        <button type="button" onClick={() => go(i - 1)} className="grid size-14 place-items-center rounded-full border border-white/25 bg-steel-900/40 text-white backdrop-blur hover:bg-steel-900/70" aria-label="Previous slide">
           <ChevronLeft className="size-6" aria-hidden />
         </button>
-        <button type="button" onClick={() => go(i + 1)} className="grid size-12 place-items-center rounded-full border border-white/25 bg-steel-900/40 text-white backdrop-blur hover:bg-steel-900/70" aria-label="Next slide">
+        <button type="button" onClick={() => go(i + 1)} className="grid size-14 place-items-center rounded-full border border-white/25 bg-steel-900/40 text-white backdrop-blur hover:bg-steel-900/70" aria-label="Next slide">
           <ChevronRight className="size-6" aria-hidden />
         </button>
       </div>

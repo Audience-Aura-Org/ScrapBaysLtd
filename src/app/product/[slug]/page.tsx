@@ -55,7 +55,7 @@ export default async function ProductPage({ params }: { params: Params }) {
           {/* Title block centred on phones; price, form and details stay left-aligned. */}
           <div className="text-center md:text-left">
             {cat && (
-              <Link href={`/product-category/${cat.slug}/`} className="eyebrow hover:underline">
+              <Link href={`/product-category/${cat.slug}/`} className="eyebrow relative hover:underline after:absolute after:inset-x-0 after:-inset-y-5 after:content-['']">
                 {cat.name}
               </Link>
             )}
@@ -121,7 +121,7 @@ export default async function ProductPage({ params }: { params: Params }) {
               <ul className="flex flex-wrap gap-2">
                 {p.tags.map((t) => (
                   <li key={t.slug}>
-                    <Link href={`/product-tag/${t.slug}/`} className="inline-flex min-h-9 items-center rounded-full bg-steel-100 px-3 text-sm text-steel-700 hover:bg-brand-50 hover:text-brand-800">
+                    <Link href={`/product-tag/${t.slug}/`} className="inline-flex min-h-14 items-center rounded-full bg-steel-100 px-3 text-sm text-steel-700 hover:bg-brand-50 hover:text-brand-800">
                       {t.name}
                     </Link>
                   </li>

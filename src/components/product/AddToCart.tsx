@@ -36,7 +36,7 @@ export function AddToCart({ product }: { product: ProductLite }) {
             Quantity
           </label>
           <div className="flex items-stretch">
-            <button type="button" onClick={() => step(-1)} className="grid w-11 place-items-center rounded-l-md border border-r-0 border-steel-300 bg-white hover:bg-steel-100" aria-label="Decrease quantity">
+            <button type="button" onClick={() => step(-1)} className="grid w-14 place-items-center rounded-l-md border border-r-0 border-steel-300 bg-white hover:bg-steel-100" aria-label="Decrease quantity">
               <Minus className="size-4" aria-hidden />
             </button>
             <input
@@ -48,7 +48,7 @@ export function AddToCart({ product }: { product: ProductLite }) {
               aria-invalid={!valid}
               aria-describedby={qtyError ? `${id}-qty-err` : undefined}
             />
-            <button type="button" onClick={() => step(1)} className="grid w-11 place-items-center rounded-r-md border border-l-0 border-steel-300 bg-white hover:bg-steel-100" aria-label="Increase quantity">
+            <button type="button" onClick={() => step(1)} className="grid w-14 place-items-center rounded-r-md border border-l-0 border-steel-300 bg-white hover:bg-steel-100" aria-label="Increase quantity">
               <Plus className="size-4" aria-hidden />
             </button>
           </div>
