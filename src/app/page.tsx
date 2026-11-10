@@ -1,103 +1,166 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Globe2, Handshake, Leaf, ShieldCheck, type LucideIcon } from "lucide-react";
+import home from "../../data/home.json";
+import { HeroSlider } from "@/components/home/HeroSlider";
+import { ProductCard, ProductGrid } from "@/components/product/ProductCard";
+import { getCategories, getPosts, lite, productsInCategory } from "@/lib/content";
+import { buildMetadata } from "@/lib/seo";
+import { site } from "@/lib/site";
+import { formatDate } from "@/lib/format";
 
-export default function Home() {
+export const metadata = buildMetadata({
+  title: "Scrap Metal, Plastic Scrap, Electronic Scrap & Recyclable Materials Supplier | Scrap Bay Limited",
+  absoluteTitle: true,
+  description:
+    "Scrap Bay Limited supplies ferrous & non-ferrous scrap metal, metal ingots, electronic scrap, plastic scrap, motor parts scrap and timber logs to buyers worldwide. Request a quote today.",
+  path: "/",
+});
+
+const ICONS: Record<string, LucideIcon> = { shield: ShieldCheck, globe: Globe2, handshake: Handshake, leaf: Leaf };
+
+export default function HomePage() {
+  const categories = getCategories();
+  const catName = Object.fromEntries(categories.map((c) => [c.slug, c.name]));
+  const posts = getPosts().slice(0, 3);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <HeroSlider {...home.hero} />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Categories */}
+      <section className="container-x py-16 md:py-20">
+        <div className="mb-8 flex flex-col items-center gap-3 text-center md:flex-row md:items-end md:justify-between md:text-left">
+          <div>
+            <p className="eyebrow">Categories</p>
+            <h2 className="mt-1 text-3xl font-bold sm:text-4xl">What we trade</h2>
+          </div>
+          <Link href="/shop/" className="inline-flex min-h-11 items-center gap-1 font-semibold text-brand-700 hover:text-brand-900">
+            Browse all products <ArrowRight className="size-4" aria-hidden />
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <ul className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 lg:grid-cols-7">
+          {categories.map((c) => (
+            <li key={c.slug}>
+              <Link href={`/product-category/${c.slug}/`} className="group relative block aspect-[4/5] overflow-hidden rounded-lg bg-steel-800">
+                {c.image && <Image src={c.image.src} alt="" fill sizes="(min-width:1024px) 14vw, (min-width:768px) 25vw, 50vw" className="object-cover opacity-80 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />}
+                <span className="absolute inset-0 bg-gradient-to-t from-steel-900/90 via-steel-900/20 to-transparent" />
+                <span className="absolute inset-x-0 bottom-0 p-3 text-center md:text-left">
+                  <span className="block font-display text-lg leading-tight font-semibold text-white">{c.name}</span>
+                  <span className="text-xs text-steel-200">{productsInCategory(c.slug).length} products</span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Featured product rows */}
+      {home.featuredSections.map((sec) => {
+        const items = productsInCategory(sec.category).slice(0, sec.limit);
+        if (!items.length) return null;
+        return (
+          <section key={sec.category} className="border-t border-steel-200 bg-white py-14 md:py-16">
+            <div className="container-x">
+              <div className="mb-8 flex flex-col items-center gap-3 text-center md:flex-row md:items-end md:justify-between md:text-left">
+                <h2 className="text-3xl font-bold sm:text-4xl">{sec.title}</h2>
+                <Link href={`/product-category/${sec.category}/`} className="inline-flex min-h-11 items-center gap-1 font-semibold text-brand-700 hover:text-brand-900">
+                  View all {catName[sec.category]} <ArrowRight className="size-4" aria-hidden />
+                </Link>
+              </div>
+              <ProductGrid>
+                {items.map((p) => (
+                  <ProductCard key={p.slug} product={lite(p)} />
+                ))}
+              </ProductGrid>
+            </div>
+          </section>
+        );
+      })}
+
+      {/* Value blocks */}
+      <section className="bg-steel-900 py-16 text-white md:py-20">
+        <div className="container-x">
+          <div className="mx-auto mb-10 max-w-2xl text-center">
+            <p className="eyebrow text-signal-400">Why Scrap Bay</p>
+            <h2 className="mt-1 text-3xl font-bold text-white sm:text-4xl">Trusted supply, end to end</h2>
+          </div>
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {home.values.map((v) => {
+              const Icon = ICONS[v.icon] || ShieldCheck;
+              return (
+                <li key={v.title} className="rounded-lg border border-white/10 bg-white/[0.04] p-6 text-center lg:text-left">
+                  <span className="mx-auto mb-4 grid size-12 place-items-center rounded-md bg-brand-700 text-white lg:mx-0">
+                    <Icon className="size-6" aria-hidden />
+                  </span>
+                  <h3 className="text-xl font-semibold text-white">{v.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-steel-300">{v.text}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
+      {/* Enquiry CTA */}
+      <section className="container-x py-16 md:py-20">
+        <div className="grid gap-6 overflow-hidden rounded-xl bg-brand-900 p-8 text-center text-white md:grid-cols-[1.5fr_1fr] md:items-center md:p-12 md:text-left">
+          <div>
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">Buying or selling scrap?</h2>
+            <p className="mt-3 max-w-xl text-brand-100 max-md:mx-auto">
+              Add products to your quote list and send one enquiry for everything — or tell us about the material you want to sell. Our trading team replies with pricing, availability and shipping terms.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row md:flex-col md:items-stretch lg:flex-row lg:justify-end">
+            <Link href="/shop/" className="btn-signal">
+              Request a quote
+            </Link>
+            <Link href="/scrap-material-enquiry/" className="btn-ghost-light">
+              Sell your scrap
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest posts */}
+      {posts.length > 0 && (
+        <section className="border-t border-steel-200 bg-white py-14 md:py-16">
+          <div className="container-x">
+            <div className="mb-8 flex flex-col items-center gap-3 text-center md:flex-row md:items-end md:justify-between md:text-left">
+              <h2 className="text-3xl font-bold sm:text-4xl">From the blog</h2>
+              <Link href="/blog/" className="inline-flex min-h-11 items-center gap-1 font-semibold text-brand-700 hover:text-brand-900">
+                All articles <ArrowRight className="size-4" aria-hidden />
+              </Link>
+            </div>
+            <ul className="grid gap-5 md:grid-cols-3">
+              {posts.map((p) => (
+                <li key={p.slug} className="group card relative overflow-hidden">
+                  {p.image && (
+                    <div className="relative aspect-[16/9] bg-steel-100">
+                      <Image src={p.image.src} alt={p.image.alt || ""} fill sizes="(min-width:768px) 33vw, 100vw" className="object-cover" />
+                    </div>
+                  )}
+                  <div className="p-5">
+                    <time dateTime={p.date} className="text-sm text-steel-500">
+                      {formatDate(p.date)}
+                    </time>
+                    <h3 className="mt-1 text-xl leading-snug font-semibold">
+                      <Link href={`/${p.slug}/`} className="after:absolute after:inset-0 group-hover:text-brand-700">
+                        {p.title}
+                      </Link>
+                    </h3>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      <section className="container-x pt-14 text-center">
+        <h2 className="text-2xl font-bold sm:text-3xl">Scrap Metal, Plastic Scrap, Electronic Scrap &amp; Other Recyclable Materials Suppliers</h2>
+        <p className="mx-auto mt-3 max-w-3xl text-steel-600">{site.description}</p>
+      </section>
+    </>
   );
 }

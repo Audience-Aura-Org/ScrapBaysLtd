@@ -74,7 +74,6 @@ const decode = (s = "") =>
     .replace(/&([a-z]+);/gi, (m, n) => NAMED[n.toLowerCase()] ?? m);
 const plain = (html = "") => decode(html.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
 const writeFile = (p, data) => { fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, data); };
-const yamlStr = (s) => JSON.stringify(s ?? "");
 function frontmatter(obj) {
   // JSON is valid YAML, so every value is emitted as JSON for safety.
   const lines = Object.entries(obj).filter(([, v]) => v !== undefined).map(([k, v]) => `${k}: ${JSON.stringify(v)}`);
@@ -362,7 +361,7 @@ for (const p of posts) {
 const homeHtml = await pageHtml(`${BASE}/`);
 const heroIds = [...decode(homeHtml || "").matchAll(/"id":(\d+),"url":"[^"]*wp-content[^"]*"/g)].map((m) => Number(m[1]));
 const hero = [...new Set(heroIds)].map((id) => imageInfo(id)).filter(Boolean);
-writeFile(path.join(ROOT, "data", "hero.json"), JSON.stringify(hero, null, 2) + "\n");
+writeFile(path.join(ROOT, "data", "legacy-hero.json"), JSON.stringify(hero, null, 2) + "\n");
 
 // ---------------------------------------------------------------- brand assets
 const brand = mediaById.get(1121) || mediaById.get(1095);

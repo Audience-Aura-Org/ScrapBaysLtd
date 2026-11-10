@@ -1,0 +1,41 @@
+{
+  "hero": {
+    "title": "Scrap Bay Limited",
+    "text": "Scrap Bay Limited is a trading company that specialises in selling scrap metal, plastic scrap and waste paper scrap — all grades of ferrous and non-ferrous scrap metal, supplied to industrial buyers worldwide.",
+    "primary": { "label": "Shop now", "href": "/shop/" },
+    "secondary": { "label": "Sell your scrap", "href": "/scrap-material-enquiry/" },
+    "slides": [
+      { "src": "/media/2026/01/steel-rail-scrap-seo-1200x1200-1.jpg", "alt": "Used rails and HMS steel scrap", "label": "Ferrous & non-ferrous metal scrap", "href": "/product-category/meralscrap/" },
+      { "src": "/media/2025/10/copper-inqot.jpeg", "alt": "Stacked copper ingots", "label": "Metal ingots", "href": "/product-category/metalingot/" },
+      { "src": "/media/2025/10/larch-logs-scaled-1.jpg", "alt": "Stacked larch wood logs", "label": "Hardwood & softwood logs", "href": "/product-category/woods/" },
+      { "src": "/media/2026/01/insulated-copper-wire-scrap-seo-1200x1200-1.jpg", "alt": "Insulated copper cable scrap", "label": "Copper cable & wire scrap", "href": "/product/insulated-copper-cable-scrap/" },
+      { "src": "/media/2026/01/clear_pet_scrap_seo_1200.jpg", "alt": "Clear PET plastic scrap", "label": "Plastic scrap", "href": "/product-category/plastic-scrap/" }
+    ]
+  },
+  "featuredSections": [
+    { "title": "Wood", "category": "woods", "limit": 8 },
+    { "title": "Metal Ingots", "category": "metalingot", "limit": 8 }
+  ],
+  "values": [
+    {
+      "icon": "shield",
+      "title": "Premium & Verified Products",
+      "text": "We supply only high-grade ferrous, non-ferrous, plastic, and paper scrap that meet international quality standards. Each shipment is inspected and verified for purity and consistency to ensure our clients receive the best materials every time."
+    },
+    {
+      "icon": "globe",
+      "title": "Worldwide Reach, Local Expertise",
+      "text": "With clients and partners across Africa, Asia, Europe, and the Americas, we manage seamless international trade logistics. Our global presence enables us to deliver efficiently and build long-term relationships across continents."
+    },
+    {
+      "icon": "handshake",
+      "title": "Reliable & Transparent Service",
+      "text": "From order to delivery, Scrap Bay Limited ensures timely communication, transparent pricing, and dependable logistics. We believe in honest trade practices and maintaining a reputation built on trust and reliability."
+    },
+    {
+      "icon": "leaf",
+      "title": "Committed to a Greener Future",
+      "text": "We contribute to environmental sustainability by promoting recycling and resource recovery. Our operations reduce waste and support the global movement toward a circular economy that benefits both industry and the planet."
+    }
+  ]
+}

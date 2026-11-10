@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "build": "node scripts/next-prod.mjs build",
+    "start": "node scripts/next-prod.mjs start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "mail:test": "node scripts/mail-test.mjs",
+    "import:wp": "node scripts/import-wordpress.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
@@ -20,6 +23,7 @@
     "remark-gfm": "^4.0.1",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
+    "server-only": "^0.0.1",
     "unified": "^11.0.5",
     "zod": "^4.6.7"
   },
@@ -37,5 +41,8 @@
     "turndown": "^7.2.5",
     "turndown-plugin-gfm": "^1.0.2",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20.9.0"
   }
 }
