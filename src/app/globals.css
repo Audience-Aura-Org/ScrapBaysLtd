@@ -75,12 +75,9 @@
   button {
     font-size: inherit;
   }
-  /* Phones: 80% zoom makes small text too small, so lift the rem base and the two
-     smallest steps (body 18px -> 14.4px on screen, text-sm ~13.5px, text-xs ~11.7px). */
+  /* Phones: same 16px rem base as desktop (body 12.8px on screen at 80% zoom); only the
+     two smallest steps are lifted so labels stay legible (text-sm 12px, text-xs 10.4px). */
   @media (max-width: 639.98px) {
-    html {
-      font-size: 18px;
-    }
     :root {
       --text-xs: 0.8125rem;
       --text-sm: 0.9375rem;
