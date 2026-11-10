@@ -7,9 +7,9 @@ updated: "2026-01-13T12:04:34Z"
 
 **Driving UK’s Recycling and Resource Future**
 
-Founded in **2021**, **Scrap Bay Limited** has grown to become one of **UK’s most integrated and diversified companies**, specializing in the **supply and sale of Scrap Materials, Mines, Metallurgy, and Woods**. With over a decade of experience, we are proud to be recognized as a trusted and dependable partner across industries and continents.
+Founded in **2021**, **Scrap Bays Limited** has grown to become one of **UK’s most integrated and diversified companies**, specializing in the **supply and sale of Scrap Materials, Mines, Metallurgy, and Woods**. With over a decade of experience, we are proud to be recognized as a trusted and dependable partner across industries and continents.
 
-At **Scrap Bay Limited**, our **clients are the architects of our success**. Their loyalty and vision inspire us to innovate, expand, and continuously improve. Together, we’ve built a culture of unity, integrity, and excellence — values that guide every transaction and every relationship.
+At **Scrap Bays Limited**, our **clients are the architects of our success**. Their loyalty and vision inspire us to innovate, expand, and continuously improve. Together, we’ve built a culture of unity, integrity, and excellence — values that guide every transaction and every relationship.
 
 ## Our Vision
 
@@ -33,7 +33,7 @@ To deliver **premium-quality scrap, metal, plastic, and wood materials** to our 
 
 ## Our Strategy
 
-**Scrap Bay Limited** follows a **strategic supply framework** focused on efficiency, reliability, and sustainability.
+**Scrap Bays Limited** follows a **strategic supply framework** focused on efficiency, reliability, and sustainability.
 We invest not only in distribution but also in **supply networks, storage, and logistics infrastructure** — ensuring:
 
 Efficient and secure delivery systems
@@ -50,5 +50,5 @@ We trade metal scrap, metal ingots, electronic scrap, motor parts scrap, plastic
 
 ## A Sustainable Future
 
-At **Scrap Bay Limited**, we believe that true success lies in **balancing growth with responsibility**.
+At **Scrap Bays Limited**, we believe that true success lies in **balancing growth with responsibility**.
 By integrating sustainability into our operations, investing in innovation, and nurturing strong global relationships, we continue to shape a future where **industrial progress and environmental care go hand in hand**.

@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Track Your Order or Enquiry",
-  description: "Check the status of your Scrap Bay Limited order, quote request or scrap material offer using your reference number.",
+  description: "Check the status of your Scrap Bays Limited order, quote request or scrap material offer using your reference number.",
   path: "/track-order/",
   noindex: true,
 });

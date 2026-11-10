@@ -37,7 +37,7 @@ function legacyTarget(sp: URLSearchParams): string | null {
 function unauthorized() {
   return new NextResponse("Authentication required", {
     status: 401,
-    headers: { "WWW-Authenticate": 'Basic realm="Scrap Bay admin", charset="UTF-8"', "Cache-Control": "no-store" },
+    headers: { "WWW-Authenticate": 'Basic realm="Scrap Bays admin", charset="UTF-8"', "Cache-Control": "no-store" },
   });
 }
 

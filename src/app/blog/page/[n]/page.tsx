@@ -13,7 +13,7 @@ type Params = Promise<{ n: string }>;
 
 export async function generateMetadata({ params }: { params: Params }) {
   const n = Number((await params).n);
-  return buildMetadata({ title: `Blog — Page ${n}`, description: `Scrap Bay Limited blog, page ${n}.`, path: blogHref(n), noindex: true });
+  return buildMetadata({ title: `Blog — Page ${n}`, description: `Scrap Bays Limited blog, page ${n}.`, path: blogHref(n), noindex: true });
 }
 
 export default async function BlogPaged({ params }: { params: Params }) {

@@ -17,7 +17,7 @@ export async function generateMetadata({ searchParams }: { searchParams: SP }): 
   const cat = getCategory(one(sp.category));
   return buildMetadata({
     title: cat ? `Shop ${cat.name}` : one(sp.q) ? `Search results for “${one(sp.q)}”` : "Shop — All Scrap Materials",
-    description: `Browse ${getProducts().length} scrap materials from Scrap Bay Limited: metal scrap, metal ingots, electronic scrap, motor parts scrap, plastic scrap, timber logs and more. Request a quote online.`,
+    description: `Browse ${getProducts().length} scrap materials from Scrap Bays Limited: metal scrap, metal ingots, electronic scrap, motor parts scrap, plastic scrap, timber logs and more. Request a quote online.`,
     path: "/shop/",
     // Search, sort, filter and paginated variants: keep out of the index but let crawlers follow links.
     noindex: filtered,

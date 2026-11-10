@@ -10,7 +10,7 @@ updated: "2026-09-15T23:02:51Z"
 
 ## Non-Ferrous Scrap London – Copper, Aluminium, Brass & Lead
 
-Scrap Bays Ltd supplies **[Non-Ferrous Scrap London](https://clearway-group.co.uk/buy-non-ferrous-scrap-metals/)** buyers and commercial customers across the UK with recyclable copper, aluminium, brass, lead and other non-iron metal materials.
+Scrap Bays Limited supplies **[Non-Ferrous Scrap London](https://clearway-group.co.uk/buy-non-ferrous-scrap-metals/)** buyers and commercial customers across the UK with recyclable copper, aluminium, brass, lead and other non-iron metal materials.
 
 Our range can include **Copper Wire Scrap, Copper Cable Scrap, Insulated Copper Cable Scrap, Aluminium UBC Scrap, Aluminium Extrusion Scrap, Aluminium Wheel Scrap, Honey Brass Scrap, Lead Scrap and Radiator Scrap**, subject to availability and specification.
 
@@ -123,7 +123,7 @@ The appropriate processing method depends on the material, composition and condi
 
 ## Serving London and UK Buyers
 
-Scrap Bays Ltd supports commercial **Non-Ferrous Scrap London** enquiries as well as buyers throughout the wider UK and international markets.
+Scrap Bays Limited supports commercial **Non-Ferrous Scrap London** enquiries as well as buyers throughout the wider UK and international markets.
 
 For location-specific requirements, provide your collection or delivery destination together with the product, quantity and specification.
 
@@ -151,7 +151,7 @@ Our team can review your requirements and provide available product information 
 
 ## Non-Ferrous Scrap London Supplier
 
-Scrap Bays Ltd supplies **Non-Ferrous Scrap London** materials including copper, aluminium, brass, lead, radiators, cables and other recyclable non-ferrous metals.
+Scrap Bays Limited supplies **Non-Ferrous Scrap London** materials including copper, aluminium, brass, lead, radiators, cables and other recyclable non-ferrous metals.
 
 Contact us with your required product, quantity, grade and destination to discuss available supply.
 

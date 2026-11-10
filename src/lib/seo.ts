@@ -11,7 +11,7 @@ type MetaInput = {
   type?: "website" | "article";
   publishedTime?: string;
   modifiedTime?: string;
-  /** Use the title as-is instead of the "%s | Scrap Bay Limited" template. */
+  /** Use the title as-is instead of the "%s | Scrap Bays Limited" template. */
   absoluteTitle?: boolean;
 };
 

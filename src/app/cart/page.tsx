@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Quote List & Cart",
-  description: "Review the products in your quote list and send one enquiry to Scrap Bay Limited.",
+  description: "Review the products in your quote list and send one enquiry to Scrap Bays Limited.",
   path: "/cart/",
   noindex: true,
 });

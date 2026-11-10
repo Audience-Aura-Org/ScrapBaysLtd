@@ -12,7 +12,7 @@ updated: "2026-09-15T22:43:34Z"
 
 Ferrous Scrap London – Iron & Steel Scrap Materials
 
-Scrap Bays Ltd supplies **[Ferrous Scrap London](https://www.fptmetals.com/)** buyers and commercial customers across the UK with a range of iron- and steel-based recyclable materials. Our ferrous scrap range can include HMS Scrap, Cast Iron Scrap, Used Rails, Steel Scrap, Steel Tire Wire Scrap, Brake Drum Scrap and other ferrous metal materials, subject to availability and specification.
+Scrap Bays Limited supplies **[Ferrous Scrap London](https://www.fptmetals.com/)** buyers and commercial customers across the UK with a range of iron- and steel-based recyclable materials. Our ferrous scrap range can include HMS Scrap, Cast Iron Scrap, Used Rails, Steel Scrap, Steel Tire Wire Scrap, Brake Drum Scrap and other ferrous metal materials, subject to availability and specification.
 
 We support recyclers, steel processors, foundries, manufacturers, scrap traders and industrial buyers looking for ferrous materials for recycling, steelmaking, metal recovery and industrial processing.
 
@@ -144,7 +144,7 @@ The appropriate recycling process depends on the material type, grade, compositi
 
 ## Serving London and the UK
 
-Scrap Bays Ltd supports commercial enquiries for **Ferrous Scrap London** and buyers across the wider UK.
+Scrap Bays Limited supports commercial enquiries for **Ferrous Scrap London** and buyers across the wider UK.
 
 For location-specific requirements, buyers can provide their delivery or collection destination together with the required product, quantity and specification.
 
@@ -172,7 +172,7 @@ Our team can review your requirements and provide available product information 
 
 ## Ferrous Scrap London Supplier
 
-Scrap Bays Ltd supplies a range of **Ferrous Scrap London** materials including HMS Scrap, Cast Iron Scrap, Used Rails and other iron- and steel-based recyclable materials.
+Scrap Bays Limited supplies a range of **Ferrous Scrap London** materials including HMS Scrap, Cast Iron Scrap, Used Rails and other iron- and steel-based recyclable materials.
 
 Contact us with your required product, quantity, grade and destination to discuss available supply.
 

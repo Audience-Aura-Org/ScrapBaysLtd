@@ -10,7 +10,7 @@ updated: "2026-09-15T13:18:38Z"
 
 ## Metal Scrap – Ferrous & Non-Ferrous Scrap Materials
 
-Scrap Bays Ltd supplies a wide range of **[metal scrap](https://www.dongshengjs.com/nickel-scrap-price.html?gad_source=1&gad_campaignid=23927291473&gbraid=0AAAAA-ZoF2md5JNn18ddTsB0I4kTM-7kg&gclid=CjwKCAjw2aPVBhBkEiwA0Cptt92fyjxXMs4ju4DMIQlC39TiBEI2XO0JSpf4j7puuL_udwfEvFTCwxoCzxEQAvD_BwE)** for recyclers, manufacturers, foundries, processors, traders and industrial buyers. Our range covers both **ferrous and non-ferrous scrap materials**, including steel, iron, copper, aluminum, brass, lead, radiators, cables, motors and other recyclable metals.
+Scrap Bays Limited supplies a wide range of **[metal scrap](https://www.dongshengjs.com/nickel-scrap-price.html?gad_source=1&gad_campaignid=23927291473&gbraid=0AAAAA-ZoF2md5JNn18ddTsB0I4kTM-7kg&gclid=CjwKCAjw2aPVBhBkEiwA0Cptt92fyjxXMs4ju4DMIQlC39TiBEI2XO0JSpf4j7puuL_udwfEvFTCwxoCzxEQAvD_BwE)** for recyclers, manufacturers, foundries, processors, traders and industrial buyers. Our range covers both **ferrous and non-ferrous scrap materials**, including steel, iron, copper, aluminum, brass, lead, radiators, cables, motors and other recyclable metals.
 
 We support commercial buyers looking for reliable sources of scrap materials for recycling, metal recovery, processing, manufacturing and other industrial applications. Products can be supplied according to available grades, specifications, quantities and material conditions.
 

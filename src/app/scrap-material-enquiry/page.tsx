@@ -8,7 +8,7 @@ import { site, telHref } from "@/lib/site";
 
 export const metadata = buildMetadata({
   title: "Scrap Material Enquiry — Sell Your Scrap",
-  description: "Selling scrap metal, e-scrap, plastics, rubber or timber? Send Scrap Bay Limited the material type, quantity, location and photos and get an offer from our trading team.",
+  description: "Selling scrap metal, e-scrap, plastics, rubber or timber? Send Scrap Bays Limited the material type, quantity, location and photos and get an offer from our trading team.",
   path: "/scrap-material-enquiry/",
 });
 

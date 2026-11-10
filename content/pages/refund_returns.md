@@ -2,7 +2,7 @@
 title: "Refund and Returns Policy"
 slug: "refund_returns"
 kind: "policy"
-seoDescription: "How Scrap Bay Limited handles quality claims, refunds and cancellations for bulk scrap, ingot, plastic and timber orders."
+seoDescription: "How Scrap Bays Limited handles quality claims, refunds and cancellations for bulk scrap, ingot, plastic and timber orders."
 updated: "2026-11-10T00:00:00Z"
 reviewNote: "DRAFT written during the 2026 site rebuild. Have it reviewed by your solicitor before relying on it."
 ---

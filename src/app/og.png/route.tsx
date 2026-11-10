@@ -17,7 +17,7 @@ export async function GET() {
             <img src={logoSrc} width={96} height={96} alt="" />
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <div style={{ fontSize: 56, fontWeight: 700, letterSpacing: -1 }}>Scrap Bay Limited</div>
+            <div style={{ fontSize: 56, fontWeight: 700, letterSpacing: -1 }}>Scrap Bays Limited</div>
             <div style={{ fontSize: 24, color: "#8cc8a2", letterSpacing: 4, textTransform: "uppercase" }}>B2B scrap materials trader</div>
           </div>
         </div>

@@ -22,7 +22,7 @@ Every response from scrapbaysltd.com, including JSON and XML sitemaps, starts wi
 ## Fixed during migration (as requested)
 
 - "Metal **Ignots**" → "Metal Ingots" (homepage heading).
-- "**Acre Metals Ltd**" → "Scrap Bay Limited" (homepage value block).
+- "**Acre Metals Ltd**" → "Scrap Bays Limited" (homepage value block).
 - Stray "**Title:**" prefix removed from the Used Rails page title.
 - Duplicate **Compressor Scraps** pages: `/compressor-scraps-2/` 301 → `/compressor-scraps/`.
 - "**Copper Wire Scrap — Pillar Page SEO Setup**" (`/copper-wire-scrap/`) dropped: it was a draft written for another brand ("Millbury Copper Wire Scrap", with "Body Description" placeholders). 301 → `/product/copper-wire-scrap-99-99/`.

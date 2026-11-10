@@ -11,7 +11,7 @@ export const generateStaticParams = () => getCategories().map((c) => ({ slug: c.
 type Params = Promise<{ slug: string }>;
 
 const intro = (name: string, n: number, desc: string) =>
-  desc || `Browse ${n} ${name.toLowerCase()} products supplied by Scrap Bay Limited to industrial buyers worldwide. Add items to your quote list for pricing, availability and shipping terms.`;
+  desc || `Browse ${n} ${name.toLowerCase()} products supplied by Scrap Bays Limited to industrial buyers worldwide. Add items to your quote list for pricing, availability and shipping terms.`;
 
 export async function generateMetadata({ params }: { params: Params }) {
   const c = getCategory((await params).slug);

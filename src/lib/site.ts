@@ -1,13 +1,13 @@
 export const site = {
-  name: "Scrap Bay Limited",
-  shortName: "Scrap Bay",
-  legalName: "Scrap Bay Limited",
+  name: "Scrap Bays Limited",
+  shortName: "Scrap Bays",
+  legalName: "Scrap Bays Limited",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://scrapbaysltd.com").replace(/\/$/, ""),
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@scrapbaysltd.com",
   phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "+44 7985 714297",
   tagline: "Scrap metal, plastic, electronic scrap & recyclable materials — traded worldwide",
   description:
-    "Scrap Bay Limited is a UK trading company supplying ferrous and non-ferrous scrap metal, metal ingots, electronic scrap, plastic scrap, motor parts scrap and timber to industrial buyers worldwide.",
+    "Scrap Bays Limited is a UK trading company supplying ferrous and non-ferrous scrap metal, metal ingots, electronic scrap, plastic scrap, motor parts scrap and timber to industrial buyers worldwide.",
   logo: "/icons/logo-512.png",
   country: "GB",
   themeColor: "#14532d",

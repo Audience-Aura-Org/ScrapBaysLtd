@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Blog — Scrap Materials, Recycling & Trading Guides",
-  description: "Guides and market notes from Scrap Bay Limited on scrap metal, electronic scrap, plastics, rubber, precious metals and recyclable materials.",
+  description: "Guides and market notes from Scrap Bays Limited on scrap metal, electronic scrap, plastics, rubber, precious metals and recyclable materials.",
   path: "/blog/",
 });
 

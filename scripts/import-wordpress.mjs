@@ -73,7 +73,12 @@ const decode = (s = "") =>
     .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
     .replace(/&([a-z]+);/gi, (m, n) => NAMED[n.toLowerCase()] ?? m);
 const plain = (html = "") => decode(html.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
-const writeFile = (p, data) => { fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, data); };
+/** The business name is "Scrap Bays Limited"; the old site mixed "Scrap Bay", "Scrap Bay LTD" and "Scrap Bays Ltd". */
+const brandName = (s) => s.replace(/Scrap Bays Ltd\b/g, "Scrap Bays Limited").replace(/Scrap Bay LTD/g, "Scrap Bays Limited").replace(/Scrap Bay(?!s)/g, "Scrap Bays");
+const writeFile = (p, data) => {
+  fs.mkdirSync(path.dirname(p), { recursive: true });
+  fs.writeFileSync(p, p.endsWith(".md") ? brandName(data) : data);
+};
 function frontmatter(obj) {
   // JSON is valid YAML, so every value is emitted as JSON for safety.
   const lines = Object.entries(obj).filter(([, v]) => v !== undefined).map(([k, v]) => `${k}: ${JSON.stringify(v)}`);

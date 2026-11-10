@@ -2,7 +2,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { CheckoutView } from "@/components/forms/CheckoutView";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata = buildMetadata({ title: "Checkout", description: "Place your order with Scrap Bay Limited. Payment by bank transfer or invoice.", path: "/checkout/", noindex: true });
+export const metadata = buildMetadata({ title: "Checkout", description: "Place your order with Scrap Bays Limited. Payment by bank transfer or invoice.", path: "/checkout/", noindex: true });
 
 export default function CheckoutPage() {
   return (

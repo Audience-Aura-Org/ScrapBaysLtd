@@ -2,12 +2,12 @@
 title: "Conditions of Use"
 slug: "condition-of-use"
 kind: "policy"
-seoDescription: "Terms for using scrapbaysltd.com and trading with Scrap Bay Limited: quotations, orders, payment by bank transfer or invoice, inspection, shipping and liability."
+seoDescription: "Terms for using scrapbaysltd.com and trading with Scrap Bays Limited: quotations, orders, payment by bank transfer or invoice, inspection, shipping and liability."
 updated: "2026-11-10T00:00:00Z"
 reviewNote: "DRAFT written during the 2026 site rebuild. Have it reviewed by your solicitor before relying on it."
 ---
 
-These conditions apply to your use of **scrapbaysltd.com** (the "Site") and to quotations and orders placed with **Scrap Bay Limited** ("we", "us") through it. By using the Site you agree to them. Questions: [info@scrapbaysltd.com](mailto:info@scrapbaysltd.com).
+These conditions apply to your use of **scrapbaysltd.com** (the "Site") and to quotations and orders placed with **Scrap Bays Limited** ("we", "us") through it. By using the Site you agree to them. Questions: [info@scrapbaysltd.com](mailto:info@scrapbaysltd.com).
 
 ## 1. Business customers only
 

@@ -10,10 +10,10 @@ import { site } from "@/lib/site";
 import { formatDate } from "@/lib/format";
 
 export const metadata = buildMetadata({
-  title: "Scrap Metal, Plastic Scrap, Electronic Scrap & Recyclable Materials Supplier | Scrap Bay Limited",
+  title: "Scrap Metal, Plastic Scrap, Electronic Scrap & Recyclable Materials Supplier | Scrap Bays Limited",
   absoluteTitle: true,
   description:
-    "Scrap Bay Limited supplies ferrous & non-ferrous scrap metal, metal ingots, electronic scrap, plastic scrap, motor parts scrap and timber logs to buyers worldwide. Request a quote today.",
+    "Scrap Bays Limited supplies ferrous & non-ferrous scrap metal, metal ingots, electronic scrap, plastic scrap, motor parts scrap and timber logs to buyers worldwide. Request a quote today.",
   path: "/",
 });
 
@@ -82,7 +82,7 @@ export default function HomePage() {
       <section className="bg-steel-900 py-16 text-white md:py-20">
         <div className="container-x">
           <div className="mx-auto mb-10 max-w-2xl text-center">
-            <p className="eyebrow text-signal-400">Why Scrap Bay</p>
+            <p className="eyebrow text-signal-400">Why Scrap Bays</p>
             <h2 className="mt-1 text-3xl font-bold text-white sm:text-4xl">Trusted supply, end to end</h2>
           </div>
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

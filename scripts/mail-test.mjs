@@ -18,7 +18,7 @@ const cfg = {
   user: process.env.SMTP_USER,
   pass: process.env.SMTP_PASS,
 };
-const from = process.env.MAIL_FROM || (cfg.user ? `Scrap Bay Limited <${cfg.user}>` : "");
+const from = process.env.MAIL_FROM || (cfg.user ? `Scrap Bays Limited <${cfg.user}>` : "");
 const to = process.argv[2] || process.env.MAIL_TO || process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@scrapbaysltd.com";
 
 console.log(`SMTP ${cfg.host}:${cfg.port} secure=${cfg.secure} user=${cfg.user || "(not set)"}`);
@@ -34,8 +34,8 @@ try {
   const info = await t.sendMail({
     from,
     to,
-    subject: "Scrap Bay Limited — SMTP test",
-    text: `This is a test email from the Scrap Bay Limited website.\nSent ${new Date().toISOString()} via ${cfg.host}.`,
+    subject: "Scrap Bays Limited — SMTP test",
+    text: `This is a test email from the Scrap Bays Limited website.\nSent ${new Date().toISOString()} via ${cfg.host}.`,
   });
   console.log(`✓ Test email sent to ${to} (${info.messageId})`);
 } catch (e) {

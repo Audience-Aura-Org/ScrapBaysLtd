@@ -2,7 +2,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { WishlistView } from "@/components/product/WishlistView";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata = buildMetadata({ title: "Wishlist", description: "Products you've saved on Scrap Bay Limited.", path: "/wishlist/", noindex: true });
+export const metadata = buildMetadata({ title: "Wishlist", description: "Products you've saved on Scrap Bays Limited.", path: "/wishlist/", noindex: true });
 
 export default function WishlistPage() {
   return (

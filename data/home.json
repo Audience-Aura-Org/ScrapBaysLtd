@@ -1,7 +1,7 @@
 {
   "hero": {
-    "title": "Scrap Bay Limited",
-    "text": "Scrap Bay Limited is a trading company that specialises in selling scrap metal, plastic scrap and waste paper scrap — all grades of ferrous and non-ferrous scrap metal, supplied to industrial buyers worldwide.",
+    "title": "Scrap Bays Limited",
+    "text": "Scrap Bays Limited is a trading company that specialises in selling scrap metal, plastic scrap and waste paper scrap — all grades of ferrous and non-ferrous scrap metal, supplied to industrial buyers worldwide.",
     "primary": { "label": "Shop now", "href": "/shop/" },
     "secondary": { "label": "Sell your scrap", "href": "/scrap-material-enquiry/" },
     "slides": [
@@ -30,7 +30,7 @@
     {
       "icon": "handshake",
       "title": "Reliable & Transparent Service",
-      "text": "From order to delivery, Scrap Bay Limited ensures timely communication, transparent pricing, and dependable logistics. We believe in honest trade practices and maintaining a reputation built on trust and reliability."
+      "text": "From order to delivery, Scrap Bays Limited ensures timely communication, transparent pricing, and dependable logistics. We believe in honest trade practices and maintaining a reputation built on trust and reliability."
     },
     {
       "icon": "leaf",

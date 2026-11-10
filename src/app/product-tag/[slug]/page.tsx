@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Params }) {
   const { slug } = await params;
   const tag = getTags().find((t) => t.slug === slug);
   if (!tag) return {};
-  return buildMetadata({ title: `${tag.name} — Products`, description: `Scrap Bay Limited products tagged “${tag.name}”.`, path: `/product-tag/${tag.slug}/`, noindex: true });
+  return buildMetadata({ title: `${tag.name} — Products`, description: `Scrap Bays Limited products tagged “${tag.name}”.`, path: `/product-tag/${tag.slug}/`, noindex: true });
 }
 
 export default async function TagPage({ params }: { params: Params }) {

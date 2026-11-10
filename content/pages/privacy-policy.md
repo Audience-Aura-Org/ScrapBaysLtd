@@ -2,12 +2,12 @@
 title: "Privacy Policy"
 slug: "privacy-policy"
 kind: "policy"
-seoDescription: "How Scrap Bay Limited collects, uses and protects personal data submitted through scrapbaysltd.com, including quote requests, orders and scrap material enquiries."
+seoDescription: "How Scrap Bays Limited collects, uses and protects personal data submitted through scrapbaysltd.com, including quote requests, orders and scrap material enquiries."
 updated: "2026-11-10T00:00:00Z"
 reviewNote: "DRAFT written during the 2026 site rebuild. Have it reviewed by your solicitor/data-protection adviser."
 ---
 
-This policy explains how **Scrap Bay Limited** ("we", "us", "our") collects and uses personal data when you use **scrapbaysltd.com** or contact us. We are the data controller for this information. If you have any questions, email [info@scrapbaysltd.com](mailto:info@scrapbaysltd.com).
+This policy explains how **Scrap Bays Limited** ("we", "us", "our") collects and uses personal data when you use **scrapbaysltd.com** or contact us. We are the data controller for this information. If you have any questions, email [info@scrapbaysltd.com](mailto:info@scrapbaysltd.com).
 
 ## Information we collect
 

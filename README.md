@@ -1,4 +1,4 @@
-# Scrap Bay Limited — website
+# Scrap Bays Limited — website
 
 Standalone Next.js 15 storefront for **scrapbaysltd.com**, replacing the old WordPress / WooCommerce / Elementor site. All content (products, categories, pages, blog posts, images) lives in this repository; nothing talks to WordPress at runtime.
 
@@ -38,7 +38,7 @@ All variables are documented in [`.env.example`](.env.example). Locally put them
 | `NEXT_PUBLIC_SITE_URL` | Public URL (canonicals, sitemap, emails). Default `https://scrapbaysltd.com`. *Build-time.* |
 | `NEXT_PUBLIC_CONTACT_EMAIL`, `NEXT_PUBLIC_CONTACT_PHONE` | Contact details shown on the site. *Build-time.* |
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS` | Titan Mail: `smtp.titan.email`, `465`, `true`, full mailbox address, mailbox password |
-| `MAIL_FROM` | Sender. Titan only allows the authenticated mailbox, e.g. `"Scrap Bay Limited <info@scrapbaysltd.com>"` |
+| `MAIL_FROM` | Sender. Titan only allows the authenticated mailbox, e.g. `"Scrap Bays Limited <info@scrapbaysltd.com>"` |
 | `MAIL_TO` | Where new orders/enquiries are sent (comma-separated for several) |
 | `MAIL_BCC` | Optional hidden copy of business notifications |
 | `BANK_DETAILS` | Bank details printed in order confirmations (`\n` for new lines). Empty = omitted |
@@ -72,7 +72,7 @@ images: [{"src":"/media/2025/10/copper-inqot.jpeg","alt":"Copper ingots","width"
 specs: [["Purity","99.9%"],["Form","Ingot"]]   # "Technical specifications" table
 tags: [{"slug":"copper-ingots","name":"Copper Ingots"}]
 related: ["copper-cathode","copper-ore"]       # optional; otherwise same-category products
-seoTitle: "Optional <title> (\" | Scrap Bay Limited\" is added automatically)"
+seoTitle: "Optional <title> (\" | Scrap Bays Limited\" is added automatically)"
 seoDescription: "Optional meta description (otherwise generated from the text)"
 featured: true                  # optional
 order: 20                       # sort position in "Featured" order
@@ -134,7 +134,7 @@ The quote list/cart and the wishlist are stored in the visitor's browser (localS
 
 ## SEO
 
-- Titles `Page | Scrap Bay Limited`, meta descriptions (from front matter, or generated from the text), canonicals, Open Graph/Twitter tags. Default social image: `/og.png` (branded, generated at build); product and blog pages use their own photo.
+- Titles `Page | Scrap Bays Limited`, meta descriptions (from front matter, or generated from the text), canonicals, Open Graph/Twitter tags. Default social image: `/og.png` (branded, generated at build); product and blog pages use their own photo.
 - JSON-LD: Organization + LocalBusiness and WebSite + SearchAction on every page; Product (with `Offer` only when a price exists), BreadcrumbList, BlogPosting.
 - `/sitemap.xml` (with images and lastmod), `/robots.txt`, `/manifest.webmanifest`, icons.
 - `noindex,follow` on shop search/filter/sort/pagination URLs, blog page 2+, tag pages, cart, checkout, wishlist and tracking.
