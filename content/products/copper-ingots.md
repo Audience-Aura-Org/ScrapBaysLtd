@@ -3,7 +3,7 @@ name: "Copper Ingots – Premium Quality High-Purity Copper Metal Ingots for Sal
 slug: "copper-ingots"
 legacyId: 960
 category: "metalingot"
-price: 8500
+price: null
 currency: "USD"
 unit: "tonnes"
 stock: "in_stock"
