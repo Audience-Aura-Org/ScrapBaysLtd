@@ -1,0 +1,93 @@
+[
+  {
+    "slug": "meralscrap",
+    "name": "Metal Scrap",
+    "legacyName": "Meral Scrap",
+    "legacyId": 26,
+    "description": "",
+    "image": {
+      "src": "/media/2026/01/hss-tool-steel-scrap-seo-1200x1200-1.jpg",
+      "alt": "Tungsten Carbide Scrap",
+      "width": 1200,
+      "height": 1200
+    }
+  },
+  {
+    "slug": "metalingot",
+    "name": "Metal Ingots",
+    "legacyName": "Metal Ingot",
+    "legacyId": 33,
+    "description": "",
+    "image": {
+      "src": "/media/2025/10/Zinc-Ingot.jpg",
+      "alt": "Metal Ingots Saudi Arabia",
+      "width": 750,
+      "height": 750
+    }
+  },
+  {
+    "slug": "electronicscrap",
+    "name": "Electronic Scrap",
+    "legacyName": "Electronic Scrap",
+    "legacyId": 41,
+    "description": "",
+    "image": {
+      "src": "/media/2026/01/Image-Jul-3-2026-10_55_35-AM.png",
+      "alt": "Electronic Scrap",
+      "width": 1254,
+      "height": 1254
+    }
+  },
+  {
+    "slug": "motorpartsscrap",
+    "name": "Motor Parts Scrap",
+    "legacyName": "Motor Parts Scrap",
+    "legacyId": 40,
+    "description": "",
+    "image": {
+      "src": "/media/2026/07/AC_Fridge_Compressor_Scrap_SEO_1200x1200.jpg",
+      "alt": "Compressor Scraps",
+      "width": 1200,
+      "height": 1200
+    }
+  },
+  {
+    "slug": "plastic-scrap",
+    "name": "Plastic Scrap",
+    "legacyName": "Plastic Scrap",
+    "legacyId": 56,
+    "description": "",
+    "image": {
+      "src": "/media/2026/07/plastic-film-rolls-.webp",
+      "alt": "LDPE Plastic Film Scrap",
+      "width": 1200,
+      "height": 1200
+    }
+  },
+  {
+    "slug": "woods",
+    "name": "Woods",
+    "legacyName": "Woods",
+    "legacyId": 59,
+    "description": "",
+    "image": {
+      "src": "/media/2025/10/Zebrano-Wood-Logs.jpg",
+      "alt": "Zebrano Wood Logs",
+      "width": 560,
+      "height": 420
+    }
+  },
+  {
+    "slug": "others",
+    "name": "Others",
+    "legacyName": "Others",
+    "legacyId": 60,
+    "description": "",
+    "image": {
+      "src": "/media/2026/09/d2d4ce04-0974-48e0-8495.png",
+      "alt": "Caluanie Muelear Oxidize",
+      "width": 1277,
+      "height": 1232
+    }
+  }
+]
