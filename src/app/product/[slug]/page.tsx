@@ -59,7 +59,7 @@ export default async function ProductPage({ params }: { params: Params }) {
                 {cat.name}
               </Link>
             )}
-            <h1 className="mt-2 text-[2rem] font-bold sm:text-[2.5rem]">{title}</h1>
+            <h1 className="mt-2 text-[calc(2rem-2px)] font-bold sm:text-[calc(2.5rem-2px)]">{title}</h1>
             {subtitle && <p className="mt-2 text-lg text-steel-600">{subtitle}</p>}
           </div>
           <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-steel-200 py-4">

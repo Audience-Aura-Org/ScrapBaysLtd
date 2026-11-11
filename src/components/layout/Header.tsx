@@ -91,7 +91,7 @@ export function Header({ categories }: { categories: NavCat[] }) {
               href="/shop/"
               aria-expanded={dropdown}
               aria-controls="products-menu"
-              className={`flex items-center gap-1 rounded-md px-3 py-4 font-medium hover:text-brand-700 ${isActive("/shop/") || pathname.startsWith("/product") ? "text-brand-700" : "text-steel-700"}`}
+              className={`flex min-h-14 items-center gap-1 rounded-md px-3 py-4 font-medium hover:text-brand-700 ${isActive("/shop/") || pathname.startsWith("/product") ? "text-brand-700" : "text-steel-700"}`}
               // Re-focusing the link after Esc must not immediately re-open the menu.
               onFocus={(e) => {
                 if (e.relatedTarget && e.currentTarget.parentElement?.contains(e.relatedTarget as Node)) e.stopPropagation();
@@ -103,13 +103,13 @@ export function Header({ categories }: { categories: NavCat[] }) {
               <ul className="card p-2 shadow-lg">
                 {categories.map((c) => (
                   <li key={c.slug}>
-                    <Link href={`/product-category/${c.slug}/`} className="block rounded px-3 py-4 text-steel-700 hover:bg-brand-50 hover:text-brand-800">
+                    <Link href={`/product-category/${c.slug}/`} className="flex min-h-14 items-center rounded px-3 py-4 text-steel-700 hover:bg-brand-50 hover:text-brand-800">
                       {c.name}
                     </Link>
                   </li>
                 ))}
                 <li className="mt-1 border-t border-steel-100 pt-1">
-                  <Link href="/shop/" className="block rounded px-3 py-4 font-semibold text-brand-700 hover:bg-brand-50">
+                  <Link href="/shop/" className="flex min-h-14 items-center rounded px-3 py-4 font-semibold text-brand-700 hover:bg-brand-50">
                     All products →
                   </Link>
                 </li>
@@ -117,7 +117,7 @@ export function Header({ categories }: { categories: NavCat[] }) {
             </div>
           </div>
           {links.slice(1).map((l) => (
-            <Link key={l.href} href={l.href} className={`rounded-md px-3 py-4 font-medium hover:text-brand-700 ${isActive(l.href) ? "text-brand-700" : "text-steel-700"}`}>
+            <Link key={l.href} href={l.href} className={`inline-flex min-h-14 items-center rounded-md px-3 py-4 font-medium hover:text-brand-700 ${isActive(l.href) ? "text-brand-700" : "text-steel-700"}`}>
               {l.label}
             </Link>
           ))}

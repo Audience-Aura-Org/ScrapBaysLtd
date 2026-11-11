@@ -35,7 +35,7 @@ export function BlogPost({ post }: { post: Post }) {
                 {category.name}
               </Link>
             )}
-            <h1 className="mx-auto mt-2 max-w-4xl text-[2rem] font-bold sm:text-[2.5rem] lg:text-[3rem]">{post.title}</h1>
+            <h1 className="mx-auto mt-2 max-w-4xl text-[calc(2rem-2px)] font-bold sm:text-[calc(2.5rem-2px)] lg:text-[calc(3rem-2px)]">{post.title}</h1>
             <p className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm text-steel-600">
               <span>
                 Published <time dateTime={post.date}>{formatDate(post.date)}</time>
@@ -131,7 +131,7 @@ function ShareLinks({ url, title }: { url: string; title: string }) {
               href={l.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-14 items-center rounded-full border border-steel-300 bg-white px-4 text-sm font-medium hover:border-brand-600 hover:text-brand-700"
+              className="inline-flex min-h-14 min-w-14 items-center justify-center rounded-full border border-steel-300 bg-white px-4 text-sm font-medium hover:border-brand-600 hover:text-brand-700"
             >
               {l.name}
               <span className="sr-only"> (opens in a new tab)</span>
