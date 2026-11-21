@@ -28,7 +28,7 @@ export function BlogPost({ post }: { post: Post }) {
       <article>
         <header className="border-b border-steel-200 bg-white">
           {/* Title and meta centred on phones and up; the body below is left-aligned. */}
-          <div className="container-x py-8 text-center md:py-12">
+          <div className="container-x py-5 text-center md:py-12">
             <Breadcrumbs items={[{ name: "Blog", path: "/blog/" }, { name: post.title, path: `/${post.slug}/` }]} className="mb-5 flex justify-center" />
             {category && (
               <Link href={`/product-category/${category.slug}/`} className="eyebrow relative hover:underline after:absolute after:inset-x-0 after:-inset-y-5 after:content-['']">
@@ -55,7 +55,7 @@ export function BlogPost({ post }: { post: Post }) {
           </div>
         </header>
 
-        <div className="container-x py-10">
+        <div className="container-x py-6 md:py-10">
           <div className="mx-auto max-w-[85ch]">
             {post.image && (
               <figure className="mb-8">
@@ -100,7 +100,7 @@ export function BlogPost({ post }: { post: Post }) {
       </article>
 
       {related.length > 0 && (
-        <section className="border-t border-steel-200 bg-white py-12">
+        <section className="border-t border-steel-200 bg-white py-8 md:py-12">
           <div className="container-x">
             <h2 className="mb-6 text-center text-2xl font-bold md:text-left">Related articles</h2>
             <PostList posts={related} headingLevel={3} />

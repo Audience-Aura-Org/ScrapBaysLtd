@@ -37,7 +37,7 @@ export function PageHeader({ title, intro, crumbs, eyebrow }: { title: string; i
   return (
     <section className="relative overflow-hidden border-b border-steel-200 bg-white">
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,var(--color-steel-100)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-steel-100)_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:linear-gradient(to_left,black,transparent_70%)]" />
-      <div className="container-x relative py-8 text-center md:py-12 md:text-left">
+      <div className="container-x relative py-5 text-center md:py-12 md:text-left">
         <Breadcrumbs items={crumbs} className="mb-4 flex justify-center md:justify-start" />
         {eyebrow && <p className="eyebrow mb-2">{eyebrow}</p>}
         <h1 className="mx-auto max-w-4xl text-[calc(2rem-2px)] font-bold sm:text-[calc(2.5rem-2px)] md:mx-0 lg:text-[calc(3rem-2px)]">{title}</h1>

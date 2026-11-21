@@ -33,7 +33,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
   return (
     <>
       <PageHeader title={c.name} eyebrow="Product category" crumbs={[{ name: "Shop", path: "/shop/" }, { name: c.name, path: `/product-category/${c.slug}/` }]} intro={intro(c.name, products.length, c.description)} />
-      <div className="container-x py-8 md:py-10">
+      <div className="container-x py-5 md:py-10">
         <div className="mb-5 flex flex-col items-center justify-between gap-3 text-sm text-steel-600 sm:flex-row">
           <p>{products.length} products</p>
           <Link href={`/shop/?category=${c.slug}`} className="font-semibold text-brand-700 underline">

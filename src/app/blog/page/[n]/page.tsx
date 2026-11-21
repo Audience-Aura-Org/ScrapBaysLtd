@@ -23,7 +23,7 @@ export default async function BlogPaged({ params }: { params: Params }) {
   return (
     <>
       <PageHeader title={`Blog — page ${n}`} eyebrow="Insights" crumbs={[{ name: "Blog", path: "/blog/" }, { name: `Page ${n}`, path: blogHref(n) }]} />
-      <div className="container-x py-10">
+      <div className="container-x py-6 md:py-10">
         <PostList posts={blogPage(n)} />
         <Pagination current={n} pages={blogPageCount()} href={blogHref} />
       </div>

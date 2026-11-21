@@ -14,7 +14,7 @@ export default function BlogIndex() {
   return (
     <>
       <PageHeader title="Blog" eyebrow="Insights" crumbs={[{ name: "Blog", path: "/blog/" }]} intro="Material guides, grades and recycling notes from our trading team." />
-      <div className="container-x py-10">
+      <div className="container-x py-6 md:py-10">
         <PostList posts={blogPage(1)} />
         <Pagination current={1} pages={blogPageCount()} href={blogHref} />
       </div>

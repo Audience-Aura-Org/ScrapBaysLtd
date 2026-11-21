@@ -47,10 +47,18 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const IOS_NO_INPUT_ZOOM = `(function(){var n=navigator;if(!(/iP(hone|ad|od)/.test(n.userAgent)||(n.platform==="MacIntel"&&n.maxTouchPoints>1)))return;var m=document.querySelector('meta[name="viewport"]');if(m&&m.content.indexOf("maximum-scale")<0)m.setAttribute("content",m.content+", maximum-scale=1");})();`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const categories = getCategories().map(({ slug, name }) => ({ slug, name }));
   return (
     <html lang="en-GB" className={poppins.variable}>
+      <head>
+        {/* iPhone/iPad only: stop Safari zooming into form fields (their text is under 16px
+            on screen). iOS ignores maximum-scale for pinch-zoom, so users can still zoom;
+            other platforms never get this, so Android pinch-zoom is unaffected. */}
+        <script dangerouslySetInnerHTML={{ __html: IOS_NO_INPUT_ZOOM }} />
+      </head>
       <body className="flex flex-col">
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2">
           Skip to content

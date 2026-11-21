@@ -7,13 +7,13 @@ import type { Img } from "@/lib/content";
 export function Gallery({ images, name }: { images: Img[]; name: string }) {
   const [active, setActive] = useState(0);
   const touchX = useRef<number | null>(null);
-  if (!images.length) return <div className="aspect-square rounded-lg bg-steel-100" />;
+  if (!images.length) return <div className="aspect-[4/3] rounded-lg bg-steel-100 sm:aspect-square" />;
   const go = (i: number) => setActive((i + images.length) % images.length);
   const img = images[active];
   return (
     <div className="mx-auto w-full max-w-xl lg:max-w-none">
       <div
-        className="relative aspect-square overflow-hidden rounded-lg border border-steel-200 bg-white"
+        className="relative aspect-[4/3] overflow-hidden rounded-lg border border-steel-200 bg-white sm:aspect-square"
         onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
         onTouchEnd={(e) => {
           if (touchX.current == null) return;

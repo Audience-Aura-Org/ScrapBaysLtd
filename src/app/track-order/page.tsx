@@ -14,7 +14,7 @@ export default function TrackPage() {
   return (
     <>
       <PageHeader title="Track your order or enquiry" crumbs={[{ name: "Track order", path: "/track-order/" }]} intro="Enter the reference from your confirmation email (e.g. SBQ-261110-AB12C) and the email address you used." />
-      <div className="container-x max-w-4xl py-8 md:py-10">
+      <div className="container-x max-w-4xl py-5 md:py-10">
         <Suspense>
           <TrackForm />
         </Suspense>

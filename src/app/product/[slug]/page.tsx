@@ -49,7 +49,7 @@ export default async function ProductPage({ params }: { params: Params }) {
         />
       </div>
 
-      <section className="container-x grid gap-8 py-6 md:py-8 lg:grid-cols-2 lg:gap-12">
+      <section className="container-x grid gap-5 py-4 md:gap-8 md:py-8 lg:grid-cols-2 lg:gap-12">
         <Gallery images={p.images} name={p.name} />
         <div>
           {/* Title block centred on phones; price, form and details stay left-aligned. */}
@@ -96,7 +96,7 @@ export default async function ProductPage({ params }: { params: Params }) {
         </div>
       </section>
 
-      <section className="container-x grid gap-10 py-8 lg:grid-cols-[1fr_22rem]">
+      <section className="container-x grid gap-8 py-6 md:gap-10 md:py-8 lg:grid-cols-[1fr_22rem]">
         <div className="min-w-0">
           <h2 className="mb-4 text-2xl font-bold">Product description</h2>
           <div className="prose-site" dangerouslySetInnerHTML={{ __html: renderMarkdown(p.body) }} />
@@ -133,7 +133,7 @@ export default async function ProductPage({ params }: { params: Params }) {
       </section>
 
       {related.length > 0 && (
-        <section className="border-t border-steel-200 bg-white py-12">
+        <section className="border-t border-steel-200 bg-white py-8 md:py-12">
           <div className="container-x">
             <h2 className="mb-6 text-center text-3xl font-bold md:text-left">Related products</h2>
             <ProductGrid>

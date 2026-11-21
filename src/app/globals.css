@@ -54,8 +54,8 @@
 @layer base {
   /*
    * The whole site renders at 80% on every screen size. Anything that must hit a real-pixel
-   * minimum after zoom is sized as (target / 0.8): inputs 20px -> 16px on screen (stops iOS
-   * auto-zoom), tap targets 56px -> 44.8px. Viewport units shrink with zoom too, so full-height
+   * minimum after zoom is sized as (target / 0.8): tap targets 56px -> 44.8px. Form fields use
+   * the body size; iOS focus-zoom is turned off by an iPhone-only script in layout.tsx. Viewport units shrink with zoom too, so full-height
    * rules divide by --zoom.
    */
   :root {
@@ -82,10 +82,10 @@
     @apply text-steel-900;
     text-wrap: balance;
   }
-  /* iOS zooms into inputs under 16px on screen: 20px x 0.8 zoom = 16px. Fixed px so the
-     phone root-size bump below doesn't change it. */
+  /* Form fields match body text. (iOS would zoom into fields under 16px on screen; the
+     iPhone-only viewport script in layout.tsx stops that.) */
   input, select, textarea {
-    font-size: 20px;
+    font-size: var(--text-base);
   }
   button {
     font-size: inherit;
@@ -123,7 +123,7 @@
     @apply mb-1.5 block text-sm font-semibold text-steel-700;
   }
   .field {
-    @apply block min-h-14 w-full rounded-md border border-steel-300 bg-white px-3 py-3 text-[20px] text-steel-900 shadow-sm placeholder:text-steel-500/70 focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20 focus:outline-none;
+    @apply block min-h-14 w-full rounded-md border border-steel-300 bg-white px-3 py-3 text-base text-steel-900 shadow-sm placeholder:text-steel-500/70 focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20 focus:outline-none;
   }
   .field-error {
     @apply mt-1 text-sm text-red-700;

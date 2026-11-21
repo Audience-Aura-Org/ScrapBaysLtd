@@ -8,7 +8,7 @@ export default function WishlistPage() {
   return (
     <>
       <PageHeader title="Wishlist" crumbs={[{ name: "Wishlist", path: "/wishlist/" }]} intro="Saved on this device. Add them to your quote list when you're ready." />
-      <div className="container-x py-8 md:py-10">
+      <div className="container-x py-5 md:py-10">
         <WishlistView />
       </div>
     </>

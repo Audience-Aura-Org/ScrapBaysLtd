@@ -48,7 +48,7 @@ export function HeroSlider({ title, text, primary, secondary, slides }: { title:
       ))}
       <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-b from-steel-900/85 via-steel-900/70 to-steel-900/85 md:bg-gradient-to-r md:from-steel-900/95 md:via-steel-900/75 md:to-steel-900/20" />
 
-      <div className="container-x flex min-h-[32rem] flex-col items-center justify-center py-16 text-center md:min-h-[36rem] md:items-start md:text-left lg:min-h-[38rem]">
+      <div className="container-x flex min-h-[24rem] flex-col items-center justify-center py-10 text-center md:min-h-[36rem] md:py-16 md:items-start md:text-left lg:min-h-[38rem]">
         <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm font-medium text-brand-100 backdrop-blur">
           <span className="size-2 rounded-full bg-signal-400" aria-hidden /> UK-based B2B scrap materials trader
         </p>

@@ -46,7 +46,7 @@ export default async function ContentPage({ params }: { params: Params }) {
     return (
       <>
         <PageHeader title={page.title} crumbs={[{ name: page.title, path: `/${slug}/` }]} />
-        <div className="container-x py-10 md:py-14">
+        <div className="container-x py-6 md:py-14">
           <div className="mx-auto max-w-3xl">
             {page.kind === "policy" && page.updated && <p className="mb-6 text-sm text-steel-500">Last updated {formatDate(page.updated)}</p>}
             <article className="prose-site" dangerouslySetInnerHTML={{ __html: renderMarkdown(dropDuplicateTitle(page.body, page.title)) }} />

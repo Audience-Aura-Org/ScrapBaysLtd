@@ -37,7 +37,7 @@ export default function HomePage() {
       <HeroSlider title={home.hero.title} text={home.hero.text} primary={home.hero.primary} secondary={home.hero.secondary} slides={heroSlides} />
 
       {/* Categories */}
-      <section className="container-x py-16 md:py-20">
+      <section className="container-x py-10 md:py-20">
         <div className="mb-8 flex flex-col items-center gap-3 text-center md:flex-row md:items-end md:justify-between md:text-left">
           <div>
             <p className="eyebrow">Categories</p>
@@ -68,7 +68,7 @@ export default function HomePage() {
         const items = productsInCategory(sec.category).slice(0, sec.limit);
         if (!items.length) return null;
         return (
-          <section key={sec.category} className="border-t border-steel-200 bg-white py-14 md:py-16">
+          <section key={sec.category} className="border-t border-steel-200 bg-white py-10 md:py-16">
             <div className="container-x">
               <div className="mb-8 flex flex-col items-center gap-3 text-center md:flex-row md:items-end md:justify-between md:text-left">
                 <h2 className="text-3xl font-bold sm:text-4xl">{sec.title}</h2>
@@ -87,7 +87,7 @@ export default function HomePage() {
       })}
 
       {/* Value blocks */}
-      <section className="bg-steel-900 py-16 text-white md:py-20">
+      <section className="bg-steel-900 py-10 text-white md:py-20">
         <div className="container-x">
           <div className="mx-auto mb-10 max-w-2xl text-center">
             <p className="eyebrow text-signal-400">Why Scrap Bays</p>
@@ -111,7 +111,7 @@ export default function HomePage() {
       </section>
 
       {/* Enquiry CTA */}
-      <section className="container-x py-16 md:py-20">
+      <section className="container-x py-10 md:py-20">
         <div className="grid gap-6 overflow-hidden rounded-xl bg-brand-900 p-8 text-center text-white md:grid-cols-[1.5fr_1fr] md:items-center md:p-12 md:text-left">
           <div>
             <h2 className="text-3xl font-bold text-white sm:text-4xl">Buying or selling scrap?</h2>
@@ -132,7 +132,7 @@ export default function HomePage() {
 
       {/* Latest posts */}
       {posts.length > 0 && (
-        <section className="border-t border-steel-200 bg-white py-14 md:py-16">
+        <section className="border-t border-steel-200 bg-white py-10 md:py-16">
           <div className="container-x">
             <div className="mb-8 flex flex-col items-center gap-3 text-center md:flex-row md:items-end md:justify-between md:text-left">
               <h2 className="text-3xl font-bold sm:text-4xl">From the blog</h2>

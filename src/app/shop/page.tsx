@@ -52,7 +52,7 @@ export default async function ShopPage({ searchParams }: { searchParams: SP }) {
         crumbs={[{ name: "Shop", path: "/shop/" }]}
         intro="Prices for most materials depend on grade, volume and destination. Add products to your quote list and send one enquiry for everything."
       />
-      <div className="container-x py-8 md:py-10">
+      <div className="container-x py-5 md:py-10">
         <div className="card mb-6 p-4 sm:p-5">
           <ShopFilters key={`${q}|${category}|${sort}`} q={q} category={category} sort={sort} categories={categories.map(({ slug, name }) => ({ slug, name }))} />
         </div>

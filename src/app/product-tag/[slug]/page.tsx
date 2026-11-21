@@ -26,7 +26,7 @@ export default async function TagPage({ params }: { params: Params }) {
   return (
     <>
       <PageHeader title={tag.name} eyebrow="Product tag" crumbs={[{ name: "Shop", path: "/shop/" }, { name: tag.name, path: `/product-tag/${slug}/` }]} />
-      <div className="container-x py-8 md:py-10">
+      <div className="container-x py-5 md:py-10">
         <ProductGrid>
           {products.map((p) => (
             <ProductCard key={p.slug} product={lite(p)} categoryName={catName[p.category]} />

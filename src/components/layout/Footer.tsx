@@ -9,7 +9,7 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="mt-20 bg-steel-900 text-steel-300">
-      <div className="container-x grid gap-10 py-14 text-center sm:grid-cols-2 sm:text-left lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+      <div className="container-x grid gap-8 py-10 text-center md:gap-10 md:py-14 sm:grid-cols-2 sm:text-left lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div className="flex flex-col items-center sm:items-start">
           <Logo light />
           <p className="mt-4 max-w-xs text-sm leading-relaxed">

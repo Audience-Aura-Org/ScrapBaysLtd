@@ -23,7 +23,7 @@ export default function SellPage() {
         crumbs={[{ name: "Scrap Material Enquiry", path: "/scrap-material-enquiry/" }]}
         intro="Have scrap or recyclable material to sell? Tell us what it is, how much and where it is — add photos if you can — and our trading team will come back with an offer."
       />
-      <div className="container-x grid gap-10 py-10 lg:grid-cols-[1fr_20rem]">
+      <div className="container-x grid gap-8 py-6 md:gap-10 md:py-10 lg:grid-cols-[1fr_20rem]">
         <div className="card p-5 sm:p-8">
           <SellForm materials={MATERIALS} />
         </div>

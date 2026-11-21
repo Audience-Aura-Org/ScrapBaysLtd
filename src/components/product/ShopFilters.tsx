@@ -30,7 +30,7 @@ export function ShopFilters({ q, category, sort, categories, action = "/shop/" }
       action={action}
       role="search"
       autoComplete="off"
-      className="grid gap-3 sm:grid-cols-[1fr_auto_auto] sm:items-end"
+      className="grid grid-cols-2 gap-3 sm:grid-cols-[1fr_auto_auto] sm:items-end"
       onSubmit={(e) => {
         // Keep URLs clean: leave empty fields out of the query string.
         for (const el of Array.from(e.currentTarget.elements) as HTMLInputElement[]) {
@@ -38,7 +38,7 @@ export function ShopFilters({ q, category, sort, categories, action = "/shop/" }
         }
       }}
     >
-      <div className="relative">
+      <div className="relative col-span-2 sm:col-span-1">
         <label htmlFor="shop-q" className="field-label">
           Search
         </label>

@@ -13,7 +13,7 @@ export default function CartPage() {
   return (
     <>
       <PageHeader title="Quote list" crumbs={[{ name: "Quote list", path: "/cart/" }]} intro="Adjust quantities, then send one enquiry for everything below." />
-      <div className="container-x py-8 md:py-10">
+      <div className="container-x py-5 md:py-10">
         <CartView />
       </div>
     </>
