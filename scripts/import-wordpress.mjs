@@ -199,7 +199,7 @@ const storeCats = await fetchJson(`${BASE}/wp-json/wc/store/v1/products/categori
 const wpCats = await fetchAll("wp/v2/product_cat");
 // Display-name fixes: "Meral Scrap" typo (the old menu already said "Metal scrap"), and the
 // homepage's "Metal Ignots" heading. Slugs are kept unchanged so URLs keep working.
-const CAT_NAME_FIX = { meralscrap: "Metal Scrap", metalingot: "Metal Ingots" };
+const CAT_NAME_FIX = { meralscrap: "Metal Scrap", metalingot: "Minerals and Ingots" };
 const CAT_ORDER = ["meralscrap", "metalingot", "electronicscrap", "motorpartsscrap", "plastic-scrap", "woods", "others"];
 
 // ---------------------------------------------------------------- products
@@ -344,7 +344,7 @@ if (about) {
         .replace(/^\* \* \*\n+/gm, "")
         .replace(/^## (Driving[^\n]*)$/m, "**$1**")
         // The category list came through as empty headings; link to the live list instead.
-        .replace(/## Our Product Categories[\s\S]*?(?=## A Sustainable Future)/, "## Our Product Categories\n\nWe trade metal scrap, metal ingots, electronic scrap, motor parts scrap, plastic scrap, timber and other recyclable materials. [Browse all categories](/shop/).\n\n"),
+        .replace(/## Our Product Categories[\s\S]*?(?=## A Sustainable Future)/, "## Our Product Categories\n\nWe trade metal scrap, minerals and ingots, electronic scrap, motor parts scrap, plastic scrap, timber and other recyclable materials. [Browse all categories](/shop/).\n\n"),
   );
   report.pages++;
 }

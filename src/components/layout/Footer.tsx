@@ -13,7 +13,7 @@ export function Footer() {
         <div className="flex flex-col items-center sm:items-start">
           <Logo light />
           <p className="mt-4 max-w-xs text-sm leading-relaxed">
-            UK-based trader of scrap metal, metal ingots, electronic, plastic and motor-parts scrap and timber, supplying industrial buyers worldwide.
+            UK-based trader of scrap metal, minerals and ingots, electronic, plastic and motor-parts scrap and timber, supplying industrial buyers worldwide.
           </p>
           <div className="mt-5 space-y-2 text-sm">
             <a href={`mailto:${site.email}`} className="flex min-h-14 items-center justify-center gap-2 hover:text-white sm:justify-start">

@@ -7,7 +7,7 @@ export const site = {
   phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "+44 7985 714297",
   tagline: "Scrap metal, plastic, electronic scrap & recyclable materials — traded worldwide",
   description:
-    "Scrap Bays Limited is a UK trading company supplying ferrous and non-ferrous scrap metal, metal ingots, electronic scrap, plastic scrap, motor parts scrap and timber to industrial buyers worldwide.",
+    "Scrap Bays Limited is a UK trading company supplying ferrous and non-ferrous scrap metal, minerals and ingots, electronic scrap, plastic scrap, motor parts scrap and timber to industrial buyers worldwide.",
   logo: "/icons/logo-512.png",
   country: "GB",
   themeColor: "#14532d",

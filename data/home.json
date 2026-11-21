@@ -22,7 +22,7 @@
         "src": "/images/hero/hero-metal-ingots.webp",
         "fallback": "/media/2025/10/copper-inqot.jpeg",
         "alt": "Stacked copper ingots",
-        "label": "Metal ingots",
+        "label": "Minerals and ingots",
         "href": "/product-category/metalingot/"
       },
       {
@@ -56,7 +56,7 @@
       "limit": 8
     },
     {
-      "title": "Metal Ingots",
+      "title": "Minerals and Ingots",
       "category": "metalingot",
       "limit": 8
     }

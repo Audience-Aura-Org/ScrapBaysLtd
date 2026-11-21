@@ -15,7 +15,7 @@ export const metadata = buildMetadata({
   title: "Scrap Metal, Plastic Scrap, Electronic Scrap & Recyclable Materials Supplier | Scrap Bays Limited",
   absoluteTitle: true,
   description:
-    "Scrap Bays Limited supplies ferrous & non-ferrous scrap metal, metal ingots, electronic scrap, plastic scrap, motor parts scrap and timber logs to buyers worldwide. Request a quote today.",
+    "Scrap Bays Limited supplies ferrous & non-ferrous scrap metal, minerals and ingots, electronic scrap, plastic scrap, motor parts scrap and timber logs to buyers worldwide. Request a quote today.",
   path: "/",
 });
 

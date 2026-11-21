@@ -46,7 +46,7 @@ Our approach enables us to meet customer needs effectively while contributing to
 
 ## Our Product Categories
 
-We trade metal scrap, metal ingots, electronic scrap, motor parts scrap, plastic scrap, timber and other recyclable materials. [Browse all categories](/shop/).
+We trade metal scrap, minerals and ingots, electronic scrap, motor parts scrap, plastic scrap, timber and other recyclable materials. [Browse all categories](/shop/).
 
 ## A Sustainable Future
 

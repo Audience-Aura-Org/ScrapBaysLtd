@@ -31,7 +31,7 @@ Size: **2400 × 1200 px** (2:1), WebP.
 - **Prompt:**
   > Wide photograph of a large outdoor scrap metal yard at golden hour: a towering, orderly pile of heavy melting steel scrap and cut railway rails in rust browns and steel greys fills the centre-right of the frame, a yellow material-handling grab crane partly visible behind it, soft dust in the warm light. The left third of the frame falls into soft shadow and an out-of-focus background of stacked scrap bales under an overcast sky, calm and uncluttered. Shot on a 35mm lens at eye level, shallow depth of field on the left, crisp detail on the metal textures, realistic, high dynamic range. No text, no logos, no people in focus.
 
-### 2. Metal ingots
+### 2. Minerals and ingots
 - **Path:** `public/images/hero/hero-metal-ingots.webp`
 - **Fallback (current):** `/media/2025/10/copper-inqot.jpeg`
 - **Alt text (already set):** Stacked copper ingots
